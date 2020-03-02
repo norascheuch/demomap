@@ -12,7 +12,17 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+
+    <div class="container justfiy-content-center">
+      <div class="row text-align">
+        <div class="col-12">
+
+          <%= yield %>
+
+        </div>
+      </div>
+    </div>
+
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
