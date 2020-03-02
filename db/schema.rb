@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_144934) do
+ActiveRecord::Schema.define(version: 2020_03_02_151600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "demo_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["demo_id"], name: "index_comments_on_demo_id"
+    t.index ["event_id"], name: "index_comments_on_event_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "demos", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "start_location"
+    t.string "end_location"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_demos_on_user_id"
+  end
+
+  create_table "event_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.text "description"
+    t.string "location"
+    t.bigint "user_id"
+    t.bigint "demo_id"
+    t.bigint "event_type_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["demo_id"], name: "index_events_on_demo_id"
+    t.index ["event_type_id"], name: "index_events_on_event_type_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +73,11 @@ ActiveRecord::Schema.define(version: 2020_03_02_144934) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "demos"
+  add_foreign_key "comments", "events"
+  add_foreign_key "comments", "users"
+  add_foreign_key "demos", "users"
+  add_foreign_key "events", "demos"
+  add_foreign_key "events", "event_types"
+  add_foreign_key "events", "users"
 end
