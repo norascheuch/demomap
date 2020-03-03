@@ -3,7 +3,7 @@
     <div class="card-comment-infos">
       <div class="card-comment-infos-content">
         <div class="card-comment-infos-content-details">
-          <%= image_tag "group.svg", alt: "Sit-In" %>
+          <%= image_tag c.commentable.event_type.icon, alt: c.commentable.event_type.name  %>
           <p>
           created<br>
           <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
