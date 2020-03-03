@@ -1,2 +1,22 @@
-<h1>Demos#index</h1>
+<h1>Upcoming Demonstrations </h1>
 <p>Find me in app/views/demos/index.html.erb</p>
+
+<% @demos.each do |demo| %>
+  <% if policy(Demo).show? %>
+          <%= link_to demo_path(demo) do %>
+            <div class="card-demo">
+                <div class="card-demo-infos">
+                  <div>
+                    <h2><%= demo.name %></h2>
+                  </div>
+                  <h2><%= demo.start_time %></h2>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+<% if policy(Demo).create? %>
+  <%= link_to "New restaurant", new_restaurant_path %>
+<% end %>
+

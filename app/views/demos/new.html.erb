@@ -1,2 +1,14 @@
 <h1>Demos#new</h1>
 <p>Find me in app/views/demos/new.html.erb</p>
+
+<h1>Create your Demo</h1>
+
+                <%= simple_form_for @demo do |f| %>
+                  <%= f.input :name %>
+                  <%= f.input :description %>
+                  <%= f.button :submit, "Create Profile", class: 'btn btn-secondary w-100' %>
+                <% end %>
+
+<% if policy(Demo).create? %>
+  <%= link_to "New Demo", new_demo_path %>
+<% end %>
