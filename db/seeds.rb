@@ -8,8 +8,9 @@
 
 require 'faker'
 
-puts'deleting old events, demo and EventTypes'
+puts'Deleting old events, demo and eventtypes and comments'
 
+Comment.destroy_all
 
 Event.destroy_all
 
@@ -37,9 +38,16 @@ event_type2 = EventType.create!(name: 'speach', icon: 'share.svg')
 event_type3 = EventType.create!(name: 'police', icon: 'group.svg')
 event_type4 = EventType.create!(name: 'medics', icon: 'logo.png')
 
-Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo: demo, event_type: event_type1, user: user)
-Event.create!(description: 'important', location:'Friedrichstraße 4 Berlin', demo: demo, event_type: event_type2, user: user)
+event1 = Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo: demo, event_type: event_type1, user: user)
+event2 = Event.create!(description: 'important', location:'Friedrichstraße 4 Berlin', demo: demo, event_type: event_type2, user: user)
 Event.create!(description: 'lets meet', location:'Friedrichstraße 40 Berlin', demo: demo, event_type: event_type3, user: user)
 Event.create!(description: 'super meeting', location:'Friedrichstraße 45 Berlin', demo: demo, event_type: event_type4, user: user)
+
+Comment.create!(user: user, content: 'This is a test comment for an Event', commentable: event1)
+Comment.create!(user: user, content: 'This is another test comment for the same event', commentable: event1)
+Comment.create!(user: user, content: 'This is a test comment for an Event', commentable: event2)
+Comment.create!(user: user, content: 'This is a test comment for a demonstration', commentable: demo)
+Comment.create!(user: user, content: 'This is another test comment for a demonstration', commentable: demo)
+Comment.create!(user: user, content: 'And even a third test comment for a demonstration', commentable: demo)
 
 puts'finished'

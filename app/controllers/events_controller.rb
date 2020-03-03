@@ -16,6 +16,6 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @comments = Event.find(params[:id]).comments
   end
 end
