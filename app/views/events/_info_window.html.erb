@@ -1,2 +1,6 @@
-<h2><%= event.description%></h2>
-<p><%= event.location %></p>
+<%= link_to event_path(event) do %>
+  <div>
+    <h2><%= event.description%></h2>
+    <p><%= event.location %></p>
+  </div>
+<% end %>
