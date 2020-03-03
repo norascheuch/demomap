@@ -32,8 +32,14 @@ user = User.create!({
 
 demo = Demo.create!(description:'Lorem Ipsum  ', name:'Monday for future', user: user)
 
-event_type = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
+event_type1 = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
+event_type2 = EventType.create!(name: 'speach', icon: 'share.svg')
+event_type3 = EventType.create!(name: 'police', icon: 'group.svg')
+event_type4 = EventType.create!(name: 'medics', icon: 'logo.png')
 
-Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo: demo, event_type: event_type, user: user)
+Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo: demo, event_type: event_type1, user: user)
+Event.create!(description: 'important', location:'Friedrichstraße 4 Berlin', demo: demo, event_type: event_type2, user: user)
+Event.create!(description: 'lets meet', location:'Friedrichstraße 40 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'super meeting', location:'Friedrichstraße 45 Berlin', demo: demo, event_type: event_type4, user: user)
 
 puts'finished'
