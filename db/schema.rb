@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_104340) do
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["demo_id"], name: "index_events_on_demo_id"
     t.index ["event_type_id"], name: "index_events_on_event_type_id"
     t.index ["user_id"], name: "index_events_on_user_id"
