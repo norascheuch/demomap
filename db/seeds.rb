@@ -8,13 +8,19 @@
 
 require 'faker'
 
-puts'deleting old events'
+puts'deleting old events, demo and EventTypes'
+
 
 Event.destroy_all
 
+Demo.destroy_all
+
+EventType.destroy_all
+
+User.destroy_all
+
 puts'starting seeds'
 
-10.times do
 
 user = User.create!({
     email: Faker::Internet.email(domain: 'gmail'),
@@ -22,12 +28,12 @@ user = User.create!({
 
   })
 
-end
 
-Demo.create!(description:'Lorem Ipsum  ', name:'Monday for future', user_id:1)
 
-EventType.create!(name: 'sit-in')
+demo = Demo.create!(description:'Lorem Ipsum  ', name:'Monday for future', user: user)
 
-Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo_id: 1, event_type_id: 1, user_id:1)
+event_type = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
+
+Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo: demo, event_type: event_type, user: user)
 
 puts'finished'

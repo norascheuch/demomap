@@ -1,13 +1,14 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.geocoded #returns flats with coordinates
-
+    @events = Event.geocoded
     @markers = @events.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-      }
+      @icon = event.event_type.icon
+           {
+     lat: event.latitude,
+     lng: event.longitude,
+     infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+     image_url: helpers.asset_url(@icon)
+     }
     end
   end
 
@@ -16,5 +17,16 @@ class EventsController < ApplicationController
 
   def show
 
+  end
+
+  private
+
+  def set_marker_img(event,event_img)
+     {
+     lat: event.latitude,
+     lng: event.longitude,
+     infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+     image_url: helpers.asset_url(event_img)
+     }
   end
 end
