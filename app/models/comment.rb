@@ -1,5 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :user
-  belongs_to :demo
-  belongs_to :event
+  belongs_to :commentable, polymorphic: true
+
+  validates :content, presence: true
+
 end
