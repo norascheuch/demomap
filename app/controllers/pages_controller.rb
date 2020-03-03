@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:splash]
   def splash
   end
 
@@ -18,3 +18,4 @@ class PagesController < ApplicationController
   def impressum
   end
 end
+
