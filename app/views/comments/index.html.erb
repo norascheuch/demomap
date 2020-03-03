@@ -1,2 +1,24 @@
 <h1>Comments#index</h1>
 <p>Find me in app/views/demos/index.html.erb</p>
+<% @comments.each { |c|%> <%= c.content %> <%} %>
+
+<div class="card-comment">
+  <div class="card-comment-infos">
+    <div class="card-comment-infos-content">
+      <div class="card-comment-infos-content-details">Details</div>
+      <div class="card-comment-infos-content-description">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      </div>
+    </div>
+    <div class="card-comment-infos votes">
+      Votes
+    </div>
+  </div>
+
+  <div class="card-comment-footer">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
+
+
