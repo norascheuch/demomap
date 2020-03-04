@@ -12,7 +12,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' unless current_page?(:root) %>
+
     <%= render 'shared/flashes' unless current_page?(:root) %>
 
       <div class="container justfiy-content-center">
@@ -24,6 +24,7 @@
         </div>
       </div>
 
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
