@@ -1,0 +1,58 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: black;
+}
+
+.navbar-light .navbar-toggler .fa-align-justify {
+  position: fixed;
+  bottom: 15px;
+  left: 16px;
+}
+
+.navbar-toggler-icon {
+  color: red !important;
+}
+
+.button-trans {
+  border-color: transparent !important;
+}
+
+.footer{
+  position: sticky;
+  left: 0 ; right: 0; bottom: 0;
+  height:[footer-height]
+}
+
+.toggler_box {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 50px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.html { height: 100%; }
+.body {
+    min-height:100%;
+    position:relative;
+    padding-bottom:[footer-height]
+}
+
