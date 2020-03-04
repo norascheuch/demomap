@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-  get 'events/index'
-  get 'events/new'
   devise_for :users
 
   root to: 'pages#splash'
@@ -11,13 +8,11 @@ Rails.application.routes.draw do
   get '/tips', to: 'pages#tips'
 
   resources :demos do
-    resources :events, only: [:index] do
-      resources :comments, only: [:index, :new, :create]
+    resources :events, only: [:index, :new, :show, :create, :destroy] do
+      resources :comments, only: [:index, :new, :create, :destroy]
     end
-    resources :comments, only: [:index, :new, :create]
+    resources :comments, only: [:index, :new, :create, :destroy]
   end
-
-  resources :events, only: [:show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

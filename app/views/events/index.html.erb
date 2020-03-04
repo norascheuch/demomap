@@ -19,7 +19,7 @@
    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
       <% @events.each do |event| %>
        <li>
-         <%= link_to event_path(event) do %>
+         <%= link_to demo_events_path(event) do %>
            <%= event.description %>
          <% end %>
        </li>

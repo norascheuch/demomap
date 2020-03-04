@@ -1,2 +1,8 @@
 <h1>Demos#show</h1>
 <p>Find me in app/views/demos/show.html.erb</p>
+
+<%= @demo.name %>
+
+<% if policy(@demo).edit? %>
+  <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
+<% end %>
