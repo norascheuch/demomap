@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#splash'
   get '/dashboard', to: 'pages#dashboard'
+  get '/contact', to: 'pages#contact'
+  get '/organizers', to: 'pages#organizers'
+  get '/tips', to: 'pages#tips'
 
   resources :demos do
     resources :events, only: [:index] do

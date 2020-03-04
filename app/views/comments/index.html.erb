@@ -3,7 +3,7 @@
     <div class="card-comment-infos">
       <div class="card-comment-infos-content">
         <div class="card-comment-infos-content-details">
-          <%= image_tag "group.svg", alt: "Sit-In" %>
+          <%= image_tag "group.svg", alt: "Demonstration" %>
           <p>
           created<br>
           <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
@@ -23,7 +23,7 @@
 
     <div class="card-comment-footer">
       <p>
-        <!-- <i class="fas fa-map-marker-alt"></i> -->
+        <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
       </p>
       <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
     </div>
