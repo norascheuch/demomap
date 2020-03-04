@@ -1,2 +1,34 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/demos/index.html.erb</p>
+<% @comments.each do |c|%>
+  <div class="card-comment">
+    <div class="card-comment-infos">
+      <div class="card-comment-infos-content">
+        <div class="card-comment-infos-content-details">
+          <%= image_tag "group.svg", alt: "Demonstration" %>
+          <p>
+          created<br>
+          <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+          </p>
+        </div>
+        <div class="card-comment-infos-content-description">
+          <%= c.content %>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        </div>
+      </div>
+      <div class="card-comment-info-votes">
+        <i class="fas fa-chevron-up"></i>
+        <p>089</p>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <div class="card-comment-footer">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
+      </p>
+      <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+    </div>
+  </div>
+<% end %>
+
+
+
