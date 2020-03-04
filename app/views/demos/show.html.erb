@@ -1,20 +1,39 @@
 <div class="card-demo-show-banner"></div>
 
 <div class="card-demo-show-title">
-  <div class="card-demo-show-title-content">
-      <%= @demo.name %>
-  </div>
+      <p class="demo-title"><%= @demo.name %></p>
+      <a href="#" class="btn-calendar"></a>
+      <%= link_to '#', demo_events_path(@demo.events), class: 'btn-calendar' %>
 </div>
 
 <div class="card-demo-action">
-  <div class="card-demo-action-address">
-    <p>TODO DEMO LOCATION</p>
+  <i></i>
+  <div class="card-demo-btns">
+    <a href="#" class="btn-calendar"></a>
+    <a href="#" class="btn-share"></a>
+    <p>TODO BTN 1</p>
+    <p>TODO BTN 2</p>
+    <div class="card-demo-action-address">
+      <p>TODO DEMO LOCATION</p>
+      <%= @demo.start_location %>
+    </div>
   </div>
 </div>
 
 <div class="card-demo-description">
-<h3>Details:</h3>
-<p>TODO => demo.desxription</p>
+  <h3>Details:</h3>
+    <span class="d-inline-block text-truncate" style="max-width: 250px">
+      <p>
+          Seitan everyday carry leggings try-hard, hammock food truck thundercats jean shorts gentrify pinterest gastropub trust fund kinfolk scenester schlitz. Hammock pabst +1 four loko ennui. Before they sold out pickled crucifix umami kickstarter craft beer,
+          cronut flexitarian austin post-ironic whatever single-origin coffee. Brooklyn franzen authentic, try-hard DIY craft beer sartorial hella actually. Four loko ramps celiac 3 wolf moon neutra. Food truck leggings pork belly disrupt echo park four loko.
+          Deep v paleo shabby chic, 90's vinyl tofu vice seitan authentic whatever skateboard put a bird on it semiotics readymade sartorial.
+        </p>
+      </span>
+    <p class="expand-button">
+      Read More => TODO COLLAPSE ACCODRION WITH JS
+    </p>
+  </div>
+
 
 
 <h3>Itinerary:</h3>
