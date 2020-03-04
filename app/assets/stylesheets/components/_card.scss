@@ -173,6 +173,7 @@ p {
   margin-top: 90px;
   margin-bottom: 30px;
   border-radius: 5px;
+  margin-left: 15px;
 }
 
 .card-demo-btns {
@@ -212,3 +213,22 @@ p {
 .card-demo-description {
   padding-left: 4px;
 }
+
+.card-demo-description > p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.333333px;
+}
+
+.card-demo-description > h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.333333px;
+}
+
