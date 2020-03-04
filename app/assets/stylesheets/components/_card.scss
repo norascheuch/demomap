@@ -84,9 +84,59 @@ p {
     }
 }
 
+
+.card-demo-info-date {
+  padding-right: 5px;
+  padding-left: 20px;
+  line-height: 1.1em;
+  a {
+    text-decoration: none;
+    }
+    :hover {
+    text-decoration: none;
+    }
+}
+
+
+.card-demo-info-day {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.333333px;
+  padding-bottom: 5px;
+
+  width: 107.75px;
+  height: 45px;
+  left: 28.54px;
+  top: 130px;
+}
+
+.card-demo-info-month {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.333333px;
+  padding-top: 5px;
+
+  width: 99.22px;
+  height: 29px;
+  left: 32.8px;
+  top: 180px;
+}
+
+
 .card-demo-infos {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -113,7 +163,6 @@ p {
   }
 
 }
-
 
 
 // CARD DEMO SHOW //
