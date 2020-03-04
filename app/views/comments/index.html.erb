@@ -14,24 +14,26 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
         </div>
       </div>
-      <div class="card-comment-info-votes">
-        <%= simple_form_for([@demo, c], remote: true) do |form| %>
-  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
- <%= button_tag(type: 'submit') do %>
-           <i class="fas fa-chevron-up"></i>
-  <% end %>
-<% end %>
 
+<div class="card-comment-info-votes">
+        <form class="simple_form edit_comment" id="edit_comment_6" novalidate="novalidate" action="/demos/1/comments/6" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="wBpSFCWz4Zp7tAOy41MbHTQ/FRY2G9fmYIaOs2CVTO8nbMq9Wb540amuTHqwx4scLd5G4Vt/Ojz684BM9hjJAg==">
+  <div class="form-group hidden comment_vote"><input class="form-control hidden" value="up" type="hidden" name="comment[vote]" id="comment_vote"></div>
+<button name="button" type="submit" class="btn">
+        <i class="fas fa-chevron-up"></i>
+</button></form>
         <%= render 'shared/votes', c: c %>
-<%= simple_form_for([@demo, c], remote: true) do |form| %>
-  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
- <%= button_tag(type: 'submit') do %>
-        <i class="fas fa-chevron-down"></i>
-  <% end %>
-<% end %>
-      </div>
-    </div>
 
+
+
+
+
+<form class="simple_form edit_comment" id="edit_comment_6" novalidate="novalidate" action="/demos/1/comments/6" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="wBpSFCWz4Zp7tAOy41MbHTQ/FRY2G9fmYIaOs2CVTO8nbMq9Wb540amuTHqwx4scLd5G4Vt/Ojz684BM9hjJAg==">
+  <div class="form-group hidden comment_vote"><input class="form-control hidden" value="down" type="hidden" name="comment[vote]" id="comment_vote"></div>
+  <button name="button" type="submit" class="btn">
+        <i class="fas fa-chevron-down"></i>
+</button></form>      </div>
+
+    </div>
     <div class="card-comment-footer">
       <p>
         <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
@@ -40,6 +42,4 @@
     </div>
   </div>
 <% end %>
-
-
 
