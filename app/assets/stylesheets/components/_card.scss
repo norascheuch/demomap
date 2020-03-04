@@ -76,6 +76,9 @@ p {
     justify-content: space-between;
     border-radius: 24px;
     margin: 1em 0;
+    width: 335px;
+    height: 109px;
+
     a {
     text-decoration: none;
     }
@@ -90,7 +93,7 @@ p {
   align-items: center;
 }
 
-.card-comment-infos-content-details {
+.card-demo-infos-content-details {
   position: absolute;
   width: 184px;
   height: 57px;
@@ -112,9 +115,21 @@ p {
   font-weight: 700;
   }
 
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
+.card-demo-infos-content-description {
+  padding-right: 5px;
+  line-height: 1.1em;
+}
 
+.card-demo-infos-content-details p {
+  font-size: 12px;
+  opacity: .8;
+  padding-left: 6px;
+}
 
 // CARD DEMO SHOW //
 
