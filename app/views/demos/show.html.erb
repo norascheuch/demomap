@@ -3,6 +3,6 @@
 
 <%= @demo.name %>
 
-<% if policy(Demo).edit? %>
-  <td><%= link_to "Edit", edit_demo_path(demo) %></td>
+<% if policy(@demo).edit? %>
+  <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
 <% end %>

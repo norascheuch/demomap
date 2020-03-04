@@ -3,7 +3,7 @@ class DemosController < ApplicationController
 
   def index
     @demo = Demo.all
-    @demos = policy_scope(Demo).order(created_at: :desc)
+    @demos = policy_scope(Demo).order(start_time: :desc)
   end
 
   def show

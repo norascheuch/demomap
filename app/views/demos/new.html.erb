@@ -9,6 +9,6 @@
                   <%= f.button :submit, "Create Profile", class: 'btn btn-secondary w-100' %>
                 <% end %>
 
-<% if policy(Demo).create? %>
+<% if policy(@demo).create? %>
   <%= link_to "New Demo", new_demo_path %>
 <% end %>

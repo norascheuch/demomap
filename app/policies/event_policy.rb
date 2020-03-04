@@ -1,4 +1,4 @@
-class DemoPolicy < ApplicationPolicy
+class EventPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -21,15 +21,15 @@ class DemoPolicy < ApplicationPolicy
     return new?
   end
 
-    def edit?
-      return record.user == user
-    end
+  def edit?
+    return record.user == user
+  end
 
-    def update?
-      return edit?
-    end
+  def update?
+    return edit?
+  end
 
-    def destroy?
-      return edit?
-    end
+  def destroy?
+    return edit?
+  end
 end
