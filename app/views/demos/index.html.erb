@@ -1,2 +1,20 @@
-<h1>Demos#index</h1>
-<p>Find me in app/views/demos/index.html.erb</p>
+
+      <h1>Upcoming Demonstrations </h1>
+
+        <% @demos.each do |demo| %>
+          <%= link_to demo_path(demo) do %>
+            <div class="card-demo">
+              <div class="card-demo-infos">
+                <div class="card-comment-info-date">
+                  <div class="card-comment-info-day">27</div>
+                  <div class="card-comment-info-month">Jan</div>
+                </div>
+                <div class="card-demo-infos-content">
+                  <div class="card-demo-infos-content-details">
+                    <h2><%= demo.name %></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>

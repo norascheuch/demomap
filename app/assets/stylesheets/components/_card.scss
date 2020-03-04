@@ -60,3 +60,72 @@ p {
 //   border: 1px solid red;
 // }
 
+
+.card-demo {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-radius: 24px;
+    margin: 1em 0;
+    a {
+    text-decoration: none;
+    }
+    :hover {
+    text-decoration: none;
+    }
+}
+
+.card-demo-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-comment-infos-content-details {
+  position: absolute;
+  width: 184px;
+  height: 57px;
+  left: 160px;
+  top: 130px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.333333px;
+
+  color: #000000;
+
+}
+
+.card-comment-info-date {
+  line-height: .6;
+  padding-left: 20px;
+}
+
+.card-comment-info-day {
+  font-size: 64px;
+  font-weight: bold;
+  font-family: Roboto;
+  letter-spacing: -0.33px;
+  text-align: center;
+  height: 50px;
+}
+
+.card-comment-info-month {
+  font-size: 36px;
+  height: 29px;
+  padding-top: 8px;
+}
+
