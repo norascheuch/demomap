@@ -1,6 +1,28 @@
 <%= link_to demo_event_path(demo, event) do %>
-  <div>
-    <h2><%= event.description%></h2>
-    <p><%= event.location %></p>
+  <div class="card-popup">
+    <div class="card-popup-infos">
+      <div class="card-popup-infos-content">
+        <div class="card-popup-infos-content-details">
+          <%= image_tag event.event_type.icon %>
+          <strong><%= event.event_type.name %></strong>
+        </div>
+        <div class="card-popup-infos-content-description">
+          <%= event.description %>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        </div>
+      </div>
+<!--       <div class="card-popup-info-votes">
+        <i class="fas fa-chevron-up"></i>
+        <p>089</p>
+        <i class="fas fa-chevron-down"></i>
+      </div> -->
+    </div>
+    <div class="card-popup-footer">
+      <p><i class="far fa-comment"></i> 23 </p>
+      <p>
+        <i class="fas fa-map-marker-alt"></i> <%= event.location %>
+      </p>
+      <p>last voted: <strong><%= event.created_at.strftime("%I:%M%p") %></strong></p>
+    </div>
   </div>
 <% end %>
