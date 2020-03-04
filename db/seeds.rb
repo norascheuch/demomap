@@ -29,9 +29,15 @@ user = User.create!({
 
   })
 
+user2 = User.create!({
+    email: Faker::Internet.email(domain: 'gmail'),
+    password: Faker::Internet.password(min_length: 10, max_length: 20),
+
+  })
 
 
-demo = Demo.create!(description:'Lorem Ipsum  ', name:'Monday for future', user: user)
+
+demo = Demo.create!(description:'Lorem Ipsum  ', name:'Fridays for future', user: user)
 
 event_type1 = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
 event_type2 = EventType.create!(name: 'speach', icon: 'share.svg')

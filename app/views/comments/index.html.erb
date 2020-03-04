@@ -15,9 +15,20 @@
         </div>
       </div>
       <div class="card-comment-info-votes">
-        <i class="fas fa-chevron-up"></i>
-        <p>089</p>
+        <%= simple_form_for([@demo, c], remote: true) do |form| %>
+  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+ <%= button_tag(type: 'submit') do %>
+           <i class="fas fa-chevron-up"></i>
+  <% end %>
+<% end %>
+
+        <%= render 'shared/votes', c: c %>
+<%= simple_form_for([@demo, c], remote: true) do |form| %>
+  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+ <%= button_tag(type: 'submit') do %>
         <i class="fas fa-chevron-down"></i>
+  <% end %>
+<% end %>
       </div>
     </div>
 
