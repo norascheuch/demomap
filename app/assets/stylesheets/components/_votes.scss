@@ -1,0 +1,16 @@
+.card-comment-info-votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 0.3em;
+}
+
+.card-comment-info-votes p {
+  // font-family: Roboto;
+  font-size: 35px;
+  margin: 0;
+  padding: 0;
+}

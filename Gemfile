@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
+gem 'acts_as_votable'
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -9,6 +11,7 @@ gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'pundit'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -16,6 +19,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
