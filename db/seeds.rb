@@ -37,23 +37,47 @@ user2 = User.create!({
 
 
 
-demo = Demo.create!(description:'Lorem Ipsum  ', name:'Fridays for future', user: user)
+demo = Demo.create!(description:'Lorem Ipsum  ', name:'Mondays for future', user: user, start_time: Date.today)
+demo2 = Demo.create!(description:'Lorem Ipsum  ', name:"You can't eat money!", user: user, start_time: (Date.today + 12))
+demo3 = Demo.create!(description:'Lorem Ipsum  ', name:'Critical Mass', user: user, start_time: (Date.today + 1))
+demo4 = Demo.create!(description:'Lorem Ipsum  ', name:'Mondays for future', user: user, start_time: (Date.today + 5))
 
 event_type1 = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
-event_type2 = EventType.create!(name: 'speach', icon: 'share.svg')
+event_type2 = EventType.create!(name: 'speech', icon: 'share.svg')
 event_type3 = EventType.create!(name: 'police', icon: 'group.svg')
-event_type4 = EventType.create!(name: 'medics', icon: 'logo.png')
 
-event1 = Event.create!(description: 'Super important', location:'Friedrichstraße 2 Berlin', demo: demo, event_type: event_type1, user: user)
-event2 = Event.create!(description: 'important', location:'Friedrichstraße 4 Berlin', demo: demo, event_type: event_type2, user: user)
-Event.create!(description: 'lets meet', location:'Friedrichstraße 40 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: 'super meeting', location:'Friedrichstraße 45 Berlin', demo: demo, event_type: event_type4, user: user)
+event1 = Event.create!(description: 'Sit In!', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type1, user: user)
+event2 = Event.create!(description: 'Speech from Martin', location:'Friedrichstraße 4 Berlin', demo: demo, event_type: event_type2, user: user)
+event3 = Event.create!(description: 'Speech from Vanessa', location:'Unter den Linden Berlin', demo: demo, event_type: event_type2, user: user)
+event4 = Event.create!(description: 'Speech from Cole', location:'Alexanderplatz Berlin', demo: demo, event_type: event_type2, user: user)
 
-Comment.create!(user: user, content: 'This is a test comment for an Event', commentable: event1)
-Comment.create!(user: user, content: 'This is another test comment for the same event', commentable: event1)
-Comment.create!(user: user, content: 'This is a test comment for an Event', commentable: event2)
-Comment.create!(user: user, content: 'This is a test comment for a demonstration', commentable: demo)
-Comment.create!(user: user, content: 'This is another test comment for a demonstration', commentable: demo)
-Comment.create!(user: user, content: 'And even a third test comment for a demonstration', commentable: demo)
+
+Event.create!(description: '6 pack', location:'Rathausstraße 25, 10178 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '6 pack', location:'Unter den Linden 1, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '6 pack', location:'Scharrenstraße 22, 10178 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '6 pack', location:'Werderscher Markt 1, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '12 pack', location:'Mohrenstraße 30, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
+
+
+
+Comment.create!(user: user, content: 'We need a lot of people fast! Move here now!', commentable: event1)
+Comment.create!(user: user, content: "There's lots of police here but I think we can make it", commentable: event1)
+Comment.create!(user: user, content: 'Lets do this!', commentable: event1)
+c1 = Comment.create!(user: user, content: 'Environment is so important! I invited all my friends.', commentable: demo)
+c2 = Comment.create!(user: user, content: "Great demonstration! I'm so happy we are so many and really make an impact!", commentable: demo)
+c3 = Comment.create!(user: user, content: 'Not so sure about this. What about the businesses? We need planes and cars to keep the economy running.', commentable: demo)
+
+
+c1.vote_by :voter => user, :vote => 'up'
+c3.vote_by :voter => user, :vote => 'down'
+c2.vote_by :voter => user, :vote => 'up'
+c1.vote_by :voter => user2, :vote => 'up'
+c3.vote_by :voter => user2, :vote => 'down'
+c2.vote_by :voter => user2, :vote => 'down'
+
 
 puts'finished'
