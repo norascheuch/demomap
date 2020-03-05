@@ -1,24 +1,40 @@
 <div class="card-demo-show-banner"></div>
 
 <div class="card-demo-show-title">
-  <div class="card-demo-show-title-content">
-      <%= @demo.name %>
-  </div>
+      <h2 class="demo-title"><%= @demo.name %></h2>
+
+      <a href="#" class="btn-go"><i class="fas fa-location-circle"></i></a>
+      <%= link_to '#', demo_events_path(@demo.events), class: 'btn-go' %>
 </div>
 
 <div class="card-demo-action">
-  <div class="card-demo-action-address">
-    <p>TODO DEMO LOCATION</p>
+  <div class="card-demo-btns">
+    <a href="#" class="btn-calendar"></a>
+    <a href="#" class="btn-share"></a>
+    <p>TODO BTN 1</p>
+    <p>TODO BTN 2</p>
+    <div class="card-demo-action-address">
+      <%= @demo.start_location %>
+    </div>
   </div>
 </div>
 
-<div class="card-demo-description">
-<h3>Details:</h3>
-<p>TODO => demo.desxription</p>
-
-
-<h3>Itinerary:</h3>
-<p>TODO => demo.desxription</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card-demo-description">
+        <h3>Details:</h3>
+          <span class="d-inline-block text-truncate" style="max-width: 300px">
+          <p><%= @demo.description %></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec erat consectetur, malesuada leo sit amet, elementum est. Etiam vitae maximus mauris. Ut dignissim fermentum interdum. Praesent et sapien felis. Nullam sit amet elementum est, vitae cursus enim. Pellentesque elit magna, sodales a erat vitae, laoreet aliquam lorem. Aenean est libero, feugiat non dui eget, venenatis elementum odio. Vivamus in augue ut ipsum dignissim posuere. Nam blandit ut ante at pulvinar. Nulla ornare, ipsum ut vestibulum vestibulum, ligula nulla fringilla dui, id consequat eros augue eu libero. Nulla laoreet tellus a pharetra rutrum. Vestibulum sed sollicitudin massa, sit amet dignissim arcu. Sed scelerisque nibh metus, ut faucibus orci placerat accumsan. Nulla lobortis enim ut sapien pretium sollicitudin. Pellentesque odio diam, tristique vel blandit vitae, venenatis vel arcu. Maecenas ornare leo a lacus laoreet vulputate. </p>
+          </span>
+          <p class="expand-button">
+            Read More => TODO COLLAPSE ACCORDION WITH JS
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
