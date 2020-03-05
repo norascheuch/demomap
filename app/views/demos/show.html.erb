@@ -2,19 +2,30 @@
 
 <div class="card-demo-show-title">
       <h2 class="demo-title"><%= @demo.name %></h2>
-
-      <a href="#" class="btn-go"><i class="fas fa-location-circle"></i></a>
-      <%= link_to '#', demo_events_path(@demo.events), class: 'btn-go' %>
+      <div class="btn-go">
+        <%= link_to demo_events_path(@demo.events) do %>
+          <i class="fas fa-location-arrow"></i>
+        <% end %>
+      </div>
 </div>
 
 <div class="card-demo-action">
   <div class="card-demo-btns">
-    <a href="#" class="btn-calendar"></a>
-    <a href="#" class="btn-share"></a>
-    <p>TODO BTN 1</p>
-    <p>TODO BTN 2</p>
+    <div class="btn-comments">
+      <%= link_to demo_comments_path(@demo) do %>
+      <i class="far fa-comments fa-2x"></i>
+    <% end %>
+    </div>
+
+    <div class="btn-share">
+      <%= link_to demo_events_path(@demo.events) do %>
+          <i class="fas fa-share-alt fa-2x"></i>
+      <% end %>
+    </div>
+
     <div class="card-demo-action-address">
       <%= @demo.start_location %>
+      <p>LOCATION HERE</p>
     </div>
   </div>
 </div>

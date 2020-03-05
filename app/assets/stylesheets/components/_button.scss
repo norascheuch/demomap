@@ -1,4 +1,4 @@
-.btn-go {
+.btn-go i {
   position: absolute;
   display: block;
   border-radius: 50%;
@@ -6,27 +6,28 @@
   height: 55px;
   left: 285px;
   top: 179px;
-  backgroung-color: #326ECD;
+  background: #326ECD;
+  color: white;
 }
 
-.btn-calendar {
+.btn-comments i {
   position: absolute;
   display: block;
   border-radius: 50%;
   width: 55px;
   height: 55px;
-  left: 25px;
-  top: 290px;
-  background-color: #FFD144;
+  left: 50%;
+  background: #FFD144;
+  color: white;
 }
 
-.btn-share {
+.btn-share i {
   position: absolute;
   display: block;
   border-radius: 50%;
   width: 55px;
   height: 55px;
-  left: 101px;
-  top: 290px;
-  background-color: #B3B3B3;
+  left: 25%;
+  background: #B3B3B3;
+  button: white;
 }

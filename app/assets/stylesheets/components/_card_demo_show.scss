@@ -39,6 +39,8 @@
   margin-bottom: 30px;
   border-radius: 5px;
   margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-demo-btns {
@@ -62,7 +64,7 @@
 
 .card-demo-action-address {
   width: 315px;
-  left: 182px;
+  left: 75%;
   top: 277px;
 
   font-family: Roboto;
