@@ -1,7 +1,27 @@
-<h1>Demos#show</h1>
-<p>Find me in app/views/demos/show.html.erb</p>
+<div class="card-demo-show-banner"></div>
 
-<%= @demo.name %>
+<div class="card-demo-show-title">
+  <div class="card-demo-show-title-content">
+      <%= @demo.name %>
+  </div>
+</div>
+
+<div class="card-demo-action">
+  <div class="card-demo-action-address">
+    <p>TODO DEMO LOCATION</p>
+  </div>
+</div>
+
+<div class="card-demo-description">
+<h3>Details:</h3>
+<p>TODO => demo.desxription</p>
+
+
+<h3>Itinerary:</h3>
+<p>TODO => demo.desxription</p>
+
+</div>
+
 
 <% if policy(@demo).edit? %>
   <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
