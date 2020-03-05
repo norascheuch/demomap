@@ -27,6 +27,7 @@
     <% end %>
 
             <%= render 'shared/votes', c: c %>
+
     <%= simple_form_for([@demo, c], remote: true) do |form| %>
       <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
       <%= form.button :button do %>
@@ -45,7 +46,8 @@
         </div>
       </div>
     <% end %>
-
     </div>
   </div>
 </div>
+
+<%#=# render 'shared/votes', c: c unless c.weighted_score < 0 %>
