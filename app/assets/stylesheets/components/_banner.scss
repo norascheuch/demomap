@@ -1,0 +1,19 @@
+.banner {
+  top:0px;
+  z-index: 7;
+  position: sticky;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  color: rgba(0,0,0,0.3);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.banner-content {
+  display: flex;
+  align-items: center;
+}
+
+
