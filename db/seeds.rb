@@ -41,6 +41,7 @@ demo = Demo.create!(description:'Lorem Ipsum  ', name:'Mondays for future', user
 demo2 = Demo.create!(description:'Lorem Ipsum  ', name:"You can't eat money!", user: user, start_time: (Date.today + 12))
 demo3 = Demo.create!(description:'Lorem Ipsum  ', name:'Critical Mass', user: user, start_time: (Date.today + 1))
 demo4 = Demo.create!(description:'Lorem Ipsum  ', name:'Mondays for future', user: user, start_time: (Date.today + 5))
+demo5 = Demo.create!(description:'Lorem Ipsum  ', name:'Female Future', user: user, start_time: (Date.today + 5))
 
 event_type1 = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
 event_type2 = EventType.create!(name: 'speech', icon: 'share.svg')
