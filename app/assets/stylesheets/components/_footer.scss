@@ -1,3 +1,28 @@
+.navbar {
+  bottom: 0px;
+  left: 0px;
+  width: 180px;
+  position: fixed;
+  border-radius: 3px !important;
+}
+
+.footer-symbols-map {
+  bottom: 0px;
+  left: 50%;
+  position: fixed;
+  display: block;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background: #B3B3B3;
+  color: white;
+  margin-right: 20px;
+
+}
+
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -45,9 +70,13 @@
   background-color: white;
   width: 100%;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   bottom: 0px;
   left: 0px;
   height: 50px;
+  padding-right: 14px;
   border-top-left-radius:25px;
   border-top-right-radius:25px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);

@@ -4,9 +4,20 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div id="toggler-box-strip" class="toggler_box">
     <button id="button-toggler" class="navbar-toggler button-trans" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class=" fas fa-align-justify text-body"></span>
+      <span class="fas fa-align-justify text-body"></span>
     </button>
+
+        <%= link_to demo_events_path(@demo) do %>
+          <%= image_tag "map_icon.svg", alt: "Demonstration" %>
+        <% end %>
+
+
+        <%= link_to demo_comments_path(@demo) do %>
+          <%= image_tag "chat.svg", size: "25x25", alt: "Demonstration" %>
+        <% end %>
+
     </div>
+
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
