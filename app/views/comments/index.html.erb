@@ -1,34 +1,42 @@
 <% @comments.each do |c|%>
   <div class="card-comment">
+
     <div class="card-comment-infos">
+
       <div class="card-comment-infos-content">
         <div class="card-comment-infos-content-details">
-          <%= image_tag "group.svg", alt: "Demonstration" %>
+          <%= image_tag "sit-in.svg", alt: "Demonstration" %>
           <p>
-          created<br>
-          <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+            created<br>
+            <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
           </p>
         </div>
+
         <div class="card-comment-infos-content-description">
           <%= c.content %>
         </div>
       </div>
+
+
       <div class="card-comment-info-votes">
         <%= simple_form_for([@demo, c], remote: true) do |form| %>
-  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-<%= form.button :button do %>
-        <i class="fas fa-chevron-up"></i>
-  <% end %>
-<% end %>
+          <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+          <%= form.button :button do %>
+            <i class="fas fa-chevron-up"></i>
+          <% end %>
+        <% end %>
+
 
         <%= render 'shared/votes', c: c %>
-<%= simple_form_for([@demo, c], remote: true) do |form| %>
-  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-  <%= form.button :button do %>
-        <i class="fas fa-chevron-down"></i>
-  <% end %>
-<% end %>
+
+        <%= simple_form_for([@demo, c], remote: true) do |form| %>
+          <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+          <%= form.button :button do %>
+            <i class="fas fa-chevron-down"></i>
+          <% end %>
+        <% end %>
       </div>
+
     </div>
 
     <div class="card-comment-footer">
@@ -37,6 +45,7 @@
       </p>
       <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
     </div>
+
   </div>
 <% end %>
 
