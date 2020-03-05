@@ -1,34 +1,41 @@
-<% @comments.each do |c|%>
-  <div class="card-comment">
-    <div class="card-comment-infos">
-      <div class="card-comment-infos-content">
-        <div class="card-comment-infos-content-details">
-          <%= image_tag c.commentable.event_type.icon, alt: c.commentable.event_type.name  %>
-          <p>
-          created<br>
-          <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
-          </p>
+<%= render 'shared/banner', header: 'Sit in Blockade' %>
+<div class="container justfiy-content-center">
+  <div class="row text-align">
+    <div class="col-12">
+    <% @comments.each do |c|%>
+      <div class="card-comment">
+        <div class="card-comment-infos">
+          <div class="card-comment-infos-content">
+            <div class="card-comment-infos-content-details">
+              <%= image_tag c.commentable.event_type.icon, alt: c.commentable.event_type.name  %>
+              <p>
+              created<br>
+              <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+              </p>
+            </div>
+            <div class="card-comment-infos-content-description">
+              <%= c.content %>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+            </div>
+          </div>
+          <div class="card-comment-info-votes">
+            <i class="fas fa-chevron-up"></i>
+            <p>089</p>
+            <i class="fas fa-chevron-down"></i>
+          </div>
         </div>
-        <div class="card-comment-infos-content-description">
-          <%= c.content %>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </div>
-      </div>
-      <div class="card-comment-info-votes">
-        <i class="fas fa-chevron-up"></i>
-        <p>089</p>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
 
-    <div class="card-comment-footer">
-      <p>
-        <i class="fas fa-map-marker-alt"></i> <%= c.commentable.location %>
-      </p>
-      <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+        <div class="card-comment-footer">
+          <p>
+            <i class="fas fa-map-marker-alt"></i> <%= c.commentable.location %>
+          </p>
+          <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+        </div>
+      </div>
+    <% end %>
     </div>
   </div>
-<% end %>
+</div>
 
 
 
