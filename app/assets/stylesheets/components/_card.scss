@@ -126,7 +126,7 @@ p {
   align-items: center;
   text-align: center;
   letter-spacing: -0.333333px;
-  padding-top: 5px;
+  padding-top: 8px;
 
   width: 99.22px;
   height: 29px;
@@ -140,7 +140,8 @@ p {
   align-items: center;
 }
 
-.card-comment-infos-content-details {
+
+.card-demo-infos-content-details {
   position: absolute;
   width: 184px;
   height: 57px;
@@ -163,7 +164,6 @@ p {
   }
 
 }
-
 
 // CARD DEMO SHOW //
 
@@ -194,6 +194,4 @@ p {
   left: 0px;
   top: 0px;
   background: linear-gradient(180deg, rgba(50, 110, 205, 0.5) 0%, rgba(130, 149, 151, 0.5) 59.38%, rgba(255, 234, 169, 0.5) 100%), url(banner_demo.jpg) center top no-repeat;
-
-}
 
