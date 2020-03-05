@@ -3,3 +3,45 @@
   width:105px;
   height:51px;
 }
+
+
+.btn-go {
+  position: absolute;
+  display: block;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  bottom: 15px;
+  right: 15px;
+  background: #326ECD;
+  color: white;
+}
+
+
+.btn-share {
+  display: block;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background: #B3B3B3;
+  color: white;
+  margin-right: 20px;
+}
+
+
+.btn-demo-chatter {
+  filter: invert(100%);
+  display: block;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background: #0056ca;
+  color: white;
+  margin-right: 20px;
+}
