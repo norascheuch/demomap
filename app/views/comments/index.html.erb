@@ -40,10 +40,12 @@
           <p>
             <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
           </p>
+
           <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
         </div>
       </div>
     <% end %>
+      
     </div>
   </div>
 </div>
