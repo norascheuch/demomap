@@ -2,52 +2,121 @@
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-    <% @comments.each do |c|%>
-      <div class="card-comment">
-        <div class="card-comment-infos">
-          <div class="card-comment-infos-content">
-            <div class="card-comment-infos-content-details">
-              <%= image_tag "group.svg", alt: "Demonstration" %>
-              <p>
-              created<br>
-              <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
-              </p>
-            </div>
-            <div class="card-comment-infos-content-description">
-              <%= c.content %>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            </div>
-          </div>
-          <div class="card-comment-info-votes">
+
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Newest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Loudest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Twitter</a>
+      </li>
+    </ul>
+
+
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+        <% @comments.order(created_at: :desc).each do |c|%>
+              <div class="card-comment">
+                <div class="card-comment-infos">
+                  <div class="card-comment-infos-content">
+                    <div class="card-comment-infos-content-details">
+                      <%= image_tag "group.svg", alt: "Demonstration" %>
+                      <p>
+                      created<br>
+                      <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+                      </p>
+                    </div>
+                    <div class="card-comment-infos-content-description">
+                      <%= c.content %>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    </div>
+                  </div>
+                  <div class="card-comment-info-votes">
+                    <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                      <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+                      <%= form.button :button do %>
+                      <i class="fas fa-chevron-up"></i>
+                      <% end %>
+                    <% end %>
+
+                    <%= render 'shared/votes', c: c %>
             <%= simple_form_for([@demo, c], remote: true) do |form| %>
-      <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-    <%= form.button :button do %>
-            <i class="fas fa-chevron-up"></i>
-      <% end %>
-    <% end %>
+              <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+              <%= form.button :button do %>
+                    <i class="fas fa-chevron-down"></i>
+              <% end %>
+            <% end %>
+                  </div>
+                </div>
 
-            <%= render 'shared/votes', c: c %>
+                <div class="card-comment-footer">
+                  <p>
+                    <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
+                  </p>
 
-    <%= simple_form_for([@demo, c], remote: true) do |form| %>
-      <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-      <%= form.button :button do %>
-            <i class="fas fa-chevron-down"></i>
-      <% end %>
-    <% end %>
-          </div>
-        </div>
+                  <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+                </div>
+              </div>
 
-        <div class="card-comment-footer">
-          <p>
-            <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
-          </p>
+            <% end %>
 
-          <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
-        </div>
       </div>
-    <% end %>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+            <% @comments.each do |c|%>
+              <div class="card-comment">
+                <div class="card-comment-infos">
+                  <div class="card-comment-infos-content">
+                    <div class="card-comment-infos-content-details">
+                      <%= image_tag "group.svg", alt: "Demonstration" %>
+                      <p>
+                      created<br>
+                      <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+                      </p>
+                    </div>
+                    <div class="card-comment-infos-content-description">
+                      <%= c.content %>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    </div>
+                  </div>
+                  <div class="card-comment-info-votes">
+                    <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                      <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+                      <%= form.button :button do %>
+                      <i class="fas fa-chevron-up"></i>
+                      <% end %>
+                    <% end %>
+
+              <%= render 'shared/votes', c: c %>
+            <%= simple_form_for([@demo, c], remote: true) do |form| %>
+              <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+              <%= form.button :button do %>
+                    <i class="fas fa-chevron-down"></i>
+              <% end %>
+            <% end %>
+                  </div>
+                </div>
+
+                <div class="card-comment-footer">
+                  <p>
+                    <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
+                  </p>
+
+                  <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+                </div>
+              </div>
+            <% end %>
+
+      </div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Twitter feed here</div>
+    </div>
+
+      </div>
     </div>
   </div>
 </div>
 
-<%#=# render 'shared/votes', c: c unless c.weighted_score < 0 %>
