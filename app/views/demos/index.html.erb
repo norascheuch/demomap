@@ -1,5 +1,7 @@
-<h1>Upcoming Demonstrations </h1>
-
+<%= render 'shared/banner', header: 'Upcoming Demonstrations' %>
+  <div class="container justfiy-content-center">
+    <div class="row text-align">
+      <div class="col-12">
         <% @demos.each do |demo| %>
           <%= link_to demo_path(demo) do %>
             <div class="card-demo">
@@ -17,3 +19,6 @@
             </div>
           <% end %>
         <% end %>
+      </div>
+    </div>
+  </div>
