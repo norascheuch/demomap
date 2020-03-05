@@ -21,6 +21,14 @@ class CommentPolicy < ApplicationPolicy
     return new?
   end
 
+  def edit?
+    return true
+  end
+
+  def update?
+    return true
+  end
+
   def destroy?
     return record.user == user
   end
