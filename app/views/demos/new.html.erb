@@ -1,14 +1,20 @@
-<h1>Demos#new</h1>
-<p>Find me in app/views/demos/new.html.erb</p>
+<%= render 'shared/banner', header: 'Demos#new' %>
+  <div class="container justfiy-content-center">
+    <div class="row text-align">
+      <div class="col-12">
+      <p>Find me in app/views/demos/new.html.erb</p>
 
-<h1>Create your Demo</h1>
+      <h1>Create your Demo</h1>
 
-                <%= simple_form_for @demo do |f| %>
-                  <%= f.input :name %>
-                  <%= f.input :description %>
-                  <%= f.button :submit, "Create Profile", class: 'btn btn-secondary w-100' %>
-                <% end %>
+                      <%= simple_form_for @demo do |f| %>
+                        <%= f.input :name %>
+                        <%= f.input :description %>
+                        <%= f.button :submit, "Create Profile", class: 'btn btn-secondary w-100' %>
+                      <% end %>
 
-<% if policy(@demo).create? %>
-  <%= link_to "New Demo", new_demo_path %>
-<% end %>
+      <% if policy(@demo).create? %>
+        <%= link_to "New Demo", new_demo_path %>
+      <% end %>
+    </div>
+  </div>
+</div>

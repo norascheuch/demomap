@@ -12,18 +12,9 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/banner' unless current_page?(:root) %>
+    <%#= render 'shared/banner' unless current_page?(:root) %>
     <%= render 'shared/flashes' unless current_page?(:root) %>
-
-      <div class="container justfiy-content-center">
-        <div class="row text-align">
-          <div class="col-12">
-            <%= yield %>
-
-          </div>
-        </div>
-      </div>
-
+    <%= yield %>
     <%= render 'shared/footer' unless current_page?(:root) %>
     <%= javascript_include_tag 'application' %>
 
