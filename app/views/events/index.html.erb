@@ -1,6 +1,8 @@
 
 
-<div class="container justfiy-content-center">
+
+<div class="container-fluid">
+
   <div class="row text-align">
     <div class="col-12">
       <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
@@ -23,7 +25,7 @@
           ></div>
         </div>
         <div class="tab-pane fade" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
-          <%= render 'shared/banner', header: 'Events' %>
+
             <% @events.order(start_time: :asc).each do |event| %>
               <%= link_to demo_event_path(@demo, event) do %>
                 <div class="card-event">

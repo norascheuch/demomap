@@ -57,7 +57,7 @@ demo6 = Demo.create!(description:'Extinction Rebellion are taking to the streets
 event_type1 = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
 event_type2 = EventType.create!(name: 'speech', icon: 'group.svg')
 event_type3 = EventType.create!(name: 'concert', icon: 'music.svg')
-event_type4 = EventType.create!(name: 'road-block', icon: 'block')
+event_type4 = EventType.create!(name: 'road-block', icon: 'block.svg')
 event_type5 = EventType.create!(name: 'first-aid', icon: 'first-aid.svg')
 event_type6 = EventType.create!(name: 'danger', icon: 'exclamation.svg')
 
