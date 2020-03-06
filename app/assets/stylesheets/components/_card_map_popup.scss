@@ -31,6 +31,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .card-popup-infos {
@@ -42,24 +43,29 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 6px;
+  font-size: 20px;
+
 }
 
 .card-popup-infos-content-details img {
   width: 40px;
+  height: 40px;
+  margin: 0px 10px 10px 0px;
 }
 
 .card-popup-infos-content-description {
   padding-right: 5px;
   line-height: 1.1em;
+  font-size: 16px;
 }
 
 
 .card-popup-footer p {
   font-size: 12px;
   line-height: 1.4;
-  margin-top: 8px;
-  opacity: .8;
+  margin: 8px 8px 0px 0px;
+  opacity: 0.8;
+
 }
 
 .card-popup-infos-content-details p {

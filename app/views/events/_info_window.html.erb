@@ -17,11 +17,9 @@
       </div> -->
     </div>
     <div class="card-popup-footer">
-      <p><i class="far fa-comment"></i> 23 </p>
-      <p>
-        <i class="fas fa-map-marker-alt"></i> <%= event.location %>
-      </p>
-      <p>last voted: <strong><%= event.created_at.strftime("%I:%M%p") %></strong></p>
+      <p ><i class="far fa-comment"></i> 23 </p>
+      <p><i class="fas fa-map-marker-alt"></i> <%= event.location %></p>
+      <p>last voted: <%= event.created_at.strftime("%I:%M%p") %></p>
     </div>
   </div>
 <% end %>
