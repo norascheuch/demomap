@@ -45,3 +45,17 @@
   color: white;
   margin-right: 20px;
 }
+
+.btn-plus {
+  filter: invert(100%);
+  position: fixed;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  bottom: 12vh;
+  left: 5vh;
+  background: #0056ca;
+  color: white;
+}
