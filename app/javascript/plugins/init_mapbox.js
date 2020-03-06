@@ -2,6 +2,7 @@ import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+  const mapElementTwo = document.getElementById('map_two');
 
 
 
@@ -144,3 +145,5 @@ const initMapbox = () => {
 };
 
 export { initMapbox };
+
+
