@@ -21,5 +21,6 @@ class EventsController < ApplicationController
   def show
     @comments = Event.find(params[:id]).comments
     authorize @comments
+    @demo = Demo.find(params[:demo_id])
   end
 end
