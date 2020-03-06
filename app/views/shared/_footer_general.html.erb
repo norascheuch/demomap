@@ -1,36 +1,16 @@
 <div class="footer">
-
-
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div id="toggler-box-strip" class="toggler_box">
     <button id="button-toggler" class="navbar-toggler button-trans" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fas fa-align-justify text-body"></span>
     </button>
-
-        <%= link_to demo_events_path(@demo) do %>
-          <%= image_tag "map_icon.svg", alt: "Demonstration" %>
-        <% end %>
-
-        <%= link_to demo_comments_path(@demo) do %>
-          <%= image_tag "chat.svg", size: "25x25", alt: "Demonstration" %>
-        <% end %>
     </div>
-
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <%= link_to "Demo Calender", demos_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Demo Details", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Map View", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Newsfeed", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Tips & Tricks", tips_path, class: "nav-link" %>
@@ -41,26 +21,13 @@
           <li class="nav-item">
             <%= link_to "Contact", contact_path, class: "nav-link" %>
           </li>
-        <% if user_signed_in? %>
-          <li class="nav-item">
-              <li>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
-              </li>
-          </li>
-        <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
-        <% end %>
         <li><br></li>
         <li><br></li>
       </ul>
     </div>
   </div>
 </div>
-
-
-
-
-
 

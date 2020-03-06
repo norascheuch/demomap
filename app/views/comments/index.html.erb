@@ -20,7 +20,7 @@
           <div class="card-comment-info-votes">
             <%= simple_form_for([@demo, c], remote: true) do |form| %>
       <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-    <%= form.button :button do %>
+    <%= form.button :button, class: 'btn-votes' do %>
             <i class="fas fa-chevron-up"></i>
       <% end %>
     <% end %>
@@ -28,7 +28,7 @@
             <%= render 'shared/votes', c: c %>
     <%= simple_form_for([@demo, c], remote: true) do |form| %>
       <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-      <%= form.button :button do %>
+      <%= form.button :button, class: 'btn-votes' do %>
             <i class="fas fa-chevron-down"></i>
       <% end %>
     <% end %>
@@ -45,8 +45,13 @@
       </div>
     <% end %>
 
-     <%= render 'shared/plus' %>
+    <div class="btn-plus">
+      <%= link_to new_demo_comment_path(@demo) do %>
+        <%= image_tag "plus-solid.svg", size: "25x25", alt: "add" %>
+      <% end %>
+    </div>
 
     </div>
   </div>
 </div>
+<%= render 'shared/footer' %>

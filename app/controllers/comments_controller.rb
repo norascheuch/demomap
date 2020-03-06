@@ -7,6 +7,22 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @comment = Comment.new
+    authorize @comment
+    @demo = Demo.find(params[:demo_id])
+  end
+
+  def create
+    @comment = Comment.new(comment_params)
+    authorize @comment
+    @demo = Demo.find(params[:demo_id])
+    @comment.user = current_user
+    @comment.commentable = @demo
+    if @comment.save
+      redirect_to demo_comments_path(@demo)
+    else
+      render :new
+    end
   end
 
   def update
@@ -28,4 +44,11 @@ class CommentsController < ApplicationController
     #   render 'restaurants/show'
     # end
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
+
 end
