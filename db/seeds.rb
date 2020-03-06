@@ -68,11 +68,11 @@ event3 = Event.create!(description: 'Speech from Vanessa', location:'Unter den L
 event4 = Event.create!(description: 'Speech from Cole', location:'Alexanderplatz Berlin', demo: demo, event_type: event_type2, user: user)
 
 
-Event.create!(description: 'Serious situation beware', location:'Rathausstraße 25, 10178 Berlin', demo: demo, event_type: event_type6, user: user)
+Event.create!(description: 'Serious situation beware', location:'Karl-Liebknecht-Str. 1, 10178 Berlin', demo: demo, event_type: event_type6, user: user)
 Event.create!(description: '3 cars from the police, can not pass', location:'Unter den Linden 1, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
-Event.create!(description: 'The Activists are playing live', location:'Scharrenstraße 22, 10178 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: 'Come see the dancing squirrels', location:'Werderscher Markt 1, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '3 doctors in medics tent ', location:'Mohrenstraße 30, 10117 Berlin', demo: demo, event_type: event_type5, user: user)
+Event.create!(description: 'The Activists are playing live', location:'Unter den Linden 4, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'Come see the dancing squirrels', location:'Unter den Linden 17, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '3 doctors in medics tent ', location:'Friedrichstraße 67, 10117 Berlin', demo: demo, event_type: event_type5, user: user)
 Event.create!(description: '1 doctor', location:'Friedrichstraße 47, 10117 Berlin', demo: demo, event_type: event_type5, user: user)
 Event.create!(description: 'Block ', location:'Friedrichstraße 50, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
 Event.create!(description: '24 pack- live with 2 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)

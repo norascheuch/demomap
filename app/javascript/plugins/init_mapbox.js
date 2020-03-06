@@ -74,7 +74,7 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
-      center: [-122.662323, 45.523751],
+      center: [52.518743, 13.406523],
       zoom: 12,
     });
 
@@ -109,10 +109,11 @@ const initMapbox = () => {
           .setPopup(popup)
           .addTo(map);
       });
-      fitMapToMarkers(map, markers);
+
 
       const mappoints = JSON.parse(mapElement.dataset.mappoints);
       getRoute(map, mappoints);
+      fitMapToMarkers(map, markers);
 
       // Add starting point to the map
   //     map.addLayer({
