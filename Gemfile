@@ -12,6 +12,7 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'pundit'
 gem 'geocoder'
+gem 'twitter'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
