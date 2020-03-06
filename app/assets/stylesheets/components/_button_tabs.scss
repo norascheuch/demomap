@@ -6,10 +6,16 @@
   border-radius: 4px;
   margin: 0 3px ;
   padding: 0.2rem 1rem;
+  top: 40px;
+  z-index: 100;
+  position: relative;
+
 }
 
 .nav-pills .nav-link.active {
   background-color: $base-color;
   color: white;
   border-color: $base-color;
+
+
 }
