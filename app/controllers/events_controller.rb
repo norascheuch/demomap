@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @events = policy_scope(Event.geocoded)
-    @mappoints = '13.43,52.51;13.42,52.5;13.41,52.5'
+    @mappoints = '13.413930095294177,52.52162393940594;13.410865,52.522989,13.397043,52.517562;13.388856,52.517209;13.391318,52.501354'
     @markers = @events.map do |event|
       @icon = event.event_type.icon
       @demo = event.demo

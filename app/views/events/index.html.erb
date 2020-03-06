@@ -1,6 +1,8 @@
 
-<%= render 'shared/banner', header: 'Events' %>
-<div class="container justfiy-content-center">
+
+
+<div class="container-fluid">
+
   <div class="row text-align">
     <div class="col-12">
       <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
@@ -23,13 +25,13 @@
           ></div>
         </div>
         <div class="tab-pane fade" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
-            <% @events.each do |event| %>
+
+            <% @events.order(start_time: :asc).each do |event| %>
               <%= link_to demo_event_path(@demo, event) do %>
                 <div class="card-event">
                   <div class="card-event-icon"><%= image_tag event.event_type.icon %></div>
                   <div class="card-event-content">
-                    <h2> <%= event.event_type.name %></h2>
-                    <p> <%= event.description %></p>
+                    <p><%= event.description %></p>
                     <div class="card-event-footer">
                       <p>
                         <i class="fas fa-map-marker-alt"></i> <%= event.location %>
