@@ -4,25 +4,57 @@
   <div class="card-demo-show-title-content">
       <%= @demo.name %>
   </div>
-</div>
 
-<div class="card-demo-action">
-  <div class="card-demo-action-address">
-    <p>TODO DEMO LOCATION</p>
+  <div class="btn-go">
+      <%= link_to demo_events_path(@demo) do %>
+        <%= image_tag "go.svg", alt: "Demonstration" %>
+      <% end %>
   </div>
 </div>
 
-<div class="card-demo-description">
-<h3>Details:</h3>
-<p>TODO => demo.desxription</p>
+<div class="card-demo-show-container">
+
+  <div class="card-demo-symbols">
+
+      <div class="btn-demo-chatter">
+        <%= link_to demo_comments_path(@demo) do %>
+          <%= image_tag "chat.svg", size: "25x25", alt: "Demonstration" %>
+        <% end %>
+      </div>
+
+      <div class="btn-share">
+        <%= link_to demo_events_path(@demo) do %>
+          <%= image_tag "share_white.svg", alt: "Demonstration" %>
+        <% end %>
+      </div>
+
+      <div class="card-demo-show-smalltext">
+        <p>
+          <%= @demo.start_time.strftime("%d.%m.%Y") %> <br>
+          <%= @demo.start_time.strftime("%H:%M") %> <br>
+          <%= @demo.start_location %>
+        </p>
+      </div>
 
 
-<h3>Itinerary:</h3>
-<p>TODO => demo.desxription</p>
+    </div>
+
+
+
+
+  <h3>Details</h3>
+  <p><%= @demo.description %> Here is the demo description if there is one given</p>
+
+
+
+<!--   <h3>Itinerary:</h3>
+  <p>TODO => demo.description</p>
+ -->
+  </div>
+
+
+  <% if policy(@demo).edit? %>
+    <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
+  <% end %>
 
 </div>
-
-
-<% if policy(@demo).edit? %>
-  <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
-<% end %>
