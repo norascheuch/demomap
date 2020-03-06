@@ -12,6 +12,7 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'pundit'
 gem 'geocoder'
+gem 'cloudinary', '~> 1.12.0'
 gem 'twitter'
 
 gem 'autoprefixer-rails'
