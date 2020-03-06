@@ -13,6 +13,7 @@ gem 'redis'
 gem 'pundit'
 gem 'geocoder'
 gem 'cloudinary', '~> 1.12.0'
+gem 'twitter'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
