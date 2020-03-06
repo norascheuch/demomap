@@ -23,6 +23,7 @@
           ></div>
         </div>
         <div class="tab-pane fade" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
+          <%= render 'shared/banner', header: 'Events' %>
             <% @events.order(start_time: :asc).each do |event| %>
               <%= link_to demo_event_path(@demo, event) do %>
                 <div class="card-event">
