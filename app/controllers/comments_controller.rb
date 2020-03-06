@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @event_comments = @demo.events.map do |event|
       @comments += event.comments
     end
+    @comments.sort_by(&:created_at).reverse!
   end
 
   def new
