@@ -15,7 +15,7 @@
     <%#= render 'shared/banner' unless current_page?(:root) %>
     <%= render 'shared/flashes' unless current_page?(:root) %>
     <%= yield %>
-    <%= render 'shared/footer' unless current_page?(:root) %>
+    <%#= render 'shared/footer' unless current_page?(:root) %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
