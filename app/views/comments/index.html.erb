@@ -7,7 +7,11 @@
         <div class="card-comment-infos">
           <div class="card-comment-infos-content">
             <div class="card-comment-infos-content-details">
-              <%= image_tag "group.svg", alt: "Demonstration" %>
+              <% if c.commentable_type == 'Demo' %>
+                <%= image_tag "group.svg", alt: "Demonstration" %>
+              <% else %>
+                <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
+              <% end %>
               <p>
               created<br>
               <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
@@ -37,7 +41,12 @@
 
         <div class="card-comment-footer">
           <p>
-            <i class="fas fa-map-marker-alt"></i> <%= c.commentable.name %>
+            <i class="fas fa-map-marker-alt"></i>
+            <% if c.commentable_type == 'Demo' %>
+              <%= c.commentable.name  %> Demo
+            <% else %>
+              <%= c.commentable.location %>
+            <% end %>
           </p>
 
           <p>last voted: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
