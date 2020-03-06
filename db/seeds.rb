@@ -55,24 +55,28 @@ Despite signing the 2015 Paris Agreement, and despite the UK Government declarin
 demo6 = Demo.create!(description:'Extinction Rebellion are taking to the streets in support and solidarity with women’s movements around the world. Extinction Rebellion is a global movement and we stand side by side with our sisters all around the world, many of whom don’t have the same freedom of speech and expression we have. We would like to invite every part of every one to join us today to stand in solidarity with women and women’s rights movements all around the world. We are all crew!', name:'International Women’s Day – all genders', user: user, start_time: (Date.today + 11), start_location:'Auguststraße 24, 10117 Berlin')
 
 event_type1 = EventType.create!(name: 'sit-in', icon: 'sit-in.svg')
-event_type2 = EventType.create!(name: 'speech', icon: 'share.svg')
-event_type3 = EventType.create!(name: 'police', icon: 'group.svg')
+event_type2 = EventType.create!(name: 'speech', icon: 'group.svg')
+event_type3 = EventType.create!(name: 'concert', icon: 'music.svg')
+event_type4 = EventType.create!(name: 'road-block', icon: 'block')
+event_type5 = EventType.create!(name: 'first-aid', icon: 'first-aid.svg')
+event_type6 = EventType.create!(name: 'danger', icon: 'exclamation.svg')
 
-event1 = Event.create!(description: 'Sit In!', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type1, user: user)
+
+
 event2 = Event.create!(description: 'Speech from Martin', location:'Friedrichstraße 4 Berlin', demo: demo, event_type: event_type2, user: user)
 event3 = Event.create!(description: 'Speech from Vanessa', location:'Unter den Linden Berlin', demo: demo, event_type: event_type2, user: user)
 event4 = Event.create!(description: 'Speech from Cole', location:'Alexanderplatz Berlin', demo: demo, event_type: event_type2, user: user)
 
 
-Event.create!(description: '6 pack', location:'Rathausstraße 25, 10178 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '6 pack', location:'Unter den Linden 1, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '6 pack', location:'Scharrenstraße 22, 10178 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '6 pack', location:'Werderscher Markt 1, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '12 pack', location:'Mohrenstraße 30, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '24 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'Serious situation beware', location:'Rathausstraße 25, 10178 Berlin', demo: demo, event_type: event_type6, user: user)
+Event.create!(description: '3 cars from the police, can not pass', location:'Unter den Linden 1, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
+Event.create!(description: 'The Activists are playing live', location:'Scharrenstraße 22, 10178 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'Come see the dancing squirrels', location:'Werderscher Markt 1, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: '3 doctors in medics tent ', location:'Mohrenstraße 30, 10117 Berlin', demo: demo, event_type: event_type5, user: user)
+Event.create!(description: '1 doctor', location:'Friedrichstraße 47, 10117 Berlin', demo: demo, event_type: event_type5, user: user)
+Event.create!(description: 'Block ', location:'Friedrichstraße 50, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
+Event.create!(description: '24 pack- live with 2 pack', location:'Checkpoint Charlie Berlin', demo: demo, event_type: event_type3, user: user)
+event1 = Event.create!(description: 'Sit In!', location:'Rudi-Dutschke-Straße 26, 10969 Berlin', demo: demo, event_type: event_type1, user: user)
 
 
 
