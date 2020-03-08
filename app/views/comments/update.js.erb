@@ -1,8 +1,3 @@
-// function refreshForm(innerHTML) {
-//   const vote = document.getElementById('score');
-//   vote.innerHTML = innerHTML;
-// }
-
   document.querySelectorAll('.weighted-score').forEach((score) => {
     if (score.dataset.id == '<%= @comment.id %>') {
       score.innerHTML = '<%= @comment.weighted_score %>';
