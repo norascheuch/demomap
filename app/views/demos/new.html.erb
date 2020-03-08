@@ -16,10 +16,11 @@
         <%= link_to "New Demo", new_demo_path %>
       <% end %>
       <div
-        id="map-two"
+        id="map_two"
         style="width: 100%;
         height: 800px;"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-mappoints="<%= @mappoints.to_json %>"
       ></div>
     </div>
   </div>

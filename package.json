@@ -2,6 +2,8 @@
   "name": "demomap",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-directions": "^4.0.3",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",

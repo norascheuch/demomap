@@ -14,6 +14,7 @@ gem 'pundit'
 gem 'geocoder'
 gem 'cloudinary', '~> 1.12.0'
 gem 'twitter'
+gem 'nokogiri', '~> 1.6', '>= 1.6.7.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
