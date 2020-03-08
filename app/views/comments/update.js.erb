@@ -1,16 +1,5 @@
-function refreshForm(innerHTML) {
-  const vote = document.getElementById('score');
-  vote.innerHTML = innerHTML;
-}
-
-function updateScore(reviewHTML) {
-  const reviews = document.getElementById('score');
-  reviews.insertAdjacentHTML('beforeend', reviewHTML);
-}
-
-<% if @comment.errors.any? %>
-  refreshForm('<%= j render "shared/votes", c: c %>');
-<% else %>
-  updateScore('<%= j render "shared/votes", c: @comment %>');
-  refreshForm('<%= j render "shared/votes", c: @comment %>');
-<% end %>
+  document.querySelectorAll('.weighted-score').forEach((score) => {
+    if (score.dataset.id == '<%= @comment.id %>') {
+      score.innerHTML = '<%= @comment.weighted_score %>';
+    }
+  })
