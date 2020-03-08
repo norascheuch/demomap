@@ -1,13 +1,17 @@
-<%= render 'shared/banner', header: 'Create a new Comment' %>
+<div class="banner">
+  <div class="banner-content">
+    <h1>Create new Comment</h1>
+    <p>!Rules! Be respectfull and don’t write names.</p>
+  </div>
+</div>
+
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-      <p><strong>!Rules!</strong> Be respectful and don't write names!</p>
-      <br>
       <%= simple_form_for [@demo, @comment] do |f| %>
-  <%= f.input :content, label: 'Your comment', input_html: { class: 'shadow-sm b-white' }%>
-  <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
-<% end %>
+        <%= f.input :content, label: 'Your comment', input_html: { class: 'shadow-sm b-white' }%>
+        <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
+      <% end %>
 
     </div>
   </div>

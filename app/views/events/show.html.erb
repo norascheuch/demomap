@@ -19,7 +19,7 @@
           </div>
           <div class="card-comment-info-votes">
             <i class="fas fa-chevron-up"></i>
-            <p>089</p>
+            <p><%= c.weighted_score %></p>
             <i class="fas fa-chevron-down"></i>
           </div>
         </div>
@@ -32,6 +32,13 @@
         </div>
       </div>
     <% end %>
+
+    <div class="btn-plus">
+      <%= link_to new_demo_event_comment_path(@demo, @event) do %>
+        <%= image_tag "plus-solid.svg", size: "25x25", alt: "add" %>
+      <% end %>
+    </div>
+
     </div>
   </div>
 </div>

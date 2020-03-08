@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
     authorize @comment
     @demo = Demo.find(params[:demo_id])
+    @event = Event.find(params[:event_id]) unless params[:event_id].nil?
   end
 
   def create

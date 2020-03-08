@@ -19,7 +19,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @comments = Event.find(params[:id]).comments
+    @event = Event.find(params[:id])
+    @comments = @event.comments
     authorize @comments
     @demo = Demo.find(params[:demo_id])
   end
