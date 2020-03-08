@@ -1,4 +1,4 @@
-<%= render 'shared/banner', header: 'Sit in Blockade' %>
+<%= render 'shared/banner', header: "#{@event.event_type.name}" %>
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
@@ -17,11 +17,26 @@
               <%= c.content %>
             </div>
           </div>
+
           <div class="card-comment-info-votes">
-            <i class="fas fa-chevron-up"></i>
-            <p>089</p>
-            <i class="fas fa-chevron-down"></i>
-          </div>
+
+          <%= simple_form_for([@demo, c], remote: true) do |form| %>
+            <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+            <%= form.button :button, class: 'btn-votes' do %>
+              <i class="fas fa-chevron-up"></i>
+            <% end %>
+          <% end %>
+
+          <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
+
+          <%= simple_form_for([@demo, c], remote: true) do |form| %>
+            <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+            <%= form.button :button, class: 'btn-votes' do %>
+              <i class="fas fa-chevron-down"></i>
+            <% end %>
+          <% end %>
+
+        </div>
         </div>
 
         <div class="card-comment-footer">
@@ -32,6 +47,13 @@
         </div>
       </div>
     <% end %>
+
+    <div class="btn-plus">
+      <%= link_to new_demo_event_comment_path(@demo, @event) do %>
+        <%= image_tag "plus-solid.svg", size: "25x25", alt: "add" %>
+      <% end %>
+    </div>
+
     </div>
   </div>
 </div>
