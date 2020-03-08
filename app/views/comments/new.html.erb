@@ -5,14 +5,25 @@
   </div>
 </div>
 
+<!-- if @event? show option event or generel, else only general comment, activated by default -->
+
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-      <%= simple_form_for [@demo, @comment] do |f| %>
-        <%= f.input :content, label: 'Your comment', input_html: { class: 'shadow-sm b-white' }%>
-        <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
-      <% end %>
 
+      <% if @event.nil? %>
+        <p>General Comment</p>
+        <%= simple_form_for [@demo, @comment] do |f| %>
+          <%= f.input :content, label: 'Your comment', input_html: { class: 'shadow-sm b-white' }%>
+          <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
+        <% end %>
+      <% else %>
+        <p>Event Comment</p>
+        <%= simple_form_for [@demo, @event, @comment] do |f| %>
+          <%= f.input :content, label: 'Your comment', input_html: { class: 'shadow-sm b-white' }%>
+          <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -22,12 +22,7 @@ class CommentsController < ApplicationController
     authorize @comment
     @demo = Demo.find(params[:demo_id])
     @comment.user = current_user
-    @comment.commentable = @demo
-    if @comment.save
-      redirect_to demo_comments_path(@demo)
-    else
-      render :new
-    end
+    save_comment(@demo, @comment)
   end
 
 
@@ -49,6 +44,25 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def save_comment(demo, comment)
+    if params[:event_id].nil?
+      @comment.commentable = @demo
+      if @comment.save
+        redirect_to demo_comments_path(@demo)
+      else
+        render :new
+      end
+    else
+      @event = Event.find(params[:event_id])
+      @comment.commentable = @event
+      if @comment.save
+        redirect_to demo_event_path(@demo, @event)
+      else
+        render :new
+      end
+    end
   end
 
 end
