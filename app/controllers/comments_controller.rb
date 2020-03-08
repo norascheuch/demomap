@@ -29,6 +29,7 @@ class CommentsController < ApplicationController
     end
   end
 
+
   def update
     @comment = Comment.find(params[:id])# integrate order by created!
     authorize @comment
@@ -38,15 +39,9 @@ class CommentsController < ApplicationController
     end
 
     respond_to do |format|
-      # format.html {redirect_to demos_path(Demo.find(params[:demo_id]))}
-      format.js  # <-- will render `app/views/reviews/create.js.erb`
+      format.html {redirect_to demos_path(Demo.find(params[:demo_id]))}
+      format.js  # <-- will render `app/views/comments/update.js.erb`
     end
-    # @review.restaurant = @restaurant
-    # if @review.save
-    #   redirect_to restaurant_path(@restaurant)
-    # else
-    #   render 'restaurants/show'
-    # end
   end
 
   private

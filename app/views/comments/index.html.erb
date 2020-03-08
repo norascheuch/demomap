@@ -2,7 +2,7 @@
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-    <% @comments.each do |c|%>
+    <% @comments.each_with_index do |c, i|%>
       <div class="card-comment">
         <div class="card-comment-infos">
           <div class="card-comment-infos-content">
@@ -22,20 +22,30 @@
             </div>
           </div>
           <div class="card-comment-info-votes">
-            <%= simple_form_for([@demo, c], remote: true) do |form| %>
-      <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-    <%= form.button :button, class: 'btn-votes' do %>
-            <i class="fas fa-chevron-up"></i>
-      <% end %>
-    <% end %>
+<!--             <button class='btn btn-votes' data-id="<%= c %>" data-value='up'>
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <p class="weighted-score" data-id="<%= i %>"><%= c.weighted_score %></p>
+            <button class='btn btn-votes' data-id="<%= i %>" data-value='down'>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+ -->
+          <%= simple_form_for([@demo, c], remote: true) do |form| %>
+            <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+            <%= form.button :button, class: 'btn-votes' do %>
+              <i class="fas fa-chevron-up"></i>
+            <% end %>
+          <% end %>
 
-            <%= render 'shared/votes', c: c %>
-    <%= simple_form_for([@demo, c], remote: true) do |form| %>
-      <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-      <%= form.button :button, class: 'btn-votes' do %>
-            <i class="fas fa-chevron-down"></i>
-      <% end %>
-    <% end %>
+          <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
+
+          <%= simple_form_for([@demo, c], remote: true) do |form| %>
+            <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+            <%= form.button :button, class: 'btn-votes' do %>
+              <i class="fas fa-chevron-down"></i>
+            <% end %>
+          <% end %>
+
           </div>
         </div>
 
