@@ -1,14 +1,13 @@
 .map-background {
   height: 100vh;
   width: 100%;
-  margin: auto !important;
+  // margin: auto !important;
   background-color: white;
-  background: url(logo.svg) no-repeat;
-  background-position: center center;
+  background-position: 25% 75%;
 
-  // background-size: cover;
+  background-size: cover;
   text-align: center;
-  color: black;
+  color: white;
 }
 
 .splash {
