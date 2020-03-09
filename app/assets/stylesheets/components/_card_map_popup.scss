@@ -1,57 +1,55 @@
 .mapboxgl-popup {
-  max-width: 200px;
+  width: 200px;
 }
-
 
 .mapboxgl-popup-content {
   font-family: $body-font;
-  // border-radius: 24px;
-  // background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-radius: 8px !important;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-
-.card-popup {
-  // overflow: hidden;
-  // background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // padding: 15px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // border-radius: 24px;
-  // margin: 1em 0;
+.card-popup-content{
+  font-size: 18px;
+  margin: 0.7rem 0rem;
+  line-height: 1.2rem;
 }
 
 .card-popup-footer {
+  font-size: 12px;
+  line-height: 0.8rem;
+  opacity: 0.8;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
 
+}
+
+.card-popup-footer-location {
+ display: flex;
+ align-items: top;
+ max-width: 70%;
+}
+
+.card-popup-footer i{
+margin: 0px 0.3rem 0px 0px;
+}
+
+.card-popup-footer-comments {
+ display: flex;
+ align-items: top;
 }
 
 .card-popup-header {
+  font-size: 12px;
   display: flex;
   align-items: center;
 }
 
-
-
 .card-popup-header img {
-  width: 40px;
-  height: 40px;
-  margin: 0px 10px 10px 0px;
+  width: 20px;
+  height: 20px;
+  margin: 0px 0.3rem 0px 0px;
 }
 
 
-
-
-
-// .card-popup-infos-content-details p {
-//   font-size: 12px;
-//   opacity: .8;
-//   padding-left: 6px;
-// }
