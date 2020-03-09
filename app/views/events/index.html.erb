@@ -43,7 +43,13 @@
             <% end %>
           </div>
        </div>
-            <%= render 'shared/plus' %>
+       <% if current_user == @demo.user %>
+          <div class="btn-plus">
+            <%= link_to new_demo_event_path(@demo) do %>
+              <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
+            <% end %>
+          </div>
+        <% end %>
 
      </div>
    </div>

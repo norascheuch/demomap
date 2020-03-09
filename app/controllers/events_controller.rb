@@ -16,6 +16,22 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new(demo_id: params[:demo_id])
+    authorize @event
+    @demo = Demo.find(params[:demo_id])
+  end
+
+  def create
+    @event = Event.new(event_params)
+    @event.user = current_user
+    @event.demo_id = params[:demo_id]
+    authorize @event
+    @event.event_type = EventType.find(params[:event][:event_type])
+    if @event.save
+      redirect_to demo_events_path(params[:demo_id])
+    else
+      render :new
+    end
   end
 
   def show
@@ -24,4 +40,11 @@ class EventsController < ApplicationController
     authorize @comments
     @demo = Demo.find(params[:demo_id])
   end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:location, :description)
+  end
+
 end
