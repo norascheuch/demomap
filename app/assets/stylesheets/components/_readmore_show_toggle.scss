@@ -11,7 +11,7 @@
     left: 0;
     width: 100%;
     height: 64px;
-    background: linear-background(rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 50%, #F4F4F4 100%);
   }
 }
 
@@ -32,4 +32,8 @@ a {
 
 .content {
   margin-bottom: 10px;
+}
+
+.js-read-more {
+  color: #777;
 }
