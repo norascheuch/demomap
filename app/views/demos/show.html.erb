@@ -36,22 +36,18 @@
         </p>
       </div>
 
-
     </div>
 
-
-
-
   <h3>Details</h3>
-  <p><%= @demo.description %></p>
 
+    <div class="block">
+      <div class="content">
+        <p class="js-excerpt excerpt-hidden"><%= @demo.description %></p>
+      </div>
+        <a role="button" class="js-read-more" href="#">Read More</a>
+    </div>
 
-
-    <!--   <h3>Itinerary:</h3>
-    <p>TODO => demo.description</p>
-    -->
   </div>
-
 
   <% if policy(@demo).edit? %>
     <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
