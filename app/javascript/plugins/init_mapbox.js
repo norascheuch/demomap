@@ -9,7 +9,7 @@ const initMapbox = () => {
     const bounds = new mapboxgl.LngLatBounds();
     console.log(bounds)
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0 });
+    map.fitBounds(bounds, { padding: 70, maxZoom: 13, duration: 0 });
   };
 
   const getRoute = (map, mappoints) => {
@@ -93,52 +93,34 @@ const initMapbox = () => {
       );
 
       const markers = JSON.parse(mapElement.dataset.markers);
-      markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      const element = document.createElement('div');
-      element.className = 'marker';
-      element.style.backgroundImage = `url('${marker.image_url}')`;
-      element.style.backgroundSize = 'contain';
-      element.style.width = '25px';
-      element.style.height = '25px';
+      if (markers.length == 1) {
+          new mapboxgl.Marker()
+            .setLngLat([ markers[0].lng, markers[0].lat ])
+            .addTo(map);
+      }else{
+        markers.forEach((marker) => {
 
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+        const element = document.createElement('div');
+        element.className = 'marker';
+        element.style.backgroundImage = `url('${marker.image_url}')`;
+        element.style.backgroundSize = 'contain';
+        element.style.width = '25px';
+        element.style.height = '25px';
 
-        new mapboxgl.Marker(element)
-          .setLngLat([ marker.lng, marker.lat ])
-          .setPopup(popup)
-          .addTo(map);
-      });
-
-
+          new mapboxgl.Marker(element)
+            .setLngLat([ marker.lng, marker.lat ])
+            .setPopup(popup)
+            .addTo(map);
+        });
+      };
       const mappoints = JSON.parse(mapElement.dataset.mappoints);
       getRoute(map, mappoints);
+
       fitMapToMarkers(map, markers);
 
-      // Add starting point to the map
-  //     map.addLayer({
-  //       id: 'point',
-  //       type: 'circle',
-  //       source: {
-  //         type: 'geojson',
-  //         data: {
-  //           type: 'FeatureCollection',
-  //           features: [{
-  //             type: 'Feature',
-  //             properties: {},
-  //             geometry: {
-  //               type: 'Point',
-  //               coordinates: start
-  //             }
-  //           }
-  //           ]
-  //         }
-  //       },
-  //       paint: {
-  //         'circle-radius': 10,
-  //         'circle-color': '#3887be'
-  //       }
-  //     });
+
     });
   }
 };
