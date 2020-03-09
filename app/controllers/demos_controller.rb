@@ -14,11 +14,11 @@ class DemosController < ApplicationController
   def new
     @demo = Demo.new
     authorize @demo
-    @page = request.original_url
-    @doc = Nokogiri::HTML(open("www.rubygems.org/gems/nokogiri"))
-    authorize @doc
-    dataVvalue = doc.css('div.mapbox-directions-steps')[0]["data-lat"]
-    raise
+    # @page = request.original_url
+    # @doc = Nokogiri::HTML(open("www.rubygems.org/gems/nokogiri"))
+    # authorize @doc
+    # dataVvalue = doc.css('div.mapbox-directions-steps')[0]["data-lat"]
+    # raise
   end
 
   def create
