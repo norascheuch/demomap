@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @demo = params[:demo_id]
+    @demo = Demo.find(params[:demo_id])
     @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).geocoded)
     @mappoints = '13.413930095294177,52.52162393940594;13.410865,52.522989,13.397043,52.517562;13.388856,52.517209;13.391318,52.501354'
     if @events == []
