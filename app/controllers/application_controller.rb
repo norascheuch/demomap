@@ -12,4 +12,16 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    demos_path
+  end
+
+  def after_sign_out_path_for(resource)
+    demos_path
+  end
+
+
 end

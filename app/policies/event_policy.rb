@@ -14,7 +14,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def new?
-    return user.organizer
+    record.demo.user == user
   end
 
   def create?

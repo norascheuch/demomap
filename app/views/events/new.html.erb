@@ -2,8 +2,14 @@
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-      <p>Find me in app/views/events/new.html.erb</p>
+      <%= simple_form_for [@demo, @event] do |f| %>
+        <%= f.input :location %>
+        <%= f.input :description %>
+        <%= f.input :event_type, as: :radio_buttons, collection: EventType.all.map{ |e| [image_tag(e.icon, size: "30x30"), e.id]}, wrapper: :vertical_collection_inline%>
+        <%= f.button :submit, 'Post Event', class: "new-comment-submit btn-light" %>
+      <% end %>
     </div>
   </div>
 </div>
 <%= render 'shared/footer' %>
+
