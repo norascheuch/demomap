@@ -7,7 +7,7 @@
 
   <div class="btn-go">
       <%= link_to demo_events_path(@demo) do %>
-        <%= image_tag "go.svg", alt: "Demonstration" %>
+        <%= image_tag "demo-show-arrow.svg", alt: "Demonstration" %>
       <% end %>
   </div>
 </div>
@@ -18,13 +18,13 @@
 
       <div class="btn-demo-chatter">
         <%= link_to demo_comments_path(@demo) do %>
-          <%= image_tag "chat.svg", size: "25x25", alt: "Demonstration" %>
+          <%= image_tag "chat-demo-show.svg", alt: "Demonstration" %>
         <% end %>
       </div>
 
       <div class="btn-share">
         <%= link_to demo_events_path(@demo) do %>
-          <%= image_tag "share_white.svg", alt: "Demonstration" %>
+          <%= image_tag "demo-show-share.svg", alt: "Demonstration" %>
         <% end %>
       </div>
 
