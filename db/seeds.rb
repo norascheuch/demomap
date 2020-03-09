@@ -55,11 +55,11 @@ Despite signing the 2015 Paris Agreement, and despite the UK Government declarin
 demo6 = Demo.create!(description:'Extinction Rebellion are taking to the streets in support and solidarity with women’s movements around the world. Extinction Rebellion is a global movement and we stand side by side with our sisters all around the world, many of whom don’t have the same freedom of speech and expression we have. We would like to invite every part of every one to join us today to stand in solidarity with women and women’s rights movements all around the world. We are all crew!', name:'International Women’s Day – all genders', user: user, start_time: (Date.today + 11), start_location:'Auguststraße 24, 10117 Berlin')
 
 event_type1 = EventType.create!(name: 'Sit In', icon: 'sit-in.svg')
-event_type2 = EventType.create!(name: 'Speech', icon: 'group.svg')
-event_type3 = EventType.create!(name: 'Concert', icon: 'music.svg')
-event_type4 = EventType.create!(name: 'Roadblock', icon: 'block.svg')
+event_type2 = EventType.create!(name: 'Speech', icon: 'announcement.svg')
+event_type3 = EventType.create!(name: 'Concert', icon: 'concert.svg')
+event_type4 = EventType.create!(name: 'Roadblock', icon: 'blockade-road.svg')
 event_type5 = EventType.create!(name: 'First-Aid', icon: 'first-aid.svg')
-event_type6 = EventType.create!(name: 'Danger', icon: 'exclamation.svg')
+event_type6 = EventType.create!(name: 'Danger', icon: 'police-danger.svg')
 
 
 
