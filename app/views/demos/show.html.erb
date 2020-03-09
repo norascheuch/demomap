@@ -1,16 +1,16 @@
 <div class="card-demo-show-banner", style="background-image: linear-gradient(180deg, rgba(50, 110, 205, 0.5) 0%, rgba(130, 149, 151, 0.5) 59.38%, rgba(255, 234, 169, 0.5) 100%), url('<%= cl_image_path 'banner_demo_y9hias' %>');"></div>
 
-<div class="card-demo-show-title", style="background-image: linear-gradient(0deg, #FFFFFF 27.69%, rgba(255, 255, 255, 0) 76.27%), url('<%= cl_image_path 'map_ykhmve' %>');" >
-  <div class="card-demo-show-title-content">
-      <%= @demo.name %>
-  </div>
+<%= link_to demo_events_path(@demo) do %>
+  <div class="card-demo-show-title", style="background-image: linear-gradient(0deg, #FFFFFF 27.69%, rgba(255, 255, 255, 0) 76.27%), url('<%= cl_image_path 'map_ykhmve' %>');" >
+    <div class="card-demo-show-title-content">
+        <%= @demo.name %>
+    </div>
 
-  <div class="btn-go">
-      <%= link_to demo_events_path(@demo) do %>
-        <%= image_tag "go.svg", alt: "Demonstration" %>
-      <% end %>
+    <div class="btn-go">
+          <%= image_tag "go.svg", alt: "Demonstration" %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="card-demo-show-container">
 
