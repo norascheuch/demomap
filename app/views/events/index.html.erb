@@ -1,5 +1,6 @@
-
-
+<div id="header" style="display: none">
+<%= render 'shared/banner', header: 'Chatter' %>
+</div>
 
 <div class="container-fluid">
 
@@ -18,7 +19,7 @@
           <div
             id="map"
             style="width: 100%;
-            height: 800px;"
+            height: 100vh;"
             data-markers="<%= @markers.to_json %>"
             data-mappoints="<%= @mappoints.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
@@ -32,10 +33,12 @@
                   <div class="card-event-content">
                     <p><%= event.description %></p>
                     <div class="card-event-footer">
-                      <p>
-                        <i class="fas fa-map-marker-alt"></i> <%= event.location %>
-                      </p>
-                      <p>last voted: <strong><%= event.created_at.strftime("%I:%M%p") %></strong></p>
+                      <div class="card-event-footer-location">
+                        <p> <i class="fas fa-map-marker-alt"></i> <%= event.location %></p>
+                      </div>
+                      <div class="card-event-footer-comments">
+                        <p><i class="far fa-comment"></i> <%= event.comments.length%></p>
+                      </div>
                     </div>
                   </div>
                </div>

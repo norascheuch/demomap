@@ -29,16 +29,24 @@
 
 .card-event-content {
   text-align: left;
+  width: 70%
 }
 
 .card-event-footer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   font-size: 12px;
   line-height: 1.4;
   margin-top: 8px;
-  opacity: .8;
+  opacity: 0.8;
+}
+
+.card-event-footer-location {
+  display: flex;
+}
+
+.card-event-footer-comments {
+  display: flex;
 }
 
 
