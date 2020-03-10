@@ -1,7 +1,5 @@
 .banner-events-index  {
-  top:0px;
-  z-index: 7;
-  position: sticky;
+  position: relative;
   background: white;
   display: flex;
   align-items: flex-end;
@@ -19,4 +17,11 @@
   h1 {
     font-size: 30px;
   }
+}
+
+.box{
+  position: sticky;
+  top:0px;
+  z-index: 7;
+  height:100px;
 }
