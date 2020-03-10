@@ -22,7 +22,7 @@ class DemosController < ApplicationController
   end
 
   def create
-    @demo = Demo.new(params[:id])
+    @demo = Demo.new(demo_params)
     authorize @demo
     @demo.user = current_user
     if @demo.save
@@ -44,7 +44,7 @@ class DemosController < ApplicationController
   private
 
   def demo_params
-    params.require(:demos).permit(:name, :description, :start_time, :end_time, :start_location, :end_location)
+    params.require(:demo).permit(:name, :description, :start_time, :end_time, :route)
   end
 
 end
