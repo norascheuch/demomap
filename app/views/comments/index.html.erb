@@ -160,12 +160,11 @@
     <!-- Tweet Info Details -->
                   <div class="card-comment-infos-content-details">
                     <%= image_tag "#{tweet.user.profile_image_url_https}" %>
-                    <p>
-                    retweet<br>
-                    <strong><%= tweet.retweet_count %></strong>
-                    </p>
                     <p><%= tweet.user.name %></p>
                     <p>@<%= tweet.user.screen_name %></p>
+                    <p>
+                    RT: <strong><%= tweet.retweet_count %></strong>
+                    </p>
                   </div>
     <!-- END  -->
 
