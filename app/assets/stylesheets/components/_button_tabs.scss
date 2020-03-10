@@ -1,4 +1,10 @@
+.navigation{
+  position: sticky;
+  position: sticky;
+}
+
 .nav-pills .nav-link {
+
   background-color: white;
   color: $base-color;
   border-color: $base-color;
@@ -7,8 +13,7 @@
   margin: 0 3px ;
   padding: 0.2rem 1rem;
   top: 40px;
-  z-index: 100;
-  position: relative;
+
 
 }
 
