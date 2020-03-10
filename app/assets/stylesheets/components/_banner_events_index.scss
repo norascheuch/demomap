@@ -1,7 +1,5 @@
-.banner {
-  top:0px;
-  z-index: 7;
-  position: sticky;
+.banner-events-index  {
+  position: relative;
   background: white;
   display: flex;
   align-items: flex-end;
@@ -20,5 +18,4 @@
     font-size: 30px;
   }
 }
-
 

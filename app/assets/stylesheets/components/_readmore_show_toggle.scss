@@ -1,0 +1,39 @@
+
+.excerpt-hidden {
+  height: 5rem;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 50%, #F4F4F4 100%);
+  }
+}
+
+.excerpt-visible {
+ height: auto;
+ overflow: auto;
+}
+
+
+a {
+  color: #326ECD;
+}
+
+
+.block {
+  padding-bottom: 65px;
+}
+
+.content {
+  margin-bottom: 10px;
+}
+
+.js-read-more {
+  color: #777;
+}
