@@ -2,8 +2,6 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @events = policy_scope(Event.geocoded)
-    @info = JSON.parse(Demo.find(params[:demo_id]).route)
-    # @mappoints = @info['route'][0]['legs'][0]['steps'].map{|leg| leg['intersections'][0]['location']}.map{|array| array.join(',')}.join(';')
     @demo = Demo.find(params[:demo_id])
     start = JSON.parse(@demo.start_location)['geometry']['coordinates'].join(',')
     ende = JSON.parse(@demo.end_location)['geometry']['coordinates'].join(',')
