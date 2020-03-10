@@ -12,6 +12,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
+
     <%#= render 'shared/banner' unless current_page?(:root) %>
     <%= render 'shared/flashes' unless current_page?(:root) %>
     <%= yield %>
@@ -19,5 +20,6 @@
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
+
   </body>
 </html>
