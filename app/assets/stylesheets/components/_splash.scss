@@ -3,8 +3,7 @@
   width: 100%;
   // margin: auto !important;
   background-color: white;
-  background-position: 25% 75%;
-
+  background-position: 0% 75%;
   background-size: cover;
   text-align: center;
   color: white;
@@ -12,11 +11,13 @@
 
 .splash {
   position: relative;
-  top: 66%;
+  top: 40px;
   margin: 0 auto;
   width: 80%;
   h2 {
-    padding-top: 20px;
+
+    font-weight: 300;
+    font-size: 24px
   }
 }
 

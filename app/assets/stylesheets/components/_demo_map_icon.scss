@@ -1,0 +1,12 @@
+.demo-map-icon{
+  position:relative;
+  width: 200px;
+  height: 200px;
+  background: image_url("demo-map-icon.svg");
+  z-index: 7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  top: 40px;
+  margin-bottom: 20px;
+}
