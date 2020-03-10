@@ -2,26 +2,46 @@
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-    <% @comments.each do |c|%>
-      <div class="card-comment">
-        <div class="card-comment-infos">
-          <div class="card-comment-infos-content">
-            <div class="card-comment-infos-content-details">
-              <% if c.commentable_type == 'Demo' %>
-                <%= image_tag "group.svg", alt: "Demonstration" %>
-              <% else %>
-                <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
-              <% end %>
-              <p>
-              created<br>
-              <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
-              </p>
-            </div>
-            <div class="card-comment-infos-content-description">
-              <%= c.content %>
-            </div>
-          </div>
-          <div class="card-comment-info-votes">
+
+<!-- List of Tabs -->
+
+      <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Newest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Loudest</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Twitter</a>
+        </li>
+      </ul>
+
+<!-- 1st Tab -->
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+        <% @comments.each do |c|%>
+          <div class="card-comment">
+            <div class="card-comment-infos">
+              <div class="card-comment-infos-content">
+                <div class="card-comment-infos-content-details">
+                  <% if c.commentable_type == 'Demo' %>
+                    <%= image_tag "group.svg", alt: "Demonstration" %>
+                  <% else %>
+                    <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
+                  <% end %>
+                  <p>
+                  created<br>
+                  <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+                  </p>
+                </div>
+                <div class="card-comment-infos-content-description">
+                  <%= c.content %>
+                </div>
+              </div>
+              <div class="card-comment-info-votes">
 <!--             <button class='btn btn-votes' data-id="<%#= c %>" data-value='up'>
               <i class="fas fa-chevron-up"></i>
             </button>
@@ -30,39 +50,111 @@
               <i class="fas fa-chevron-down"></i>
             </button>
  -->
-          <%= simple_form_for([@demo, c], remote: true) do |form| %>
-            <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-            <%= form.button :button, class: 'btn-votes' do %>
-              <i class="fas fa-chevron-up"></i>
-            <% end %>
-          <% end %>
+              <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+                <%= form.button :button, class: 'btn-votes' do %>
+                  <i class="fas fa-chevron-up"></i>
+                <% end %>
+              <% end %>
 
-          <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
+              <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
 
-          <%= simple_form_for([@demo, c], remote: true) do |form| %>
-            <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-            <%= form.button :button, class: 'btn-votes' do %>
-              <i class="fas fa-chevron-down"></i>
-            <% end %>
-          <% end %>
+              <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+                <%= form.button :button, class: 'btn-votes' do %>
+                  <i class="fas fa-chevron-down"></i>
+                <% end %>
+              <% end %>
 
+              </div>
+            </div>
+
+            <div class="card-comment-footer">
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <% if c.commentable_type == 'Demo' %>
+                  <%= c.commentable.name  %> Demo
+                <% else %>
+                  <%= c.commentable.location %>
+                <% end %>
+              </p>
+
+              <p>created at: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+            </div>
           </div>
-        </div>
+        <% end %>
+    </div>
 
-        <div class="card-comment-footer">
-          <p>
-            <i class="fas fa-map-marker-alt"></i>
-            <% if c.commentable_type == 'Demo' %>
-              <%= c.commentable.name  %> Demo
-            <% else %>
-              <%= c.commentable.location %>
-            <% end %>
-          </p>
+<!-- 2nd Tab -->
 
-          <p>created at: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
-        </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <% @comments.each do |c|%>
+          <div class="card-comment">
+            <div class="card-comment-infos">
+              <div class="card-comment-infos-content">
+                <div class="card-comment-infos-content-details">
+                  <% if c.commentable_type == 'Demo' %>
+                    <%= image_tag "group.svg", alt: "Demonstration" %>
+                  <% else %>
+                    <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
+                  <% end %>
+                  <p>
+                  created<br>
+                  <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
+                  </p>
+                </div>
+                <div class="card-comment-infos-content-description">
+                  <%= c.content %>
+                </div>
+              </div>
+              <div class="card-comment-info-votes">
+<!--             <button class='btn btn-votes' data-id="<%#= c %>" data-value='up'>
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <p class="weighted-score" data-id="<%#= i %>"><%#= c.weighted_score %></p>
+            <button class='btn btn-votes' data-id="<%#= i %>" data-value='down'>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+ -->
+              <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+                <%= form.button :button, class: 'btn-votes' do %>
+                  <i class="fas fa-chevron-up"></i>
+                <% end %>
+              <% end %>
+
+              <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
+
+              <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+                <%= form.button :button, class: 'btn-votes' do %>
+                  <i class="fas fa-chevron-down"></i>
+                <% end %>
+              <% end %>
+
+              </div>
+            </div>
+
+            <div class="card-comment-footer">
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <% if c.commentable_type == 'Demo' %>
+                  <%= c.commentable.name  %> Demo
+                <% else %>
+                  <%= c.commentable.location %>
+                <% end %>
+              </p>
+
+              <p>created at: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+
+<!-- 3rd Tab -->
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Twitter feed here</div>
+
+<!-- Button Add a comment -->
 
     <div class="btn-plus">
       <%= link_to new_demo_comment_path(@demo) do %>
