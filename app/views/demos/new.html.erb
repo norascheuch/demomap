@@ -9,7 +9,8 @@
                       <%= simple_form_for @demo do |f| %>
                         <%= f.input :name %>
                         <%= f.input :description %>
-                        <%= f.button :submit, "Create Profile", class: 'btn btn-secondary w-100' %>
+                        <%= f.input :route, as: :hidden %>
+                        <%= f.button :submit, "Create new Demo", class: 'btn btn-secondary w-100' %>
                       <% end %>
 
       <% if policy(@demo).create? %>

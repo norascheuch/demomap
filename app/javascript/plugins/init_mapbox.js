@@ -116,36 +116,27 @@ const initMapbox = () => {
   };
 
   if (mapElementTwo) { // only build a map if there's a div#map to inject into
-  mapboxgl.accessToken = mapElementTwo.dataset.mapboxApiKey;
-  const map_two = new mapboxgl.Map({
-    container: 'map_two',
-    style: 'mapbox://styles/mapbox/light-v10',
-    center: [13.41297, 52.52160],
-    zoom: 12,
+    mapboxgl.accessToken = mapElementTwo.dataset.mapboxApiKey;
+    const map_two = new mapboxgl.Map({
+      container: 'map_two',
+      style: 'mapbox://styles/mapbox/light-v10',
+      center: [13.41297, 52.52160],
+      zoom: 12,
     });
 
 
-  const directions = new MapboxDirections({
-    accessToken: mapboxgl.accessToken,
-    unit: 'metric',
-    profile: 'mapbox/walking'
-  });
-
-
-
-  map_two.on('load', function() {
-    console.log(directions)
-    map_two.addControl(
-      new MapboxDirections({
-      accessToken: mapboxgl.accessToken
-      }),
-      'top-left'
-    );
-
-
-
+    const directions = new MapboxDirections({
+      accessToken: mapboxgl.accessToken,
+      unit: 'metric',
+      profile: 'mapbox/walking',
+      controls: { instructions: false }
     });
 
+
+    map_two.addControl(directions, 'top-left');
+    directions.on('route', function(route) {
+      document.getElementById('demo_route').value = JSON.stringify(route);
+    })
   };
 
 
