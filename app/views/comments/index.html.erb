@@ -152,7 +152,33 @@
       </div>
 
 <!-- 3rd Tab -->
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Twitter feed here</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+          <% TwitterApi.organizer_public_tweets.each do |tweet| %>
+            <div class="card-comment">
+              <div class="card-comment-infos">
+                <div class="card-comment-infos-content">
+    <!-- Tweet Info Details -->
+                  <div class="card-comment-infos-content-details">
+
+                  </div>
+    <!-- END  -->
+
+    <!-- Tweet Content -->
+                  <div class="card-comment-infos-content-description">
+                    <%= tweet.text %>
+                  </div>
+    <!--  END -->
+                </div>
+              </div>
+
+    <!-- Created at -->
+              <div class="card-comment-footer">
+                <p>created at: <strong>XXX</strong></p>
+              </div>
+
+            </div>
+          <% end %>
+      </div>
 
 <!-- Button Add a comment -->
 
