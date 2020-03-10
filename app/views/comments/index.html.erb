@@ -159,7 +159,13 @@
                 <div class="card-comment-infos-content">
     <!-- Tweet Info Details -->
                   <div class="card-comment-infos-content-details">
-
+                    <%= image_tag "#{tweet.user.profile_image_url_https}" %>
+                    <p>
+                    retweet<br>
+                    <strong><%= tweet.retweet_count %></strong>
+                    </p>
+                    <p><%= tweet.user.name %></p>
+                    <p>@<%= tweet.user.screen_name %></p>
                   </div>
     <!-- END  -->
 
@@ -173,7 +179,7 @@
 
     <!-- Created at -->
               <div class="card-comment-footer">
-                <p>created at: <strong>XXX</strong></p>
+                <p>created at: <strong> <%= tweet.created_at.strftime("%I:%M%p") %></strong></p>
               </div>
 
             </div>
