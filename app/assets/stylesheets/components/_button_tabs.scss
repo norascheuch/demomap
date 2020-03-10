@@ -31,3 +31,18 @@
   color: white;
   border-color: $base-color;
 }
+
+#pills-twitter-tab {
+  background-color: white;
+  color: #0084b4;
+  border-color: #0084b4;
+
+}
+
+
+#pills-twitter-tab.nav-link.active {
+  background-color: #0084b4;
+  color: white;
+  border-color: #0084b4;
+
+}
