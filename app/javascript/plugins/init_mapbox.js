@@ -82,11 +82,20 @@ const initMapbox = () => {
       zoom: 12,
     });
 
-
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+          },
+          trackUserLocation: true
+      })
+    );
 
     map.on('load', function() {
     // make an initial directions request that
     // starts and ends at the same location
+
+
 
       const markers = JSON.parse(mapElement.dataset.markers);
 
