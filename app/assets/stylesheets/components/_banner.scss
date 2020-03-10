@@ -14,11 +14,23 @@
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 .banner-content {
+  width: 100%;
+  text-align: center;
   padding-left: 20px;
   padding-bottom: 8px;
+  padding-left: 0;
   h1 {
-    font-size: 30px;
+    font-size: 18px;
+    font-weight: 400;
   }
 }
 
 
+.sec-title {
+  text-align: center;
+  color: #a9a9a9;
+  b {
+    color: #102b48;
+     opacity: 1 !important;
+  }
+}
