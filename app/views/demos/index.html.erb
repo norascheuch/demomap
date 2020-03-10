@@ -1,38 +1,45 @@
 <div class="banner">
-  <div class="banner-content">
-    <h1>Upcoming <br>Demonstrations</h1>
+  <div class="frame">
+    <div class="useless">
+    </div>
+    <div class="banner-content">
+      <h1>Upcomming Demonstrations</h1>
+    </div>
+    <div class="useless">
+    </div>
   </div>
 </div>
-  <div class="container justfiy-content-center">
-    <div class="row text-align">
-      <div class="col-12">
-      <!-- <p class="sec-title pb-2 mt-3">There are <%#= @demos.count  %> <b>demos registered</b> in <b>Berlin</b></p> -->
-        <% @demos.each do |demo| %>
-          <%= link_to demo_path(demo) do %>
-            <div class="card-demo">
-              <div class="card-demo-infos">
-                <div class="card-demo-info-date">
-                  <div class="card-demo-info-day"><%= demo.start_time.strftime("%d") %></div>
-                  <div class="card-demo-info-month"><%= demo.start_time.strftime("%b").upcase %></div>
-                </div>
-                <div class="card-demo-infos-content p-3">
-                  <div class="card-demo-infos-content-details">
-                    <p class="d-time"><%= demo.start_time.strftime("%l:%M %p") %></p>
-                    <h2><%= demo.name %></h2>
-                    <p><%= demo.description.first(20) + "..." %></p>
-                  </div>
+
+<div class="container justfiy-content-center">
+  <div class="row text-align">
+    <div class="col-12">
+    <!-- <p class="sec-title pb-2 mt-3">There are <%#= @demos.count  %> <b>demos registered</b> in <b>Berlin</b></p> -->
+      <% @demos.each do |demo| %>
+        <%= link_to demo_path(demo) do %>
+          <div class="card-demo">
+            <div class="card-demo-infos">
+              <div class="card-demo-info-date">
+                <div class="card-demo-info-day"><%= demo.start_time.strftime("%d") %></div>
+                <div class="card-demo-info-month"><%= demo.start_time.strftime("%b").upcase %></div>
+              </div>
+              <div class="card-demo-infos-content p-3">
+                <div class="card-demo-infos-content-details">
+                  <p class="d-time"><%= demo.start_time.strftime("%l:%M %p") %></p>
+                  <h2><%= demo.name %></h2>
+                  <p><%= demo.description.first(20) + "..." %></p>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-        <div class="btn-plus">
-          <%= link_to new_demo_path do %>
-            <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
-          <% end %>
-        </div>
-
+      <% end %>
+      <div class="btn-plus">
+        <%= link_to new_demo_path do %>
+          <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
+        <% end %>
       </div>
+
     </div>
   </div>
+</div>
 <%= render 'shared/footer_general' %>
