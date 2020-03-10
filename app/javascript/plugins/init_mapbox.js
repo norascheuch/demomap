@@ -134,9 +134,13 @@ const initMapbox = () => {
 
 
     map_two.addControl(directions, 'top-left');
+
     directions.on('route', function(route) {
-      document.getElementById('demo_route').value = JSON.stringify(route);
+      document.getElementById('demo_route').value = JSON.stringify(directions.getWaypoints());
+      document.getElementById('demo_start_location').value = JSON.stringify(directions.getOrigin());
+      document.getElementById('demo_end_location').value = JSON.stringify(directions.getDestination());
     })
+
   };
 
 

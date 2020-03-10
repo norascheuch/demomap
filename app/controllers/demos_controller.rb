@@ -44,7 +44,7 @@ class DemosController < ApplicationController
   private
 
   def demo_params
-    params.require(:demo).permit(:name, :description, :start_time, :end_time, :route)
+    params.require(:demo).permit(:name, :description, :start_time, :end_time, :start_location, :end_location, :route)
   end
 
 end
