@@ -6,7 +6,7 @@
   <div class="container justfiy-content-center">
     <div class="row text-align">
       <div class="col-12">
-      <p class="sec-title pb-2 mt-3">There are <%= @demos.count  %> <b>demos registered</b> in <b>Berlin</b></p>
+      <!-- <p class="sec-title pb-2 mt-3">There are <%#= @demos.count  %> <b>demos registered</b> in <b>Berlin</b></p> -->
         <% @demos.each do |demo| %>
           <%= link_to demo_path(demo) do %>
             <div class="card-demo">
