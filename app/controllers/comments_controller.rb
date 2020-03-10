@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def index
     @demo = Demo.find(params[:demo_id]) # integrate order by created!
-    @comments = policy_scope(@demo.comments) # integrate order by created!
+    @comments = policy_scope(@demo.comments).order(created_at: :desc) # integrate order by created!
     @event_comments = @demo.events.map do |event|
       @comments += event.comments
     end
