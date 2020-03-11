@@ -21,7 +21,7 @@ class TwitterApi
       config.consumer_key        = ENV['YOUR_CONSUMER_KEY']
       config.consumer_secret     = ENV['YOUR_CONSUMER_SECRET']
     end
-    @tweets = tweets.search('#<%= @demo.hashtag %>', exclude_replies: true, include_rts: false)
+    @tweets = tweets.search('#AI', lang: 'en', exclude_replies: true, include_rts: false)
   end
 ### End of comment ###
 end
