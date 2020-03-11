@@ -107,3 +107,17 @@ font-weight: 700;
     background-color: $base-color;
     // border-color: #4c4;
 }
+
+
+.social-share-button {
+  line-height: 29px;
+  width: 62px;
+  // border: 1px solid red;
+  // padding: 2px;
+  .ssb-icon {
+    margin: 0 2px;
+    background-size: 24px !important;
+    height: 24px !important;
+    width: 24px !important;
+  }
+}
