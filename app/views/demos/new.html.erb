@@ -2,19 +2,31 @@
   <div class="container justfiy-content-center">
     <div class="row text-align">
       <div class="col-12">
-      <p>Find me in app/views/demos/new.html.erb</p>
-
       <h1>Create your Demo</h1>
 
                       <%= simple_form_for @demo do |f| %>
                         <%= f.input :name %>
                         <%= f.input :description %>
-                        <%= f.button :submit, "Create Profile", class: 'btn btn-secondary w-100' %>
-                      <% end %>
+                        <%= f.input :route, as: :hidden %>
+                        <%= f.input :start_location, as: :hidden %>
+                        <%= f.input :end_location, as: :hidden %>
+                        <%= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
+                        <%= f.input :end_time, as: :string, required: false,  input_html: {class: "datepicker"} %>
+
 
       <% if policy(@demo).create? %>
         <%= link_to "New Demo", new_demo_path %>
       <% end %>
+      <div
+        id="map_two"
+        style="width: 100%;
+        height: 800px;"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-mappoints="<%= @mappoints.to_json %>"
+      ></div>
+      <br><br>
+      <%= f.button :submit, "Create new Demo", class: 'btn btn-secondary w-100' %>
+                      <% end %>
     </div>
   </div>
 </div>

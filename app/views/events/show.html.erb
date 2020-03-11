@@ -1,4 +1,18 @@
-<%= render 'shared/banner', header: "#{@event.event_type.name}" %>
+<div class="tab-box">
+  <%= render 'shared/banner', header: "#{@event.event_type.name}" %>
+  <div id="navigation">
+    <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-newest-tab" data-toggle="pill" href="#pills-newest" role="tab" aria-controls="pills-newest" aria-selected="true">Newest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-loudest-tab" data-toggle="pill" href="#pills-loudest" role="tab" aria-controls="pills-loudest" aria-selected="false">Loudest</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
