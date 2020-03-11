@@ -1,5 +1,20 @@
-  document.querySelectorAll('.weighted-score').forEach((score) => {
-    if (score.dataset.id == '<%= @comment.id %>') {
-      score.innerHTML = '<%= @comment.weighted_score %>';
-    }
-  })
+// if (typeof weightedScoreUpdate() === 'function' )
+// { weightedScoreUpdate();
+// } else {
+
+//  const weightedScoreUpdate = () => {
+  // document.querySelectorAll('.weighted-score').forEach((score) => {
+  //   if (score.dataset.id == '<%= @comment.id %>') {
+  //     score.innerHTML = '<%= @comment.weighted_score %>';
+  //   }
+  // })
+// };
+// weightedScoreUpdate()
+// }
+
+
+document.querySelectorAll('.weighted-score').forEach((score) => {
+  if (score.dataset.id == '<%= @comment.id %>') {
+    score.innerHTML = '<%= @comment.weighted_score %>';
+  }
+})

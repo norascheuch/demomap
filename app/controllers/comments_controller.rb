@@ -29,13 +29,14 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])# integrate order by created!
     authorize @comment
+
     case params[:comment][:vote]
     when 'up' then @comment.vote_by :voter => current_user, :vote => 'up'
     when 'down' then @comment.vote_by :voter => current_user, :vote => 'down'
     end
-
+    @demo = Demo.find(params[:demo_id])
     respond_to do |format|
-      format.html {redirect_to demos_path(Demo.find(params[:demo_id]))}
+      format.html {redirect_to demo_comments_path(@demo)}
       format.js  # <-- will render `app/views/comments/update.js.erb`
     end
   end
