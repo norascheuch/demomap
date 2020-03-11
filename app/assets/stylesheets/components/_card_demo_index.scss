@@ -1,3 +1,39 @@
+.card-demo-index-banner {
+  position: absolute;
+  width: 100%;
+  height: 185px;
+  left: 0px;
+  top: 0px;
+  background-size: cover;
+  position: sticky;
+  z-index: 7;
+}
+
+.card-demo-index-title {
+  position: absolute;
+  background: white;
+  margin: 0 15px;
+  height: 105px;
+  left: 20px;
+  top: 80px;
+  border-radius: 24px 24px 0 0;
+  background-size: 100%;
+  position: sticky;
+  z-index: 7;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.card-demo-index-title-content {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  width: 70%;
+  line-height: 1.2em;
+  left: 18px;
+  bottom: 12px;
+}
 
 .card-demo {
     overflow: hidden;
