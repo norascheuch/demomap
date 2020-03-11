@@ -33,12 +33,14 @@
           </div>
         <% end %>
       <% end %>
-      <div class="btn-plus">
-        <%= link_to new_demo_path do %>
-          <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
-        <% end %>
-      </div>
 
+      <% if !current_user.nil? && current_user.organizer? %>
+        <div class="btn-plus">
+          <%= link_to new_demo_path do %>
+            <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
