@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @event_comments = @demo.events.map do |event|
       @comments += event.comments
     end
-    @comments.sort_by(&:created_at).reverse!
+    @comments = @comments.sort_by(&:created_at).reverse!
     @votes_comments = @comments.sort_by{|a| a.weighted_score}.reverse
   end
 
