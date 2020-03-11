@@ -2,12 +2,12 @@
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     // justify-content: space-between;
-    border-radius: 24px;
+    border-radius: 7px;
     margin: 1em 0;
     a {
     text-decoration: none;
@@ -24,7 +24,7 @@
 .card-event-icon img {
   width: 50px;
   height: 50px;
-  margin: 10px 25px 10px 10px;
+  margin: 10px 20px 10px 10px;
 }
 
 .card-event-content {
@@ -43,10 +43,16 @@
 
 .card-event-footer-location {
   display: flex;
+  width: 50%;
 }
 
 .card-event-footer-comments {
   display: flex;
+}
+
+.card-event-footer-start_time {
+  display: flex;
+  width: 20%;
 }
 
 

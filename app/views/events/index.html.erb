@@ -47,7 +47,14 @@
                     <p><%= event.description %></p>
                     <div class="card-event-footer">
                       <div class="card-event-footer-location">
-                        <p> <i class="fas fa-map-marker-alt"></i> <%= event.location %></p>
+                        <p> <i class="fas fa-map-marker-alt"></i> <%= event.location.gsub(/,.*/,'') %></p>
+                      </div>
+                      <div class="card-event-footer-start_time">
+                        <% if event.start_time.nil?%>
+                          <p><i class="far fa-clock"></i> all day</p>
+                        <% else %>
+                          <p><i class="far fa-clock"></i> <%= event.start_time.strftime("%I:%M%p")%></p>
+                        <% end %>
                       </div>
                       <div class="card-event-footer-comments">
                         <p><i class="far fa-comment"></i> <%= event.comments.length%></p>
