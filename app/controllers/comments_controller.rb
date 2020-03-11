@@ -8,7 +8,9 @@ class CommentsController < ApplicationController
       @comments += event.comments
     end
     @comments.sort_by(&:created_at).reverse!
+    @votes_comments = @comments.sort_by{|a| a.weighted_score}.reverse
   end
+
 
   def new
     @comment = Comment.new
