@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comments.sort_by(&:created_at).reverse!
 
 ### SQL ###
-    @votes_comments = Comment.joins(:votes).select('comments.*, COUNT(votes.id) AS vote_weight').group('votes.voter_id').order('vote_weight DESC')
+    @votes_comments = Comment.all.sort_by{ |a| a.weighted_score}.reverse
 ### END SQL ###
   end
 
