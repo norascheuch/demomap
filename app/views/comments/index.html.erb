@@ -91,12 +91,7 @@
 <!-- 2nd Tab -->
 
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-<!--  <%# @comment = Comment.joins(:votes).select('comments.*, COUNT(votes.id) AS vote_weight').group('votes.voter_id').order('vote_weight DESC') %> -->
-
-<!-- <%#= @comments.votes_comments %> -->
-
-
+      <!-- @votes_comments comes from a method defined in the controller.git -->
         <% @votes_comments.each do |c|%>
 
           <div class="card-comment">

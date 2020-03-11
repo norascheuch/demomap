@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
     end
     @comments.sort_by(&:created_at).reverse!
 
-### SQL ###
+### Order the comments per weighted_score. Weighted_score method comes from the gem act_as_votable ###
     @votes_comments = Comment.all.sort_by{ |a| a.weighted_score}.reverse
-### END SQL ###
+### End of comment ###
   end
 
   def new
