@@ -19,21 +19,22 @@ p {
 .card-comment-infos {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
-.card-comment-infos-content-details {
+.card-comment-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
   font-size: 12px;
   opacity: 0.8;
 }
 
-.card-comment-infos-content-details p {
+.card-comment-header p {
   font-size: 12px;
   opacity: .8;
-  padding-left: 6px;
+
 }
 
 .card-comment-infos-content {
@@ -43,9 +44,9 @@ p {
 }
 
 .card-comment-infos-content-description {
-  padding-right: 10px;
   line-height: 1.1em;
   font-size: 18px;
+
 }
 
 .card-comment-infos-content-footer {
@@ -54,7 +55,7 @@ p {
   align-items: center;
 }
 
-.card-comment-infos-content-footer img {
+.card-comment-header img {
   height: 1.3rem;
 }
 
@@ -66,6 +67,7 @@ p {
   opacity: .8;
   padding-right: 10px;
 }
+
 
 
 

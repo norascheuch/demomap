@@ -27,61 +27,54 @@
 
         <% @comments.each do |c|%>
           <div class="card-comment">
+            <div class="card-comment-header">
+              <div class="card-comment-header-description">
+                <% if c.commentable_type == 'Demo' %>
+                  <p><strong>General</strong>
+                    <%= c.commentable.name.first(20) + "..."  %>
+                  </p>
+                <% else %>
+                  <p> <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
+                    <strong><%= Event.find(c.commentable_id).description.first(20) + "..." %></strong>
+                  </p>
+                <% end %>
+              </div>
+              <div class="card-comment-header-time">
+                <p>posted <%= time_ago_in_words(c.created_at) %> ago </p>
+              </div>
+            </div>
+
             <div class="card-comment-infos">
               <div class="card-comment-infos-content">
-                <div class="card-comment-infos-content-details">
-                    <p>posted <%= time_ago_in_words(c.created_at) %> ago </p>
-                </div>
+
                 <div class="card-comment-infos-content-description">
                   <%= c.content %>
                 </div>
                 <div class="card-comment-infos-content-footer">
 
-                    <% if c.commentable_type == 'Demo' %>
-                      <p><strong>General</strong>
-                        <%= c.commentable.name  %> Demo
-                      </p>
-                    <% else %>
-                      <p> <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
-                        <strong><%= Event.find(c.commentable_id).description.first(20) + "..." %></strong>
-                      </p>
-                      <p>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <%= c.commentable.location.gsub(/,.*/,'') %>
-                      </p>
-                    <% end %>
-
+                  <% if c.commentable_type != 'Demo' %>
+                      <p><i class="fas fa-map-marker-alt"></i>
+                      <%= c.commentable.location.gsub(/,.*/,'') %>
+                    </p>
+                  <% end %>
                 </div>
               </div>
               <div class="card-comment-info-votes">
-<!--             <button class='btn btn-votes' data-id="<%#= c %>" data-value='up'>
-              <i class="fas fa-chevron-up"></i>
-            </button>
-            <p class="weighted-score" data-id="<%#= i %>"><%#= c.weighted_score %></p>
-            <button class='btn btn-votes' data-id="<%#= i %>" data-value='down'>
-              <i class="fas fa-chevron-down"></i>
-            </button>
- -->
-              <%= simple_form_for([@demo, c], remote: true) do |form| %>
-                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-                <%= form.button :button, class: 'btn-votes' do %>
-                  <i class="fas fa-chevron-up"></i>
+                <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                  <%= form.button :button, class: 'btn-votes' do %>
+                    <%= image_tag "arrow_up.svg", alt: "Upvote" %>
+                  <% end %>
+                  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
                 <% end %>
-              <% end %>
-
-              <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
-
-              <%= simple_form_for([@demo, c], remote: true) do |form| %>
-                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-                <%= form.button :button, class: 'btn-votes' do %>
-                  <i class="fas fa-chevron-down"></i>
+                <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
+                <%= simple_form_for([@demo, c], remote: true) do |form| %>
+                  <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+                  <%= form.button :button, class: 'btn-votes' do %>
+                    <%= image_tag "arrow_down.svg", alt: "Downvote" %>
+                  <% end %>
                 <% end %>
-              <% end %>
-
               </div>
             </div>
-
-
           </div>
         <% end %>
     </div>
