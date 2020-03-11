@@ -21,12 +21,6 @@
         <% end %>
       </div>
 
-      <div class="btn-share">
-        <%= link_to demo_events_path(@demo) do %>
-          <%= image_tag "demo-show-share.svg", alt: "Demonstration" %>
-        <% end %>
-      </div>
-
       <div class="card-demo-show-smalltext">
         <p>
           <%= @demo.start_time.strftime("%d.%m.%Y") %> <br>
@@ -34,6 +28,15 @@
           <%= @demo.start_location %>
         </p>
       </div>
+
+      <div class="btn-share">
+        <%= social_share_button_tag("Check the #{@demo.name} demo information on DemoMap!") %>
+        <%#= link_to demo_events_path(@demo) do %>
+          <%#= image_tag "demo-show-share.svg", alt: "Demonstration" %>
+        <%# end %>
+      </div>
+
+
 
     </div>
 
