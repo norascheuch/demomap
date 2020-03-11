@@ -53,6 +53,10 @@ class EventsController < ApplicationController
     @comments = @event.comments
     authorize @comments
     @demo = Demo.find(params[:demo_id])
+
+### order comments of an event by votes. weighted_score comes from the gem act_as_votable ###
+    @votes_comments = @comments.all.sort_by{ |a| a.weighted_score }.reverse
+### End of comment ###
   end
 
   private
