@@ -24,134 +24,13 @@
 
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-newest" role="tabpanel" aria-labelledby="pills-newest-tab">
-
-        <% @comments.each do |c|%>
-          <div class="card-comment">
-            <div class="card-comment-infos">
-              <div class="card-comment-infos-content">
-                <div class="card-comment-infos-content-details">
-                  <% if c.commentable_type == 'Demo' %>
-                    <%= image_tag "group.svg", alt: "Demonstration" %>
-                  <% else %>
-                    <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
-                  <% end %>
-                  <p>
-                  created<br>
-                  <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
-                  </p>
-                </div>
-                <div class="card-comment-infos-content-description">
-                  <%= c.content %>
-                </div>
-              </div>
-              <div class="card-comment-info-votes">
-<!--             <button class='btn btn-votes' data-id="<%#= c %>" data-value='up'>
-              <i class="fas fa-chevron-up"></i>
-            </button>
-            <p class="weighted-score" data-id="<%#= i %>"><%#= c.weighted_score %></p>
-            <button class='btn btn-votes' data-id="<%#= i %>" data-value='down'>
-              <i class="fas fa-chevron-down"></i>
-            </button>
- -->
-              <%= simple_form_for([@demo, c], remote: true) do |form| %>
-                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-                <%= form.button :button, class: 'btn-votes' do %>
-                  <i class="fas fa-chevron-up"></i>
-                <% end %>
-              <% end %>
-
-              <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
-
-              <%= simple_form_for([@demo, c], remote: true) do |form| %>
-                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-                <%= form.button :button, class: 'btn-votes' do %>
-                  <i class="fas fa-chevron-down"></i>
-                <% end %>
-              <% end %>
-
-              </div>
-            </div>
-
-            <div class="card-comment-footer">
-              <p>
-                <i class="fas fa-map-marker-alt"></i>
-                <% if c.commentable_type == 'Demo' %>
-                  <%= c.commentable.name  %> Demo
-                <% else %>
-                  <%= c.commentable.location %>
-                <% end %>
-              </p>
-
-              <p>created at: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
-            </div>
-          </div>
-        <% end %>
-    </div>
+          <%= render partial:'comments_tab', locals: {com: @comments}%>
+        </div>
 
 <!-- 2nd Tab -->
 
       <div class="tab-pane fade" id="pills-loudest" role="tabpanel" aria-labelledby="pills-loudest-tab">
-        <% @comments.each do |c|%>
-          <div class="card-comment">
-            <div class="card-comment-infos">
-              <div class="card-comment-infos-content">
-                <div class="card-comment-infos-content-details">
-                  <% if c.commentable_type == 'Demo' %>
-                    <%= image_tag "group.svg", alt: "Demonstration" %>
-                  <% else %>
-                    <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
-                  <% end %>
-                  <p>
-                  created<br>
-                  <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
-                  </p>
-                </div>
-                <div class="card-comment-infos-content-description">
-                  <%= c.content %>
-                </div>
-              </div>
-              <div class="card-comment-info-votes">
-<!--             <button class='btn btn-votes' data-id="<%#= c %>" data-value='up'>
-              <i class="fas fa-chevron-up"></i>
-            </button>
-            <p class="weighted-score" data-id="<%#= i %>"><%#= c.weighted_score %></p>
-            <button class='btn btn-votes' data-id="<%#= i %>" data-value='down'>
-              <i class="fas fa-chevron-down"></i>
-            </button>
- -->
-              <%= simple_form_for([@demo, c], remote: true) do |form| %>
-                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
-                <%= form.button :button, class: 'btn-votes' do %>
-                  <i class="fas fa-chevron-up"></i>
-                <% end %>
-              <% end %>
-
-              <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
-
-              <%= simple_form_for([@demo, c], remote: true) do |form| %>
-                <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
-                <%= form.button :button, class: 'btn-votes' do %>
-                  <i class="fas fa-chevron-down"></i>
-                <% end %>
-              <% end %>
-
-              </div>
-            </div>
-
-            <div class="card-comment-footer">
-              <p>
-                <i class="fas fa-map-marker-alt"></i>
-                <% if c.commentable_type == 'Demo' %>
-                  <%= c.commentable.name  %> Demo
-                <% else %>
-                  <%= c.commentable.location %>
-                <% end %>
-              </p>
-
-              <p>created at: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial:'comments_tab', locals: {com: @comments}%>
       </div>
 
 <!-- 3rd Tab -->

@@ -14,46 +14,61 @@ p {
   margin: 1em 0;
 }
 
-.card-comment-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .card-comment-infos {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
-.card-comment-infos-content-details {
+.card-comment-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
+  font-size: 12px;
+  opacity: 0.8;
 }
 
-.card-comment-infos-content-details img {
-  width: 40px;
+.card-comment-header p {
+  font-size: 12px;
+  opacity: .8;
+
+}
+
+.card-comment-infos-content {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-comment-infos-content-description {
-  padding-right: 5px;
   line-height: 1.1em;
+  font-size: 18px;
+
+}
+
+.card-comment-infos-content-footer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.card-comment-header img {
+  height: 1.3rem;
 }
 
 
-.card-comment-footer p {
+.card-comment-infos-content-footer p {
   font-size: 12px;
   line-height: 1.4;
   margin-top: 8px;
   opacity: .8;
+  padding-right: 10px;
 }
 
-.card-comment-infos-content-details p {
-  font-size: 12px;
-  opacity: .8;
-  padding-left: 6px;
-}
+
 
 
 // .card-comment * {

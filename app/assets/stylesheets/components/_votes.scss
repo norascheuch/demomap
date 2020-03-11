@@ -6,13 +6,21 @@
   font-size: 60px !important;
   font-weight: 700;
   line-height: 0.3em;
+  overflow:unset;
+  margin: 8px 0px 8px 8px;
 }
 
 .card-comment-info-votes p {
   // font-family: Roboto;
-  font-size: 35px;
+  font-size: 23px;
   margin: 0;
   padding: 0;
+}
+
+.card-comment-info-votes img {
+  // font-family: Roboto;
+  width: 30px;
+  margin: 0spx 8px;
 }
 
 .btn-votes {
