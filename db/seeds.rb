@@ -76,7 +76,7 @@ c11 = Comment.create!(user: user, content: "You should listen to what he is sayi
 80.times do
   user = User.create!({
     email: Faker::Internet.email(domain: 'gmail'),
-    password: Faker::Internet.password(min_length: 10, max_length: 20),
+    password: Faker::Internet.password(min_length: 10, max_length: 20)
 
   })
 
