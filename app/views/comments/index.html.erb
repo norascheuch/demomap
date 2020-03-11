@@ -30,18 +30,27 @@
             <div class="card-comment-infos">
               <div class="card-comment-infos-content">
                 <div class="card-comment-infos-content-details">
-                  <% if c.commentable_type == 'Demo' %>
-                    <%= image_tag "group.svg", alt: "Demonstration" %>
-                  <% else %>
-                    <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
-                  <% end %>
-                  <p>
-                  created<br>
-                  <strong><%= c.created_at.strftime("%I:%M%p") %></strong>
-                  </p>
+                    <p>posted <%= time_ago_in_words(c.created_at) %> ago </p>
                 </div>
                 <div class="card-comment-infos-content-description">
                   <%= c.content %>
+                </div>
+                <div class="card-comment-infos-content-footer">
+
+                    <% if c.commentable_type == 'Demo' %>
+                      <p><strong>General</strong>
+                        <%= c.commentable.name  %> Demo
+                      </p>
+                    <% else %>
+                      <p> <%= image_tag "#{Event.find(c.commentable_id).event_type.icon}", alt: "Demonstration" %>
+                        <strong><%= Event.find(c.commentable_id).description.first(20) + "..." %></strong>
+                      </p>
+                      <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <%= c.commentable.location.gsub(/,.*/,'') %>
+                      </p>
+                    <% end %>
+
                 </div>
               </div>
               <div class="card-comment-info-votes">
@@ -72,18 +81,7 @@
               </div>
             </div>
 
-            <div class="card-comment-footer">
-              <p>
-                <i class="fas fa-map-marker-alt"></i>
-                <% if c.commentable_type == 'Demo' %>
-                  <%= c.commentable.name  %> Demo
-                <% else %>
-                  <%= c.commentable.location %>
-                <% end %>
-              </p>
 
-              <p>created at: <strong><%= c.created_at.strftime("%I:%M%p") %></strong></p>
-            </div>
           </div>
         <% end %>
     </div>
