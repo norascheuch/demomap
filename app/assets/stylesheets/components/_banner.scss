@@ -22,13 +22,18 @@
 }
 
 .banner-content {
-  align-self:flex-end;
+  align-self: flex-start;
   width: 100%;
   text-align: center;
-  padding-bottom: 59px;
+  padding-top: 12px;
+  -webkit-box-flex: 1;
   flex-grow: 1;
   h1 {
     font-size: 18px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 13px;
     font-weight: 400;
   }
 }

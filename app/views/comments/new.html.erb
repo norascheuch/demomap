@@ -1,7 +1,10 @@
+
 <div class="banner">
-  <div class="banner-content">
-    <h1>Create new Comment</h1>
-    <p>!Rules! Be respectfull and don’t write names.</p>
+  <div class="frame">
+    <div class="banner-content">
+      <h1>What do you want to share?</h1>
+      <p>!Rules! Be respectfull and don’t write names.</p>
+    </div>
   </div>
 </div>
 
@@ -10,20 +13,21 @@
 <div class="container justfiy-content-center">
   <div class="row text-align">
     <div class="col-12">
-
-      <% if @event.nil? %>
-        <p>General Comment</p>
-        <%= simple_form_for [@demo, @comment] do |f| %>
-          <%= f.input :content, label: false, input_html: { class: 'shadow-sm b-white' }%>
-          <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
-        <% end %>
-      <% else %>
-        <p>Event Comment</p>
-        <%= simple_form_for [@demo, @event, @comment] do |f| %>
-          <%= f.input :content, label: false, input_html: { class: 'shadow-sm b-white' }%>
-          <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
-        <% end %>
-      <% end %>
+      <div class="comment-box">
+        <% if @event.nil? %>
+           <p>Share your thoughts and impressions with the other participants of the <strong><%=@demo.name%> Demo</strong>!</p>
+          <%= simple_form_for [@demo, @comment] do |f| %>
+            <%= f.input :content, label: false, input_html: { class: 'shadow-sm b-white' }%>
+            <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
+          <% end %>
+        <% else %>
+          <p>Share your thoughts and impressions with the other participants regarding the <strong><%=@event.event_type.name %> at <%=@event.location %></strong>!</p>
+          <%= simple_form_for [@demo, @event, @comment] do |f| %>
+            <%= f.input :content, label: false, input_html: { class: 'shadow-sm b-white' }%>
+            <%= f.button :submit, 'Send', class: "new-comment-submit btn-light shadow-sm bg-white" %>
+            <% end %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
