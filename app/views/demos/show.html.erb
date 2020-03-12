@@ -51,13 +51,17 @@
 
  -->
   <h3>Share</h3>
-
-    <div class="btn-share">
-      <%= social_share_button_tag("Check the #{@demo.name} demo information on DemoMap! ##{@demo.d_hashtag}") %>
-      <%#= link_to demo_events_path(@demo) do %>
-        <%#= image_tag "demo-show-share.svg", alt: "Demonstration" %>
-      <%# end %>
+    <div class="block">
+      <div class="content">
+        <div class="btn-share">
+          <%= social_share_button_tag("Check the #{@demo.name} demo information on DemoMap! ##{@demo.d_hashtag}") %>
+          <%#= link_to demo_events_path(@demo) do %>
+            <%#= image_tag "demo-show-share.svg", alt: "Demonstration" %>
+          <%# end %>
+        </div>
+      </div>
     </div>
+
 
   </div>
 
