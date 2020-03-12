@@ -27,7 +27,7 @@ var TxtType = function(el, toRotate, period) {
 
         if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
-        this.isDeleting = false;
+        this.isDeleting = true;
         } else if (this.isDeleting && this.txt === '') {
         this.isDeleting = false;
         this.loopNum++;
