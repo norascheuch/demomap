@@ -60,12 +60,18 @@
 font-size: 14px !important;
 line-height: 25px !important;
 text-align: center !important;
-margin: 0 33% !important;
+// margin: 0 33% !important;
 background: $base-color !important;
 font-weight: 700;
+color: white;
 // border: 1px solid red;
-// width: 100% !important;
+width: 100% !important;
+}
 
+abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
 }
 
 .btn-arrow-back{
