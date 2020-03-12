@@ -1,9 +1,23 @@
 <div class="footer">
+
+
   <div class="navbar navbar-light navbar-lewagon">
     <div id="toggler-box-strip" class="toggler_box">
-    <button id="button-toggler" class="navbar-toggler button-trans" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="fas fa-align-justify text-body"></span>
-    </button>
+      <div>
+        <button id="button-toggler" class="navbar-toggler button-trans" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify text-body"></i>
+        </button>
+      </div>
+      <div style='visibility: hidden;'>
+        <%= link_to demo_events_path(@demo) do %>
+          <%= image_tag "world-navbar.svg", alt: "Demonstration" %>
+        <% end %>
+      </div>
+      <div style='visibility: hidden;'>
+        <%= link_to demo_comments_path(@demo) do %>
+          <%= image_tag "chat-navbar.svg", alt: "Demonstration" %>
+        <% end %>
+      </div>
     </div>
 
 

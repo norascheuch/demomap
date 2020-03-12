@@ -24,7 +24,7 @@
 
 
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: space-around;
   background: white;
 }
 
@@ -46,11 +46,11 @@
   color: black;
 }
 
-.navbar-light .navbar-toggler .fa-align-justify {
-  position: fixed;
-  bottom: 15px;
-  left: 16px;
-}
+// .navbar-light .navbar-toggler .fa-align-justify {
+//   position: fixed;
+//   bottom: 15px;
+//   left: 16px;
+// }
 
 .navbar-toggler-icon {
   color: red !important;
@@ -72,7 +72,7 @@
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   bottom: 0px;
   left: 0px;
