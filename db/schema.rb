@@ -86,6 +86,16 @@ ActiveRecord::Schema.define(version: 2020_03_11_220358) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "routepoints", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "location"
+    t.bigint "demo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["demo_id"], name: "index_routepoints_on_demo_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -119,4 +129,5 @@ ActiveRecord::Schema.define(version: 2020_03_11_220358) do
   add_foreign_key "events", "demos"
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "users"
+  add_foreign_key "routepoints", "demos"
 end

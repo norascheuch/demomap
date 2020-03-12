@@ -33,9 +33,10 @@
         <%= render partial:'comments_tab', locals: {comments: @votes_comments}%>
       </div>
 
+
 <!-- 3rd Tab -->
       <div class="tab-pane fade" id="pills-twitter" role="tabpanel" aria-labelledby="pills-twitter-tab">
-        <p>Feed: #<%= @demo.d_hashtag %></p>
+        <p>Feed: <%= @demo.d_hashtag %></p>
         <% TwitterApi.demo_hashtag.each do |tweet| %>
         <div class="card-comment">
           <div class="card-comment-header">

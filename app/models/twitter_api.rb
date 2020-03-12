@@ -10,9 +10,9 @@ class TwitterApi
   end
 
 ### Show Tweet of a specific user. Here hardcoded BBC News ###
-  def self.organizer_public_tweets
-    client.user_timeline("BBCNews", exclude_replies: true, include_rts: false)
-  end
+  # def self.organizer_public_tweets
+  #   client.user_timeline("BBCNews", exclude_replies: true, include_rts: false)
+  # end
 ### End of comment ###
 
 ### Show Tweet for a specific hashtag ###
@@ -21,7 +21,8 @@ class TwitterApi
       config.consumer_key        = ENV['YOUR_CONSUMER_KEY']
       config.consumer_secret     = ENV['YOUR_CONSUMER_SECRET']
     end
-    @tweets = tweets.search('#AI', lang: 'en', exclude_replies: true, include_rts: false)
+    @tweets = tweets.search('#FridaysForFuture Berlin -rt')
   end
+
 ### End of comment ###
 end
