@@ -24,7 +24,7 @@
   text-align: center;
   line-height: 52px;
   border-radius: 50%;
-  width: 55px;
+  width: 100%;
   height: 55px;
   color: white;
   margin-right: 20px;
@@ -111,13 +111,13 @@ font-weight: 700;
 
 .social-share-button {
   line-height: 29px;
-  width: 62px;
+  width: 100%;
   // border: 1px solid red;
   // padding: 2px;
   .ssb-icon {
-    margin: 0 2px;
-    background-size: 24px !important;
-    height: 24px !important;
-    width: 24px !important;
+    margin: 0 15px;
+    background-size: 50px !important;
+    height: 50px !important;
+    width: 50px !important;
   }
 }

@@ -29,15 +29,6 @@
         </p>
       </div>
 
-      <div class="btn-share">
-        <%= social_share_button_tag("Check the #{@demo.name} demo information on DemoMap!") %>
-        <%#= link_to demo_events_path(@demo) do %>
-          <%#= image_tag "demo-show-share.svg", alt: "Demonstration" %>
-        <%# end %>
-      </div>
-
-
-
     </div>
 
   <h3>Details</h3>
@@ -47,6 +38,15 @@
         <p class="js-excerpt excerpt-hidden"><%= @demo.description %></p>
       </div>
         <a role="button" class="js-read-more" href="#">Read More</a>
+    </div>
+
+    <h3>Share</h3>
+
+    <div class="btn-share">
+      <%= social_share_button_tag("Check the #{@demo.name} demo information on DemoMap!") %>
+      <%#= link_to demo_events_path(@demo) do %>
+        <%#= image_tag "demo-show-share.svg", alt: "Demonstration" %>
+      <%# end %>
     </div>
 
   </div>
