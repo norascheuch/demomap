@@ -36,6 +36,10 @@
 
 <!-- 3rd Tab -->
       <div class="tab-pane fade" id="pills-twitter" role="tabpanel" aria-labelledby="pills-twitter-tab">
+        <div class="comments_hashtag">
+            <p>Trends for you: #<%= @demo.d_hashtag %></p>
+        </div>
+
         <% TwitterApi.demo_hashtag.each do |tweet| %>
         <div class="card-comment">
           <div class="card-comment-header">

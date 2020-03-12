@@ -38,6 +38,8 @@ class DemosController < ApplicationController
     @demo.route = mappoints
     @demo.user = current_user
     if @demo.save
+      Event.create!(demo: @demo, event_type: EventType.find_by(name: 'Start'), start_time: @demo.start_time, user: @demo.user, description: 'Start of the demonstration', location: @demo.start_location)
+      Event.create!(demo: @demo, event_type: EventType.find_by(name: 'End'), end_time: @demo.end_time, user: @demo.user, description: 'End of the demonstration', location: @demo.end_location)
       redirect_to demo_path(@demo)
     else
       render :new
