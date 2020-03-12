@@ -35,7 +35,7 @@
               </div>
               <div class="card-demo-infos-content p-3">
                 <div class="card-demo-infos-content-details">
-                  <p class="d-time"><%= demo.start_time.strftime("%l:%M %p") %></p>
+                  <p class="d-time"><%= demo.start_time.strftime("%l:%M %p")  %> <%= demo.start_location.split(',').first %></p>
                   <h2><%= demo.name %></h2>
                   <p><%= demo.description.first(20) + "..." %></p>
                 </div>
