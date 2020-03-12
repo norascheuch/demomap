@@ -86,6 +86,21 @@ abbr[title] {
   margin-left: 15px;
 }
 
+.btn-arrow-back-white{
+  display: block;
+  align-self: flex-start;
+  width: 12px;
+  height: 55px;
+  background: image_url("arrow-back-white.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -5px;
+  margin-left: 15px;
+}
+
+
+
+
 .radio_buttons {
   // display: flex;
 }
