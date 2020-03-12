@@ -32,7 +32,10 @@ date = Date.today # setting the seeds start date
 
 demo = Demo.create!(description:'#FridaysForFuture is a movement that began in August 2018, after 15 years old Greta Thunberg sat in front of the Swedish parliament every schoolday for three weeks, to protest against the lack of action on the climate crisis. She posted what she was doing on Instagram and Twitter and it soon went viral.
   On the 8th of September, Greta decided to continue striking every Friday until the Swedish policies provided a safe pathway well under 2-degree C, i.e. in line with the Paris agreement.
-  The hashtags #FridaysForFuture and #Climatestrike spread and many students and adults began to protest outside of their parliaments and local city halls all over the world. This has also inspired the Belgium Thursday school strikes.', name:'Fridays for future', user: user, start_time: Time.new(date.year,date.month,date.day,'15'), start_location:'Alexanderplatz, Berlin', route: '13.412187,52.541264;13.396140756758996,52.53826448831151;13.392912909617337,52.524986447507814;13.387640537880742,52.52389904688613;13.389048442865459,52.51691082159789;13.376638,52.516148')
+  The hashtags #FridaysForFuture and #Climatestrike spread and many students and adults began to protest outside of their parliaments and local city halls all over the world. This has also inspired the Belgium Thursday school strikes.', name:'Fridays for future', user: user, start_time: Time.new(date.year,date.month,date.day,'15'), start_location:'U Eberswalder Strasse, Berlin', route: '13.412187,52.541264;13.396140756758996,52.53826448831151;13.392912909617337,52.524986447507814;13.387640537880742,52.52389904688613;13.389048442865459,52.51691082159789;13.376638,52.516148', end_location: 'Brandenburger Tor Berlin')
+
+event_typeS = EventType.create!(name: 'Start', icon: 'start-icon.svg')
+event_typeE = EventType.create!(name: 'End', icon: 'end-icon.svg')
 
 event_type1 = EventType.create!(name: 'Sit In', icon: 'sit-in.svg')
 event_type2 = EventType.create!(name: 'Speech', icon: 'announcement.svg')
@@ -42,20 +45,22 @@ event_type5 = EventType.create!(name: 'First-Aid', icon: 'first-aid.svg')
 event_type6 = EventType.create!(name: 'Danger', icon: 'police-danger.svg')
 
 
-
 # events and comments for demo
 
 
 event2 = Event.create!(description: 'Speech from Martin', location:'Friedrichstadtpalast Berlin', demo: demo, event_type: event_type2, user: user)
 
+Event.create!(description: 'Startpoint of the demonstration', location: demo.start_location, demo: demo, event_type: event_typeS, user: user)
+Event.create!(description: 'Endpoint of the demonstration', location: demo.end_location, demo: demo, event_type: event_typeE, user: user)
+
 Event.create!(description: 'Serious situation beware', location:'Factory Berlin', demo: demo, event_type: event_type6, user: user)
 Event.create!(description: '3 cars from the police, can not pass', location:'Mittelstraße 51-52, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
-Event.create!(description: 'The Activists are playing live', location:'Schönhauser Allee 44b, 10435 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'The Activists are playing live', location:'Eberswalder Str. 10, 10437 Berlin', demo: demo, event_type: event_type3, user: user)
 Event.create!(description: 'Come see the dancing squirrels', location:'Brunnenstraße 53, 13355 Berlin', demo: demo, event_type: event_type3, user: user)
 Event.create!(description: '3 doctors in medics tent ', location:'Linienstraße 94, 10115 Berlin', demo: demo, event_type: event_type5, user: user)
 Event.create!(description: '1 doctor', location:'Friedrichstraße 160, 10117 Berlin', demo: demo, event_type: event_type5, user: user)
 Event.create!(description: 'Block ', location:'Friedrichstraße 158, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
-Event.create!(description: 'Speech from Martin', location:'Brandenburger Tor Berlin', demo: demo, event_type: event_type2, user: user)
+Event.create!(description: 'Speech from Martin', location:'Unter den Linden 74, 10117 Berlin', demo: demo, event_type: event_type2, user: user)
 
 event1 = Event.create!(description: 'Sit In!', location:'Unter den Linden 28, 10117 Berlin', demo: demo, event_type: event_type1, user: user)
 
