@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
-gem 'acts_as_votable'
 
+gem 'letter_opener', group: :development
+
+gem 'acts_as_votable'
 gem 'social-share-button'
 
 gem 'bootsnap', require: false

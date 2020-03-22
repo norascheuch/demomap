@@ -6,24 +6,13 @@
         For inquiries, praise and criticism, as well as suggestions for improvement please send us a message. We will get back to you as soon as possible.
       </p>
       <br>
-      <form>
-        <div class="form-group">
-          <label for="validationCustom01">Your Name</label>
-          <input type="text" class="form-control" id="validationCustom01" value="Name" required>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Max.Mustermann@web.de">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Your message</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="text-center">
-         <button class="btn btn-light shadow-sm bg-white" type="submit">Send</button>
-        </div>
-      </form>
+      <%= simple_form_for :contact, :url => contact_path do |f| %>
+        <%= f.input :name%>
+        <%= f.input :email_address, as: :email, hint: 'We will reply to you using this email.' %>
+        <%= f.input :message, as: :text %>
+        <%= f.button :submit, 'Send', class: "new-comment-submit btn-light" %>
+      <% end %>
+
     </div>
   </div>
 </div>

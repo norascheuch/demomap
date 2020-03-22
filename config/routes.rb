@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'pages#splash'
-  get '/dashboard', to: 'pages#dashboard'
-  get '/contact', to: 'pages#contact'
-  get '/organizers', to: 'pages#organizers'
-  get '/tips', to: 'pages#tips'
+  get 'dashboard', to: 'pages#dashboard'
+  get 'contact', to: 'pages#contact'
+  post 'contact', to: 'pages#create_contact'
+  get 'organizers', to: 'pages#organizers'
+  get 'tips', to: 'pages#tips'
 
   resources :demos do
     resources :events, only: [:index, :new, :show, :create, :destroy] do
