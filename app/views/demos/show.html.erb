@@ -68,9 +68,12 @@
 
 
   </div>
-
   <% if policy(@demo).edit? %>
-    <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
+    <div class="btn-plus">
+      <%= link_to edit_demo_path(@demo) do %>
+        <%= image_tag "edit-regular.svg", size: "25x25", alt: "add" %>
+      <% end %>
+    </div>
   <% end %>
 
 </div>

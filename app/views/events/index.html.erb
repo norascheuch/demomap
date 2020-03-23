@@ -60,14 +60,14 @@
               <% end %>
             <% end %>
           </div>
-       </div>
-       <% if current_user == @demo.user %>
-          <div class="btn-plus">
-            <%= link_to new_demo_event_path(@demo) do %>
-              <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
-            <% end %>
-          </div>
-        <% end %>
+      </div>
+      <% if policy(@demo).new? %>
+        <div class="btn-plus">
+          <%= link_to new_demo_event_path(@demo) do %>
+            <%= image_tag "plus.svg", size: "25x25", alt: "add" %>
+          <% end %>
+        </div>
+      <% end %>
      </div>
    </div>
  </div>
