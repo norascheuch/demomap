@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_132330) do
+ActiveRecord::Schema.define(version: 2020_03_22_135852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,14 +86,14 @@ ActiveRecord::Schema.define(version: 2020_03_22_132330) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "routepoints", force: :cascade do |t|
-    t.float "latitude"
-    t.float "longitude"
-    t.string "location"
+  create_table "permissions", force: :cascade do |t|
+    t.bigint "user_id"
     t.bigint "demo_id"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["demo_id"], name: "index_routepoints_on_demo_id"
+    t.index ["demo_id"], name: "index_permissions_on_demo_id"
+    t.index ["user_id"], name: "index_permissions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,7 +105,6 @@ ActiveRecord::Schema.define(version: 2020_03_22_132330) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "organizer", default: false
-    t.integer "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -130,5 +129,6 @@ ActiveRecord::Schema.define(version: 2020_03_22_132330) do
   add_foreign_key "events", "demos"
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "users"
-  add_foreign_key "routepoints", "demos"
+  add_foreign_key "permissions", "demos"
+  add_foreign_key "permissions", "users"
 end
