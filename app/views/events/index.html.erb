@@ -61,7 +61,7 @@
             <% end %>
           </div>
       </div>
-      <% if policy(@demo).new? %>
+      <% if policy(Event.new(demo_id: params[:demo_id])).new? %>
         <div class="btn-plus">
           <%= link_to new_demo_event_path(@demo) do %>
             <%= image_tag "plus.svg", size: "25x25", alt: "add" %>

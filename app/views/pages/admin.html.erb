@@ -48,18 +48,23 @@
       </div>
     </div>
     <h4>Admin</h4>
-    <% @admin_user.each do |user| %>
-      <%= user.email %>
-    <% end %>
+      <ul>
+        <% @admin_user.each do |user| %>
+          <li><%= user.email %> </li>
+        <% end %>
+      </ul>
     <h4>Medics</h4>
-    <% @medic_user.each do |user| %>
-      <%= user.email %>
-    <% end %>
-    <h4>Scouts</h4>
-    <% @scout_user.each do |user| %>
-      <%= user.email %>
-    <% end %>
-
+      <ul>
+        <% @medic_user.each do |user| %>
+          <li> <%= user.email %></li>
+        <% end %>
+      </ul>
+      <h4>Scouts</h4>
+      <ul>
+        <% @scout_user.each do |user| %>
+          <li><%= user.email %></li>
+        <% end %>
+      </ul>
 
   </div>
   <% if policy(@demo).edit? %>
