@@ -35,36 +35,30 @@
 
     </div>
 
-  <h3>Details</h3>
+  <h3>Change user type</h3>
+  <p>You can change a user role for this demonstration (<%= @demo.name %>).</p>
 
     <div class="block">
       <div class="content">
-        <p class="js-excerpt excerpt-hidden"><%= @demo.description %></p>
-      </div>
-        <a role="button" class="js-read-more" href="#">Read More</a>
-    </div>
-
-<!--   <h3><a>Schedule</a></h3>
-
-    <div class="block">
-      <div class="content">
-        <p class="js-excerpt excerpt-hidden">From 13:00 rally of the residents' initiative for civil courage - Gegen Rechts at the Friedrichstraße/corner Johannisstraße.<br>From 13:30 rally "Refugees Welcome" at the Ella Trebe Street (main station) <br>From 14:00 rally of the Berlin Alliance against Right "No place for Nazis" Unter den Linden/corner Friedrichstraße (on the side Brandenburg Gate). <br> From 14:00 Demonstration of the initiative "Splinter & Naked" at Gendarmenmarkt </p>
-      </div>
-        <a role="button" class="js-read-more" href="#Schedule">Read More</a>
-    </div>
-
- -->
-  <h3>Share</h3>
-    <div class="block">
-      <div class="content">
-        <div class="btn-share">
-          <%= social_share_button_tag("Check the #{@demo.name} demo information on DemoMap! ##{@demo.d_hashtag}") %>
-          <%#= link_to demo_events_path(@demo) do %>
-            <%#= image_tag "demo-show-share.svg", alt: "Demonstration" %>
-          <%# end %>
-        </div>
+      <%= simple_form_for :admin, :url => demo_admin_path(@demo) do |f| %>
+        <%= f.input :email_address, collection: @user.map {|u| u.email}%>
+        <%= f.input :role, collection: Permission.roles.keys%>
+        <%= f.button :submit, 'Submit', class: "new-comment-submit btn-light" %>
+      <% end %>
       </div>
     </div>
+    <h4>Admin</h4>
+    <% @admin_user.each do |user| %>
+      <%= user.email %>
+    <% end %>
+    <h4>Medics</h4>
+    <% @medic_user.each do |user| %>
+      <%= user.email %>
+    <% end %>
+    <h4>Scouts</h4>
+    <% @scout_user.each do |user| %>
+      <%= user.email %>
+    <% end %>
 
 
   </div>

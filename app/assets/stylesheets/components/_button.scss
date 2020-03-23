@@ -54,7 +54,23 @@
   bottom: 12vh;
   left: 5vh;
   background: $base-color;
-  color: white;
+  a {color: white;
+    font-size: 21px}
+}
+
+.btn-admin {
+  position: fixed;
+  opacity: 0.8;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  bottom: 12vh;
+  left: calc(5vh + 65px);
+  background: $base-color;
+  a {color: white;
+    font-size: 21px}
 }
 
 .new-comment-submit {
