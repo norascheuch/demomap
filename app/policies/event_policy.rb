@@ -14,7 +14,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def new?
-    record.demo.user == user
+    return Permission.where(demo: record.demo, user: user).present?
   end
 
   def create?

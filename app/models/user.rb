@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :demos
-
+  has_many :permissions
   acts_as_voter
 end

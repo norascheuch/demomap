@@ -8,7 +8,7 @@
 
 require 'faker'
 
-puts'Deleting old events, demo and eventtypes and comments'
+puts'Deleting old events, demo and eventtypes and comments and users'
 
 Comment.destroy_all
 

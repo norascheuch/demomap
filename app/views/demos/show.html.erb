@@ -68,9 +68,19 @@
 
 
   </div>
-
   <% if policy(@demo).edit? %>
-    <td><%= link_to "Edit", edit_demo_path(@demo) %></td>
+    <div class="btn-plus">
+      <%= link_to edit_demo_path(@demo) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    </div>
+  <% end %>
+  <% if policy(@demo).edit? %>
+    <div class="btn-admin">
+      <%= link_to demo_admin_path(@demo) do %>
+        <i class="fas fa-users-cog"></i>
+      <% end %>
+    </div>
   <% end %>
 
 </div>

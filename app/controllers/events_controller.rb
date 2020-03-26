@@ -3,12 +3,6 @@ class EventsController < ApplicationController
   def index
     @demo = Demo.find(params[:demo_id])
     @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).geocoded)
-    # start = JSON.parse(@demo.start_location)['geometry']['coordinates'].join(',')
-    # ende = JSON.parse(@demo.end_location)['geometry']['coordinates'].join(',')
-    # waypoints = JSON.parse(@demo.route).map{|wp| wp['geometry']['coordinates'].join(',')}.join(';')
-    # @mappoints = ''
-    # @mappoints << start + ';' + waypoints + ';' + ende
-    # @mappoints = '13.413930095294177,52.52162393940594;13.410865,52.522989,13.397043,52.517562;13.388856,52.517209;13.391318,52.501354'
     @mappoints = @demo.route
     if @events == []
         @markers =[
@@ -44,6 +38,9 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to demo_events_path(params[:demo_id])
     else
+      @demo = Demo.find(params[:demo_id])
+      @event = Event.new(demo_id: params[:demo_id])
+      flash.alert = 'Something went wrong, please try again'
       render :new
     end
   end

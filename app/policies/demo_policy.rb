@@ -21,15 +21,16 @@ class DemoPolicy < ApplicationPolicy
     return new?
   end
 
-    def edit?
-      return record.user == user
-    end
+  def edit?
+    # yes if current user has entry in permissions table
+    return Permission.where(user: user, demo: record, role: 'admin').present?
+  end
 
-    def update?
-      return edit?
-    end
+  def update?
+    return edit?
+  end
 
-    def destroy?
-      return edit?
-    end
+  def destroy?
+    return record.user == user
+  end
 end

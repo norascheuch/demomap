@@ -14,11 +14,6 @@ class DemosController < ApplicationController
   def new
     @demo = Demo.new
     authorize @demo
-    # @page = request.original_url
-    # @doc = Nokogiri::HTML(open("www.rubygems.org/gems/nokogiri"))
-    # authorize @doc
-    # dataVvalue = doc.css('div.mapbox-directions-steps')[0]["data-lat"]
-    # raise
   end
 
   def create
@@ -40,6 +35,7 @@ class DemosController < ApplicationController
     if @demo.save
       Event.create!(demo: @demo, event_type: EventType.find_by(name: 'Start'), start_time: @demo.start_time, user: @demo.user, description: 'Start of the demonstration', location: @demo.start_location)
       Event.create!(demo: @demo, event_type: EventType.find_by(name: 'End'), end_time: @demo.end_time, user: @demo.user, description: 'End of the demonstration', location: @demo.end_location)
+      Permission.create!(user: current_user, demo: @demo, role: :admin)
       redirect_to demo_path(@demo)
     else
       render :new

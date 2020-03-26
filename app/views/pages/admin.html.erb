@@ -1,0 +1,72 @@
+<div class="card-demo-show-banner", style="background-image: linear-gradient(180deg, rgba(50, 110, 205, 0.5) 0%, rgba(130, 149, 151, 0.5) 59.38%, rgba(255, 234, 169, 0.5) 100%), url('<%= cl_image_path 'banner_demo_y9hias' %>');">
+  <div class="btn-arrow-back-white">
+    <input type="button" onclick="history.go(-1)">
+  </div>
+</div>
+
+<%= link_to demo_events_path(@demo) do %>
+  <div class="card-demo-show-title", style="background-image: linear-gradient(0deg, #FFFFFF 27.69%, rgba(255, 255, 255, 0) 76.27%), url('<%= cl_image_path 'map_ykhmve' %>');" >
+    <div class="card-demo-show-title-content">
+        <%= @demo.name %>
+    </div>
+  <div class="btn-go">
+        <%= image_tag "demo-show-arrow.svg", alt: "Demonstration" %>
+  </div>
+  </div>
+<% end %>
+
+<div class="card-demo-show-container">
+
+  <div class="card-demo-symbols">
+
+      <div class="btn-demo-chatter">
+        <%= link_to demo_comments_path(@demo) do %>
+          <%= image_tag "chat-demo-show.svg", alt: "Demonstration" %>
+        <% end %>
+      </div>
+
+      <div class="card-demo-show-smalltext">
+        <p>
+          <%= @demo.start_time.strftime("%d.%m.%Y") %> <br>
+          <%= @demo.start_time.strftime("%H:%M") %> <br>
+          <%= @demo.start_location %>
+        </p>
+      </div>
+
+    </div>
+
+  <h3>Change user type</h3>
+  <p>You can change a user role for this demonstration (<%= @demo.name %>). Every user with a specific role can create events. Admins can create events, make changes to the demonstration (description, route) and create users with specific roles.</p>
+  <br>
+    <div class="block">
+      <div class="content">
+      <%= simple_form_for :admin, :url => demo_admin_path(@demo) do |f| %>
+        <%= f.input :email_address, collection: @user.map {|u| u.email}%>
+        <%= f.input :role, collection: Permission.roles.keys%>
+        <%= f.button :submit, 'Submit', class: "new-comment-submit btn-light" %>
+      <% end %>
+      </div>
+    </div>
+    <h4>Admin</h4>
+      <ul>
+        <% @admin_user.each do |user| %>
+          <li><%= user.email %> </li>
+        <% end %>
+      </ul>
+    <h4>Medics</h4>
+      <ul>
+        <% @medic_user.each do |user| %>
+          <li> <%= user.email %></li>
+        <% end %>
+      </ul>
+      <h4>Scouts</h4>
+      <ul>
+        <% @scout_user.each do |user| %>
+          <li><%= user.email %></li>
+        <% end %>
+      </ul>
+
+  </div>
+
+</div>
+<%= render 'shared/footer' %>
