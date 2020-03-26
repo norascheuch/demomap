@@ -30,7 +30,9 @@ class PagesController < ApplicationController
 
   def admin
     @demo = Demo.find(params[:demo_id])
-    @user = User.all
+    @user = User.all # leave only for testing!!!!
+    # remove [collection] in simple form!!
+
     # alternative: use one DB request and filter with ruby
     @admin_user = User.joins(:permissions).where(permissions: {role: 'admin'}).where(permissions: {demo: @demo})
     @medic_user = User.joins(:permissions).where(permissions: {role: 'medic'}).where(permissions: {demo: @demo})
