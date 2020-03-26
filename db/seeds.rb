@@ -170,22 +170,22 @@ for i in 1..80 do
   end
 end
 
-date = Date.today + 4# setting the seeds start date
-demo3 = Demo.create!(description:'We invite all rebels to connect daily with a tree, rooting our resilience and strengthening our nervous systems as we lead up to the rebellion in May.
-Nature connection has been proven to help our mental health and reduce stress and anxiety and build our resilience.
-As well as fostering greater rebel resilience and mental health, through creating and nurturing connection with these beings with whom we are so interdependent, we may well find that this action will be helping us, and them, survive the changes that lie ahead.  ', name:'Rooting Rebel Resilience', user: user, start_time: Time.new(date.year,date.month,date.day,'14'), start_location:'Oranienstraße 185, 10999 Berlin', route: '13.413930095294177,52.52162393940594;13.410865,52.522989,13.397043,52.517562;13.388856,52.517209;13.391318,52.501354')
+# date = Date.today + 4# setting the seeds start date
+# demo3 = Demo.create!(description:'We invite all rebels to connect daily with a tree, rooting our resilience and strengthening our nervous systems as we lead up to the rebellion in May.
+# Nature connection has been proven to help our mental health and reduce stress and anxiety and build our resilience.
+# As well as fostering greater rebel resilience and mental health, through creating and nurturing connection with these beings with whom we are so interdependent, we may well find that this action will be helping us, and them, survive the changes that lie ahead.  ', name:'Rooting Rebel Resilience', user: user, start_time: Time.new(date.year,date.month,date.day,'14'), start_location:'Oranienstraße 185, 10999 Berlin', route: '13.413930095294177,52.52162393940594;13.410865,52.522989,13.397043,52.517562;13.388856,52.517209;13.391318,52.501354')
 
-date = Date.today + 7# setting the seeds start date
-demo4 = Demo.create!(description:'#FridaysForFuture is a movement that began in August 2018, after 15 years old Greta Thunberg sat in front of the Swedish parliament every schoolday for three weeks, to protest against the lack of action on the climate crisis. She posted what she was doing on Instagram and Twitter and it soon went viral.
-On the 8th of September, Greta decided to continue striking every Friday until the Swedish policies provided a safe pathway well under 2-degree C, i.e. in line with the Paris agreement.
-The hashtags #FridaysForFuture and #Climatestrike spread and many students and adults began to protest outside of their parliaments and local city halls all over the world. This has also inspired the Belgium Thursday school strikes.  ', name:'Fridays for future', user: user, start_time: Time.new(date.year,date.month,date.day,'18'), start_location:'Alexanderplatz, Berlin')
+# date = Date.today + 7# setting the seeds start date
+# demo4 = Demo.create!(description:'#FridaysForFuture is a movement that began in August 2018, after 15 years old Greta Thunberg sat in front of the Swedish parliament every schoolday for three weeks, to protest against the lack of action on the climate crisis. She posted what she was doing on Instagram and Twitter and it soon went viral.
+# On the 8th of September, Greta decided to continue striking every Friday until the Swedish policies provided a safe pathway well under 2-degree C, i.e. in line with the Paris agreement.
+# The hashtags #FridaysForFuture and #Climatestrike spread and many students and adults began to protest outside of their parliaments and local city halls all over the world. This has also inspired the Belgium Thursday school strikes.  ', name:'Fridays for future', user: user, start_time: Time.new(date.year,date.month,date.day,'18'), start_location:'Alexanderplatz, Berlin')
 
-date = Date.today + 9# setting the seeds start date
-demo5 = Demo.create!(description:'Mothers & Babies of XR, with support of Grandparents and other family members, will stage a mass Feed-In at the Department for Business, Energy & Industry Strategy to demand the END of Fossil Fuel Madness.
-Despite signing the 2015 Paris Agreement, and despite the UK Government declaring a Climate Emergency in April 2019, UK carbon emissions continue to increase. The true figures of carbon emissions include imports, shipping, aviation, deforestation, and destruction of peat lands. Plans are underway for the new Drax Gas Power Station, Bradley open face coal mine expansion, HS2, and Teeside Valley Airport Expansion. ', name:'End Fossil Fuel Madness', user: user, start_time: Time.new(date.year,date.month,date.day,'14'), start_location:'Gendarmenmarkt, 10117 Berlin')
+# date = Date.today + 9# setting the seeds start date
+# demo5 = Demo.create!(description:'Mothers & Babies of XR, with support of Grandparents and other family members, will stage a mass Feed-In at the Department for Business, Energy & Industry Strategy to demand the END of Fossil Fuel Madness.
+# Despite signing the 2015 Paris Agreement, and despite the UK Government declaring a Climate Emergency in April 2019, UK carbon emissions continue to increase. The true figures of carbon emissions include imports, shipping, aviation, deforestation, and destruction of peat lands. Plans are underway for the new Drax Gas Power Station, Bradley open face coal mine expansion, HS2, and Teeside Valley Airport Expansion. ', name:'End Fossil Fuel Madness', user: user, start_time: Time.new(date.year,date.month,date.day,'14'), start_location:'Gendarmenmarkt, 10117 Berlin')
 
-date = Date.today + 12# setting the seeds start date
-demo6 = Demo.create!(description:'Extinction Rebellion are taking to the streets in support and solidarity with women’s movements around the world. Extinction Rebellion is a global movement and we stand side by side with our sisters all around the world, many of whom don’t have the same freedom of speech and expression we have. We would like to invite every part of every one to join us today to stand in solidarity with women and women’s rights movements all around the world. We are all crew!', name:'International Women’s Day – all genders', user: user, start_time: Time.new(date.year,date.month,date.day,'10'), start_location:'Auguststraße 24, 10117 Berlin')
+# date = Date.today + 12# setting the seeds start date
+# demo6 = Demo.create!(description:'Extinction Rebellion are taking to the streets in support and solidarity with women’s movements around the world. Extinction Rebellion is a global movement and we stand side by side with our sisters all around the world, many of whom don’t have the same freedom of speech and expression we have. We would like to invite every part of every one to join us today to stand in solidarity with women and women’s rights movements all around the world. We are all crew!', name:'International Women’s Day – all genders', user: user, start_time: Time.new(date.year,date.month,date.day,'10'), start_location:'Auguststraße 24, 10117 Berlin')
 
 
 puts'finished'
