@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:splash, :contact, :organizers, :tips, :impressum, :create_contact]
+  skip_before_action :authenticate_user!, only: [:splash, :contact, :organizers, :tips, :impressum, :contact_create]
 
   def splash
   end
