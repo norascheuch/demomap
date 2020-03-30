@@ -49,7 +49,7 @@ class PagesController < ApplicationController
     elsif user.nil?
       flash.alert = "Please specify an existing user."
     else p.save
-      flash.notice = "User updated"
+      flash.notice = p.errors.messages[:user][0].nil? ? "User updated" : p.errors.messages[:user][0]
     end
   end
 end

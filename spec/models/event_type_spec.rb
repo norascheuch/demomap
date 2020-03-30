@@ -7,4 +7,5 @@ RSpec.describe EventType, type: :model do
   # Validation tests
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:icon) }
+  it { should validate_uniqueness_of(:name) }
 end
