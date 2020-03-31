@@ -37,7 +37,9 @@
                 <div class="card-demo-infos-content-details">
                   <p class="d-time"><%= demo.start_time.strftime("%l:%M %p")  %> <%= demo.start_location.split(',').first %></p>
                   <h2><%= demo.name %></h2>
-                  <p><%= demo.description.first(20) + "..." %></p>
+                  <% if !demo.description.nil?  %>
+                  <p> <%= demo.description.first(20) + "..." %></p>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -45,7 +47,7 @@
         <% end %>
       <% end %>
 
-      <% if !current_user.nil? && current_user.organizer? %>
+      <% if !current_user.nil? && policy(:demo).new? %>
         <div class="btn-plus">
           <%= link_to new_demo_path do %>
             <%= image_tag "plus.svg", size: "25x25", alt: "add" %>

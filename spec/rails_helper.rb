@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'database_cleaner'
 
+
 ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../config/environment', __dir__)
@@ -12,6 +13,13 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Capybara.register_driver :headless_chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu window-size=1400,900])
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+Capybara.save_path = Rails.root.join('tmp/capybara')
+Capybara.javascript_driver = :headless_chrome
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -73,6 +81,9 @@ RSpec.configure do |config|
   # add `FactoryBot` methods
   config.include FactoryBot::Syntax::Methods
 
+  # Devise test helpers
+  config.include Warden::Test::Helpers
+
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -85,4 +96,5 @@ RSpec.configure do |config|
       example.run
     end
   end
+
 end
