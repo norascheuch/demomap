@@ -1,6 +1,6 @@
-# FactoryBot.define do
-#   factory :event_type do
-#     name { Faker::Lorem.words(number: 2) }
-#     icon { 'icon' }
-#   end
-# end
+FactoryBot.define do
+  factory :event_type do
+    name { Faker::Lorem.word }
+    icon { Faker::Lorem.word }
+  end
+end

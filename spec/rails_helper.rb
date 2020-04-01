@@ -1,6 +1,8 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'capybara/rspec'
 require 'database_cleaner'
+require 'capybara-screenshot/rspec'
 
 
 ENV['RAILS_ENV'] ||= 'test'
@@ -18,8 +20,14 @@ Capybara.register_driver :headless_chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu window-size=1400,900])
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
+Capybara::Screenshot.register_driver(:headless_chrome) do |driver, path|
+  driver.browser.save_screenshot(path)
+end
 Capybara.save_path = Rails.root.join('tmp/capybara')
+Capybara.current_driver = :headless_chrome
 Capybara.javascript_driver = :headless_chrome
+Capybara::Screenshot.autosave_on_failure = true
+# to manually save screenshots: screenshot_and_save_page
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -88,6 +96,7 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
+    # FactoryBot.lint
   end
 
   # start the transaction strategy as examples are run
