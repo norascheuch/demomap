@@ -6,9 +6,9 @@ services:
   - redis
 sudo: false
 dist: trusty
-# before_install:
-# - sudo apt-get update
-# - sudo apt-get install google-chrome-stable
+before_install:
+- sudo apt-get update
+- sudo apt-get install google-chrome-stable
 addons:
   postgresql: '9.6'
   chrome: stable
