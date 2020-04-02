@@ -13,7 +13,7 @@ RSpec.feature 'User looks at map' do
   feature 'they click on a demo and see the show page', js: true do
     scenario 'returns share buttons' do
       visit("/demos/#{demo_id}")
-      pp page.body
+      # pp page.body
       assert_selector('.social-share-button')
       # visit("/demos/#{demo_id}/events")
       # Capybara::Screenshot.screenshot_and_open_image
