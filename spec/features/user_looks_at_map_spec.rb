@@ -14,9 +14,9 @@ RSpec.feature 'User looks at map' do
     scenario 'returns share buttons' do
       visit("/demos/#{demo_id}")
       assert_selector('.social-share-button')
-      visit("/demos/#{demo_id}/events")
-      Capybara::Screenshot.screenshot_and_open_image
-      assert_selector('.marker')
+      # visit("/demos/#{demo_id}/events")
+      # Capybara::Screenshot.screenshot_and_open_image
+      # assert_selector('.marker')
     end
   end
 
