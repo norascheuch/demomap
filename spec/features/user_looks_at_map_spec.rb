@@ -9,15 +9,12 @@ RSpec.feature 'User looks at map' do
   n = 3
   let!(:demos) { create_list(:demo, n) }
   let(:demo_id) { demos.last.id }
-  pp 'before scenario'
 
   feature 'they click on a demo and see the show page', js: true do
     scenario 'returns share buttons' do
-      pp 'in scenario'
       visit("/demos/#{demo_id}")
-      pp 'after visit scenario'
+      pp page.body
       assert_selector('.social-share-button')
-      pp 'after assert selector'
       # visit("/demos/#{demo_id}/events")
       # Capybara::Screenshot.screenshot_and_open_image
       # assert_selector('.marker')
