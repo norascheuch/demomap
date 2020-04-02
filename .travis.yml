@@ -3,13 +3,15 @@ cache:
   bundler: true
   yarn: true
 services:
-  - redis-server
-sudo: required
-before_install:
-- sudo apt-get update
-- sudo apt-get install google-chrome-stable
+  - redis
+sudo: false
+dist: trusty
+# before_install:
+# - sudo apt-get update
+# - sudo apt-get install google-chrome-stable
 addons:
   postgresql: '9.6'
+  chrome: stable
 before_script:
   - psql -c 'create database demomap_test;' -U postgres
 script:

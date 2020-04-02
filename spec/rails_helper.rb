@@ -27,7 +27,7 @@ Capybara.save_path = Rails.root.join('tmp/capybara')
 Capybara.current_driver = :headless_chrome
 Capybara.javascript_driver = :headless_chrome
 Capybara::Screenshot.autosave_on_failure = true
-Capybara.default_max_wait_time = 150
+Capybara.default_max_wait_time = 15
 
 # to manually save screenshots: screenshot_and_save_page
 
