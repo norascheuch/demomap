@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/xenos-ra/demomap.svg?branch=master)](https://travis-ci.org/xenos-ra/demomap)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3f31d38946f5d2677f8d/maintainability)](https://codeclimate.com/github/xenos-ra/demomap/maintainability)
 
 # Readme
 
