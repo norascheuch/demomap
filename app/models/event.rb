@@ -5,10 +5,8 @@ class Event < ApplicationRecord
   belongs_to :demo
   belongs_to :event_type
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   geocoded_by :location
-  validates :location, presence: true
-  validates :latitude, presence: true
-  validates :longitude, presence: true
+  validates :description, :location, presence: true
 end
