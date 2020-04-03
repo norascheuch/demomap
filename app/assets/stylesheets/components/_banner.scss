@@ -19,13 +19,12 @@
   height: 100px;
   flex-direction: row;
   align-items: flex-start;
+  padding-top: 15px;
 }
 
 .banner-content {
   align-self: flex-start;
-  width: 100%;
   text-align: center;
-  padding-top: 12px;
   -webkit-box-flex: 1;
   flex-grow: 1;
   h1 {

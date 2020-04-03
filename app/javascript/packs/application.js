@@ -21,3 +21,4 @@ hiddenHeader();
 commentUpdate();  // this is left here to discuss with santi, it can be deleted (inclusive the corresponding file) at the end of march latest
 readMore();
 // add_to_home_screen();
+
