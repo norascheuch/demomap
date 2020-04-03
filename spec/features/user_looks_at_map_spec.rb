@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 
-RSpec.feature 'User looks at map' do
+RSpec.feature 'User looks at map', js: true do
+  # pp page.body
+  # sleep 1
+  # screenshot_and_open_image
 
   # initialize test data
   let!(:start_event_type) { create(:event_type, name: "Start")}
@@ -10,14 +13,20 @@ RSpec.feature 'User looks at map' do
   let!(:demos) { create_list(:demo, n) }
   let(:demo_id) { demos.last.id }
 
-  feature 'they click on a demo and see the show page', js: true do
+  feature 'they click on a demo, see the show page and can access the map', js: true do
     scenario 'returns share buttons' do
       visit("/demos/#{demo_id}")
-      # pp page.body
       assert_selector('.social-share-button')
-      # visit("/demos/#{demo_id}/events")
-      # Capybara::Screenshot.screenshot_and_open_image
-      # assert_selector('.marker')
+    end
+
+    scenario 'opens map and returns JS' do
+      visit("/demos/#{demo_id}/events")
+      assert_selector('.mapboxgl-marker')
+      # save_and_open_screenshot
+    end
+
+    scenario 'events length is 2' do
+      expect(demos.last.events.length).to eq(2)
     end
   end
 
@@ -26,7 +35,6 @@ RSpec.feature 'User looks at map' do
       visit root_path
       click_link('Know')
       assert_selector('.card-demo', count: n)
-      screenshot_and_open_image
     end
   end
 

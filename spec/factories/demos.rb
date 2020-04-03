@@ -6,5 +6,9 @@ FactoryBot.define do
     association :user, factory: :user
     start_location { Faker::Address.full_address }
     end_location { Faker::Address.full_address }
+
+    # after_create do |demo|
+    #   demo.events << FactoryBot.create_list(:event, 2, description: ["End", "Start"])
+    # end
   end
 end

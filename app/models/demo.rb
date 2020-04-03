@@ -3,6 +3,7 @@ class Demo < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :permissions, dependent: :destroy
+  has_many :event_types, through: :events
 
   validates :name, :start_time, :end_time, presence: true
 
