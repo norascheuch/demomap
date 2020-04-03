@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xenos-ra/demomap.svg?branch=master)](https://travis-ci.org/xenos-ra/demomap)
+
 # Readme
 
 DemoMap is an app that enables organizers of demonstrations to share live information during a demonstration, e.g. route information, medics locations, live comments and so on. Demonstrators can access this information anonymously or with log in to write comments and vote on comments.
