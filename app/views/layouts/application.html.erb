@@ -17,10 +17,10 @@
 
     <!-- Splash screen configuration for iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" sizes="180x180" href="app/assets/images/single-page-icon.png">
     <% if current_page?(root_path) %>
         <meta HTTP-EQUIV="REFRESH" content="3; <%= demos_path %>">
     <% end %>
-    <link rel="apple-touch-icon" sizes="180x180" href="app/assets/images/single-page-icon.png">
 
     <%= favicon_link_tag asset_path('red-icon-demo-map.svg') %>
     <title>DemoMap | Real-time Info for your Demo</title>
@@ -28,6 +28,10 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
   </head>
   <body>
 
