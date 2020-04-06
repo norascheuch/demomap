@@ -35,14 +35,13 @@
     <%= render 'shared/flashes' unless current_page?(:root) %>
 
     <div class="container">
-          <div class="row justify-content-center">
-<div class="col-12 col-lg-8 background-color"    style="width: 100%;min-height: 100vh;">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 background-color"    style="width: 100%;min-height: 100vh;">
 
-    <%= yield %>
-    <div background-color style="height: 20px;"></div>
-    </div>
+                <%= yield %>
 
-</div>
+            </div>
+        </div>
     </div>
 
     <%#= render 'shared/footer' unless current_page?(:root) %>
