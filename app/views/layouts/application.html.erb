@@ -17,6 +17,9 @@
 
     <!-- Splash screen configuration for iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <% if current_page?(root_path) %>
+        <meta HTTP-EQUIV="REFRESH" content="3; <%= demos_path %>">
+    <% end %>
     <link rel="apple-touch-icon" sizes="180x180" href="app/assets/images/single-page-icon.png">
 
     <%= favicon_link_tag asset_path('red-icon-demo-map.svg') %>
@@ -30,7 +33,17 @@
 
     <%#= render 'shared/banner' unless current_page?(:root) %>
     <%= render 'shared/flashes' unless current_page?(:root) %>
-    <%= yield %>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 background-color"    style="width: 100%;min-height: 100vh;">
+
+                <%= yield %>
+
+            </div>
+        </div>
+    </div>
+
     <%#= render 'shared/footer' unless current_page?(:root) %>
     <%= javascript_include_tag 'application' %>
 

@@ -1,7 +1,7 @@
 ActionMailer::Base.smtp_settings = {
-  address: "smtp.gmail.com",
+  address: "elektropost.org",
   port: 587,
-  domain: 'gmail.com',
+  domain: 'elektropost.org',
   user_name: ENV['MAIL_ADDRESS'],
   password: ENV['MAIL_APP_PASSWORD'],
   authentication: :login,

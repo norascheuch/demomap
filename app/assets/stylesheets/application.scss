@@ -26,3 +26,15 @@ a {
   color: black;
   }
 }
+
+.background-color {
+  background: $light-gray;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (min-width: 768px) {
+.container, .container-sm, .container-md {
+    max-width: 100% !important;
+}
+}
