@@ -10,8 +10,6 @@ const markers = JSON.parse(demoMap.dataset.markers);
 // creates empty map
 const map = L.map('map', {zoomControl: false}).setView([52.521321, 13.4111854], 13);
 
-map.attributionControl.setPosition('topright');
-
 // add markers to map and the bounds array that fits the map to its markers
 let bounds = []
 
@@ -46,6 +44,15 @@ L.Routing.control({
   },
   router: L.Routing.mapbox(process.env.MAPBOX_API_KEY, {profile: 'mapbox/walking'})
 }).addTo(map);
+
+
+document.getElementById('locate-position').addEventListener('click', () => {
+  map.locate({setView: true, maxZoom: 15});
+});
+
+map.on('locationfound', function(e) {
+    L.marker(e.latlng).addTo(map)
+});
 
 
 // add tiles to map

@@ -32,6 +32,7 @@
             data-mappoints="<%= @mappoints.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           ></div>
+          <button id="locate-position" class="btn"><i class="fas fa-map-marker-alt"></i></button>
         </div>
         <div class="tab-pane fade" id="pills-event" role="tabpanel" aria-labelledby="pills-event-tab">
             <% @events.order(start_time: :asc).each do |event| %>
