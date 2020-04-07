@@ -6,6 +6,7 @@
     "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
+    "dotenv": "^8.2.0",
     "flatpickr": "^4.6.3",
     "jquery": "^3.4.1",
     "leaflet": "^1.6.0",

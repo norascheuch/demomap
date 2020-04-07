@@ -1,3 +1,4 @@
+require('dotenv').config()
 var L = require('leaflet');
 require('leaflet-routing-machine');
 
@@ -9,11 +10,12 @@ const markers = JSON.parse(demoMap.dataset.markers);
 // creates empty map
 const map = L.map('map', {zoomControl: false}).setView([52.521321, 13.4111854], 13);
 
-console.log(demoMap.dataset.mappoints)
+map.attributionControl.setPosition('topright');
 
 // add markers to map and the bounds array that fits the map to its markers
 let bounds = []
 
+// extract marker information
 markers.forEach((rawMarker) => {
   markerLoc = [rawMarker.lat, rawMarker.lng]
   const icon = L.icon({
@@ -27,16 +29,22 @@ markers.forEach((rawMarker) => {
 });
 
 
+// fit map to marker
 map.fitBounds(bounds);
 
 
+let route = demoMap.dataset.mappoints
+route = route.slice(1, route.length).split(';').map(entry => entry.split(',').map(ent => parseFloat(ent)).reverse())
 
 // add routing
 L.Routing.control({
-  waypoints: [
-    L.latLng(57.74, 11.94),
-    L.latLng(57.6792, 11.949)
-  ]
+  waypoints: route,
+  createMarker: function() { return null; },
+  lineOptions : {
+    addWaypoints: false,
+    styles: [{fillColor: '#74B1F9', opacity: 0.7, weight: 5}]
+  },
+  router: L.Routing.mapbox(process.env.MAPBOX_API_KEY, {profile: 'mapbox/walking'})
 }).addTo(map);
 
 
@@ -47,7 +55,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     id: 'mapbox/light-v10',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: demoMap.dataset.mapboxApiKey
+    accessToken: process.env.MAPBOX_API_KEY
 }).addTo(map);
 
 
