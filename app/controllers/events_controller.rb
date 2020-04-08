@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     @demo = Demo.find(params[:demo_id])
     @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).geocoded)
     @mappoints = @demo.route
+    # @mappoints = @demo.route.split(';').map{ |entry| entry.split(',').map {|e| e.to_f}.reverse}
     if @events == []
         @markers =[
              {

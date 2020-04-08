@@ -1,5 +1,4 @@
 <%= link_to demo_event_path(demo, event) do %>
-  <div class="card-popup">
     <div class="card-popup-header">
        <%= image_tag event.event_type.icon%>
        <p><%= event.event_type.name%></p>
@@ -15,7 +14,6 @@
         <i class="far fa-comment"></i><p><%= event.comments.length%></p>
       </div>
     </div>
-  </div>
 <% end %>
 
 

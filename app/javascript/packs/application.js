@@ -8,17 +8,17 @@ import "../plugins/flatpickr"
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { toggleShadow } from '../plugins/footer_menu';
-import { commentUpdate } from '../plugins/comment_update';
 import { hiddenHeader } from '../plugins/event_header';
 import { readMore } from '../plugins/read_more';
+import { leafletMainMap } from '../plugins/leaflet_main_map';
 // import { readMore } from '../plugins/add_to_home_screen.js';
-
 
 
 initMapbox();
 toggleShadow();
 hiddenHeader();
-commentUpdate();  // this is left here to discuss with santi, it can be deleted (inclusive the corresponding file) at the end of march latest
 readMore();
+leafletMainMap();
 // add_to_home_screen();
+
 
