@@ -19,8 +19,6 @@ class DemosController < ApplicationController
   def create
     @demo = Demo.new(demo_params)
     authorize @demo
-    raise
-    # JSON.parse(params[:demo][:route])
     @demo.user = current_user
     if route && @demo.save
       # events and permission are generated in model
@@ -46,18 +44,11 @@ class DemosController < ApplicationController
   end
 
   def route
-    return false if params[:demo][:start_location].empty? || params[:demo][:end_location].empty?
-    start = JSON.parse(params[:demo][:start_location])['geometry']['coordinates']
-    @demo.start_location = Geocoder.search([start[1], start[0]])[0].data['display_name']
-    ende = JSON.parse(params[:demo][:end_location])['geometry']['coordinates']
-    @demo.end_location = Geocoder.search([ende[1], ende[0]])[0].data['display_name']
-    waypoints = JSON.parse(params[:demo][:route]).map{|wp| wp['geometry']['coordinates'].join(',')}.join(';')
-    mappoints = ''
-    if waypoints == ''
-      mappoints << start.join(',') + ';' + ende.join(',')
-    else
-      mappoints << start.join(',') + ';' + waypoints + ';' + ende.join(',')
+    if params[:demo][:route].present?
+      info = JSON.parse(params[:demo][:route])
+      @demo.start_location = info[0]['name']
+      @demo.end_location = info[-1]['name']
+      @demo.route = info.map{|hash| hash['latLng'].values.join(',')}.join(';')
     end
-    @demo.route = mappoints
   end
 end
