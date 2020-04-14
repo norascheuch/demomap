@@ -19,6 +19,8 @@ class DemosController < ApplicationController
   def create
     @demo = Demo.new(demo_params)
     authorize @demo
+    raise
+    # JSON.parse(params[:demo][:route])
     @demo.user = current_user
     if route && @demo.save
       # events and permission are generated in model

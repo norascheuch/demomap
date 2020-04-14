@@ -27,18 +27,16 @@ const leafletNewDemo = () => {
         accessToken: accessToken
     }).addTo(map);
 
-
-
     L.Routing.control({
-    // waypoints: [
-    //     L.latLng(57.74, 11.94),
-    //     L.latLng(57.6792, 11.949)
-    // ],
     router: new L.Routing.mapbox(accessToken, {profile: 'mapbox/walking'}),
     geocoder: L.Control.Geocoder.mapbox(accessToken)
-    }).addTo(map);
-
-
+    })
+    .on('routeselected', function(e) {
+        var route = e.route;
+        console.log(JSON.stringify(route.inputWaypoints, null, 2));
+        document.getElementById('demo_route').value = JSON.stringify(route.inputWaypoints, null, 2);
+    })
+    .addTo(map);
   }
 };
 
