@@ -13,7 +13,7 @@ const leafletMainMap = () => {
     const markers = JSON.parse(mainMap.dataset.markers);
     const accessToken = mainMap.dataset.token;
     let route = mainMap.dataset.mappoints;
-    route = route.slice(1, route.length).split(';').map(entry => entry.split(',').map(ent => parseFloat(ent)).reverse());
+    route = route.slice(1, route.length).split(';').map(entry => entry.split(',').map(ent => parseFloat(ent)));
 
     // creates empty map
     const map = L.map('main-map', {zoomControl: false}).setView([52.521321, 13.4111854], 13);

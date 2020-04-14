@@ -1,6 +1,7 @@
-.leaflet-routing-container {
+.leaflet-routing-alt {
   display: none;
 }
+
 
 #locate-position{
   position:absolute;
@@ -14,23 +15,9 @@
 }
 
 #main-map {
-
   top: 0;
   bottom: 0;
   left: 0;
   width: 100%;
-
   position: fixed;
 }
-
-// .mapboxgl-ctrl-top-right{
-//   z-index: 100;
-// }
-
-
-.mapboxgl-ctrl-group  {
-  position: fixed;
-  top: 100px;
-  right: 20px
-}
-

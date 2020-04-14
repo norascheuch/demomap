@@ -10,6 +10,7 @@
     "flatpickr": "^4.6.3",
     "jquery": "^3.4.1",
     "leaflet": "^1.6.0",
+    "leaflet-control-geocoder": "^1.12.1",
     "leaflet-routing-machine": "^3.2.12",
     "mapbox-gl": "^1.8.1",
     "minimist": "^1.2.5",
