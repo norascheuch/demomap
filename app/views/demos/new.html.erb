@@ -3,7 +3,6 @@
     <div class="row text-align">
       <div class="col-12">
       <h1>Create your Demo</h1>
-
                       <%= simple_form_for @demo do |f| %>
                         <%= f.input :name, required: true %>
                         <%= f.input :description %>
@@ -18,11 +17,10 @@
         <%= link_to "New Demo", new_demo_path %>
       <% end %>
       <div
-        id="map_two"
+        id="new-demo"
         style="width: 100%;
         height: 800px;"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        data-mappoints="<%= @mappoints.to_json %>"
+        data-token="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
       <br><p>You NEED to input a start and end location! You can change these later.</p><br>
       <%= f.button :submit, "Create new Demo", class: 'btn btn-secondary w-100' %>
