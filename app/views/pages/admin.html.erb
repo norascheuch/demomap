@@ -42,7 +42,7 @@
     <div class="block">
       <div class="content">
       <%= simple_form_for :admin, :url => demo_admin_path(@demo) do |f| %>
-        <%= f.input :email_address, collection: @user.map {|u| u.email}%>
+        <%= f.input :email_address%>
         <%= f.input :role, collection: Permission.roles.keys%>
         <%= f.button :submit, 'Submit', class: "new-comment-submit btn-light" %>
       <% end %>
