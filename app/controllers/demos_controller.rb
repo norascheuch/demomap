@@ -1,5 +1,6 @@
 class DemosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_demo, only: [:show, :edit, :update]
 
   def index
     @demo = Demo.all
@@ -7,7 +8,6 @@ class DemosController < ApplicationController
   end
 
   def show
-    @demo = Demo.find(params[:id])
     authorize @demo
   end
 
@@ -29,8 +29,17 @@ class DemosController < ApplicationController
   end
 
   def edit
-    @demo = Demo.find(params[:id])
     authorize @demo
+  end
+
+  def update
+    authorize @demo
+    if route && @demo.update!(demo_params)
+      # events are updated in model
+      redirect_to demo_path(@demo)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -38,6 +47,10 @@ class DemosController < ApplicationController
   end
 
   private
+
+  def find_demo
+    @demo = Demo.find(params[:id])
+  end
 
   def demo_params
     params.require(:demo).permit(:name, :description, :start_time, :end_time)
@@ -48,6 +61,7 @@ class DemosController < ApplicationController
       info = JSON.parse(params[:demo][:route])
       @demo.start_location = info[0]['name']
       @demo.end_location = info[-1]['name']
+      return false if @demo.start_location == "" || @demo.end_location == ""
       @demo.route = info.map{|hash| hash['latLng'].values.join(',')}.join(';')
     end
   end

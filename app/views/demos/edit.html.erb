@@ -1,9 +1,27 @@
-<%= render 'shared/banner', header: 'Demos#edit' %>
+<%= render 'shared/banner', header: 'Edit Demo' %>
   <div class="container justfiy-content-center">
     <div class="row text-align">
       <div class="col-12">
-      <p>Find me in app/views/demos/edit.html.erb</p>
-      </div>
+      <h1>Create your Demo</h1>
+                      <%= simple_form_for @demo do |f| %>
+                        <%= f.input :name, required: true %>
+                        <%= f.input :description %>
+                        <%= f.input :route, as: :hidden %>
+                        <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+                        <%= f.input :end_time, as: :string, required: true,  input_html: {class: "datepicker"} %>
+
+      <p>Update Demo Route</p>
+      <div
+        id="new-demo"
+        style="width: 100%;
+        height: 800px;"
+        data-token="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-route="<%= @demo.route.to_json %>"
+      ></div>
+      <br><p>You NEED to input a start and end location! You can change these later.</p><br>
+      <%= f.button :submit, "Update Demo", class: 'btn btn-secondary w-100' %>
+                      <% end %>
     </div>
   </div>
-<%= render 'shared/footer' %>
+</div>
+<%= render 'shared/footer_general' %>

@@ -1,4 +1,4 @@
-<%= render 'shared/banner', header: 'Demos#new' %>
+<%= render 'shared/banner', header: 'Create a new Demo' %>
   <div class="container justfiy-content-center">
     <div class="row text-align">
       <div class="col-12">
@@ -10,9 +10,7 @@
                         <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
                         <%= f.input :end_time, as: :string, required: true,  input_html: {class: "datepicker"} %>
 
-      <% if policy(@demo).create? %>
-        <%= link_to "New Demo", new_demo_path %>
-      <% end %>
+      <p>Demo Route</p>
       <div
         id="new-demo"
         style="width: 100%;
