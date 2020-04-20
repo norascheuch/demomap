@@ -1,4 +1,4 @@
-<%= render 'shared/banner', header: 'Demos#new' %>
+<%= render 'shared/banner', header: 'Create a new Demo' %>
   <div class="container justfiy-content-center">
     <div class="row text-align">
       <div class="col-12">
@@ -10,16 +10,14 @@
                         <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
                         <%= f.input :end_time, as: :string, required: true,  input_html: {class: "datepicker"} %>
 
-      <% if policy(@demo).create? %>
-        <%= link_to "New Demo", new_demo_path %>
-      <% end %>
+      <p>Demo Route</p>
       <div
         id="new-demo"
         style="width: 100%;
         height: 800px;"
         data-token="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
-      <br><p>You NEED to input a start and end location! You can change these later.</p><br>
+      <br><p>You NEED to input a start and end location! You can change these later. When draggin the start and end location of the demo make sure to also change a waypoint before saving! Otherwise the update will not be saved.</p><br>
       <%= f.button :submit, "Create new Demo", class: 'btn btn-secondary w-100' %>
                       <% end %>
     </div>

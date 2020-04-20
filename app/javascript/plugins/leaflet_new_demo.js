@@ -13,6 +13,11 @@ const leafletNewDemo = () => {
 
     // gets all map data from HTML
     const accessToken = newDemo.dataset.token;
+    let route = newDemo.dataset.route;
+    if (route != null) {
+        route = route.slice(1, route.length).split(';').map(entry => entry.split(',').map(ent => parseFloat(ent)));
+    }
+
 
     // creates empty map
     const map = L.map('new-demo', {zoomControl: true}).setView([52.521321, 13.4111854], 13);
@@ -28,6 +33,7 @@ const leafletNewDemo = () => {
     }).addTo(map);
 
     L.Routing.control({
+    waypoints: route,
     router: new L.Routing.mapbox(accessToken, {profile: 'mapbox/walking'}),
     geocoder: L.Control.Geocoder.mapbox(accessToken)
     })
