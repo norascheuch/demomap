@@ -53,15 +53,15 @@ class DemosController < ApplicationController
   end
 
   def demo_params
-    params.require(:demo).permit(:name, :description, :start_time, :end_time)
+    params.require(:demo).permit(:name, :description, :start_time, :end_time, :d_hashtag)
   end
 
   def route
     if params[:demo][:route].present?
       info = JSON.parse(params[:demo][:route])
-      @demo.start_location = info[0]['name']
-      @demo.end_location = info[-1]['name']
-      return false if @demo.start_location == "" || @demo.end_location == ""
+      # when start/end location is the last to be changed by dragging no name is send
+      @demo.start_location = info[0]['name'] == '' || info[0]['name'].nil? ? Geocoder.search(info[0]["latLng"].values).first.address : info[0]['name']
+      @demo.end_location = info[-1]['name'] == '' || info[-1]['name'].nil? ? Geocoder.search(info[-1]["latLng"].values).first.address : info[-1]['name']
       @demo.route = info.map{|hash| hash['latLng'].values.join(',')}.join(';')
     end
   end
