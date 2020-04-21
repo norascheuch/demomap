@@ -12,7 +12,7 @@ gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
-gem 'rails', '5.2.4.2'
+gem 'rails', '6.0.2.2'
 gem 'redis'
 gem 'pundit'
 gem 'geocoder'
@@ -29,6 +29,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'bullet'
+  gem 'rack-mini-profiler'
 end
 
 group :development, :test do
