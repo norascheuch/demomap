@@ -27,6 +27,7 @@ class EventsController < ApplicationController
     @event = Event.new(demo_id: params[:demo_id])
     authorize @event
     @demo = Demo.find(params[:demo_id])
+    @collection = EventType.where("id > 2")
   end
 
   def create
@@ -59,7 +60,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:location, :description)
+    params.require(:event).permit(:location, :description, :latitude, :longitude)
   end
 
 end
