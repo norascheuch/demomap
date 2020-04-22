@@ -68,14 +68,20 @@
 
 
   </div>
+  <% if policy(@demo).destroy? %>
+    <div class="btn-delete-demo">
+      <%= link_to demo_path(@demo), method: :delete,  data: { confirm: "Are you sure you want to delete this demo and all corresponding events and comments? This action cannot be reversed!!" } do %>
+          <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  <% end %>
+
   <% if policy(@demo).edit? %>
     <div class="btn-plus">
       <%= link_to edit_demo_path(@demo) do %>
         <i class="far fa-edit"></i>
       <% end %>
     </div>
-  <% end %>
-  <% if policy(@demo).edit? %>
     <div class="btn-admin">
       <%= link_to demo_admin_path(@demo) do %>
         <i class="fas fa-users-cog"></i>

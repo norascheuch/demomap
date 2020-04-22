@@ -1,0 +1,18 @@
+.event-edit {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px
+}
+
+.btn-event {
+  opacity: 0.8;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background: $base-color;
+  a {color: white;
+    font-size: 21px}
+}

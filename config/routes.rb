@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'tips', to: 'pages#tips'
 
   resources :demos do
-    resources :events, only: [:index, :new, :show, :create, :destroy] do
+    resources :events do
       resources :comments, only: [:index, :new, :create, :destroy]
     end
     resources :comments, only: [:index, :new, :create, :destroy, :update]

@@ -1,0 +1,27 @@
+<%= render 'shared/banner', header: 'Edit Event' %>
+<div class="container justfiy-content-center">
+  <div class="row text-align">
+    <div class="col-12">
+      <%= simple_form_for [@demo, @event] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :event_type, collection: @collection %>
+        <%= f.input :location, as: :hidden %>
+        <%= f.input :latitude, as: :hidden %>
+        <%= f.input :longitude, as: :hidden %>
+        <%#= f.input :event_type, as: :radio_buttons, collection: EventType.where("id > 2").map{ |e| [image_tag(e.icon, size: "30x30"), e.id]}, wrapper: :vertical_collection_inline%>
+      <p>Location</p>
+      <div
+        id="new-event"
+        style="width: 100%;
+        height: 400px;"
+        data-token="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+
+        <%= f.button :submit, 'Post Event', class: "new-comment-submit btn-light" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'shared/footer' %>
+
+
