@@ -73,6 +73,21 @@
     font-size: 21px}
 }
 
+
+.btn-delete-demo {
+  position: fixed;
+  opacity: 0.8;
+  text-align: center;
+  line-height: 52px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  bottom: 12vh;
+  right: 5vh;
+  background: $red;
+  a {color: white;
+    font-size: 21px}
+}
 .new-comment-submit {
 font-size: 14px !important;
 line-height: 25px !important;

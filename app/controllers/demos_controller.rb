@@ -1,6 +1,6 @@
 class DemosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_demo, only: [:show, :edit, :update]
+  before_action :find_demo, only: [:show, :edit, :update, :destroy]
 
   def index
     @demo = Demo.all
@@ -44,6 +44,8 @@ class DemosController < ApplicationController
 
   def destroy
     authorize @demo
+    @demo.destroy
+    redirect_to demos_path, notice: 'Demo deleted successfully'
   end
 
   private

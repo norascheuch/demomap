@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_event, only: [:show, :edit, :update, :destroy]
   def index
     @demo = Demo.find(params[:demo_id])
-    @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).includes([:event_type, :comments]).geocoded)
+    @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).includes([:event_type, :comments]))
     @mappoints = @demo.route
     if @events == []
         @markers =[
@@ -23,30 +24,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def new
-    @event = Event.new(demo_id: params[:demo_id])
-    authorize @event
-    @demo = Demo.find(params[:demo_id])
-  end
-
-  def create
-    @event = Event.new(event_params)
-    @event.user = current_user
-    @event.demo_id = params[:demo_id]
-    authorize @event
-    @event.event_type = EventType.find(params[:event][:event_type])
-    if @event.save
-      redirect_to demo_events_path(params[:demo_id])
-    else
-      @demo = Demo.find(params[:demo_id])
-      @event = Event.new(demo_id: params[:demo_id])
-      flash.alert = 'Something went wrong, please try again'
-      render :new
-    end
-  end
-
   def show
-    @event = Event.find(params[:id])
     @comments = @event.comments
     authorize @comments
     @demo = Demo.find(params[:demo_id])
@@ -56,10 +34,64 @@ class EventsController < ApplicationController
 ### End of comment ###
   end
 
+  def new
+    @demo = Demo.find(params[:demo_id])
+    @event = Event.new(demo: @demo)
+    authorize @event
+    @collection = EventType.where("id > 2")
+  end
+
+  def create
+    @event = Event.new(event_params)
+    @event.user = current_user
+    @event.demo_id = params[:demo_id]
+    authorize @event
+    @event.event_type = EventType.find(params[:event][:event_type]) if params[:event][:event_type] != ''
+    if @event.save
+      redirect_to demo_events_path(params[:demo_id]), notice: 'Event created successfully'
+    else
+      @demo = Demo.find(params[:demo_id])
+      @collection = EventType.where("id > 2")
+      flash.alert = 'Something went wrong, please try again. You need to select a description, an event type and a location.'
+      render :new
+    end
+  end
+
+  def edit
+    @demo = Demo.find(params[:demo_id])
+    authorize @event
+    @collection = EventType.where("id > 2")
+  end
+
+  def update
+    @demo = Demo.find(params[:demo_id])
+    authorize @event
+    @event.event_type = EventType.find(params[:event][:event_type]) if params[:event][:event_type] != ''
+    if @event.update!(event_params)
+      redirect_to demo_events_path(params[:demo_id]), notice: 'Event edited successfully'
+    else
+      @demo = Demo.find(params[:demo_id])
+      @collection = EventType.where("id > 2")
+      flash.alert = 'Something went wrong, please try again. You need to select a description, an event type and a location.'
+      render :edit
+    end
+
+  end
+
+  def destroy
+    authorize @event
+    @event.destroy
+    redirect_to demo_events_path(Demo.find(params[:demo_id]))
+  end
+
   private
 
+  def find_event
+    @event = Event.find(params[:id])
+  end
+
   def event_params
-    params.require(:event).permit(:location, :description)
+    params.require(:event).permit(:location, :description, :latitude, :longitude)
   end
 
 end

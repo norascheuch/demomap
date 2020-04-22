@@ -39,7 +39,6 @@ const leafletNewDemo = () => {
     })
     .on('routeselected', function(e) {
         var route = e.route;
-        console.log(JSON.stringify(route.inputWaypoints, null, 2));
         document.getElementById('demo_route').value = JSON.stringify(route.inputWaypoints, null, 2);
     })
     .addTo(map);

@@ -11,6 +11,7 @@ import { hiddenHeader } from '../plugins/event_header';
 import { readMore } from '../plugins/read_more';
 import { leafletMainMap } from '../plugins/leaflet_main_map';
 import { leafletNewDemo } from '../plugins/leaflet_new_demo';
+import { leafletNewEvent } from '../plugins/leaflet_new_event';
 
 
 
@@ -20,5 +21,6 @@ hiddenHeader();
 readMore();
 leafletMainMap();
 leafletNewDemo();
+leafletNewEvent();
 // add_to_home_screen();
 

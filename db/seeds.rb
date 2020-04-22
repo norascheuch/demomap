@@ -49,16 +49,16 @@ demo = Demo.create!(description:'This is an example demonstrations that shows yo
   The hashtags #FridaysForFuture and #Climatestrike spread and many students and adults began to protest outside of their parliaments and local city halls all over the world. This has also inspired the Belgium Thursday school strikes.', name:'Example Fridays for future', user: user, start_time: Time.new(date.year,date.month,date.day,'14'), start_location:'U Eberswalder Strasse, Berlin',
   end_location: 'Brandenburger Tor Berlin', end_time: Time.new(date.year,date.month,date.day,'23'), route: "52.541264,13.412187;52.53826448831151,13.396140756758996;52.524986447507814,13.392912909617337;52.52389904688613,13.387640537880742;52.51691082159789,13.389048442865459;52.516148,13.376638")
 
-event2 = Event.create!(description: 'Greta Thunberg is speaking on climate change', location:'Friedrichstadtpalast Berlin', demo: demo, event_type: event_type2, user: user)
-event1 = Event.create!(description: "Peaceful resistance - let's block the cars!", location:'Unter den Linden 28, 10117 Berlin', demo: demo, event_type: event_type1, user: user)
+event2 = Event.create!(description: 'Greta Thunberg is speaking on climate change', latitude: 52.5242187, longitude: 13.3874519, location:'Friedrichstadtpalast Berlin', demo: demo, event_type: event_type2, user: user)
+event1 = Event.create!(description: "Peaceful resistance - let's block the cars!", latitude: 52.5174493, longitude: 13.3877424, location:'Unter den Linden 28, 10117 Berlin', demo: demo, event_type: event_type1, user: user)
 
-Event.create!(description: 'Arrests by the police! Beware, violent situation going on.', location:'Factory Berlin', demo: demo, event_type: event_type6, user: user)
-Event.create!(description: 'Three cars from the police, cannot pass', location:'Mittelstraße 51-52, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
-event6 = Event.create!(description: 'The Activists are playing live', location:'Eberswalder Str. 10, 10437 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: 'Come see the dancing squirrels', location:'Brunnenstraße 53, 13355 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: 'Three doctors in medics tent', location:'Linienstraße 94, 10115 Berlin', demo: demo, event_type: event_type5, user: user)
-Event.create!(description: 'Four police cars have blocked passage', location:'Friedrichstraße 158, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
-Event.create!(description: 'Organizers speak', location:'Unter den Linden 74, 10117 Berlin', demo: demo, event_type: event_type2, user: user)
+Event.create!(description: 'Arrests by the police! Beware, violent situation going on.', latitude: 52.5371204, longitude: 13.394585321606, location:'Factory Berlin', demo: demo, event_type: event_type6, user: user)
+Event.create!(description: 'Three cars from the police, cannot pass', latitude: 52.5179061, longitude: 13.3878263, location:'Mittelstraße 51-52, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
+event6 = Event.create!(description: 'The Activists are playing live', latitude: 52.5410276, longitude: 13.4074865, location:'Eberswalder Str. 10, 10437 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'Come see the dancing squirrels', latitude: 52.5385981, longitude: 13.3963665, location:'Brunnenstraße 53, 13355 Berlin', demo: demo, event_type: event_type3, user: user)
+Event.create!(description: 'Three doctors in medics tent', latitude: 52.5287759, longitude: 13.3973901, location:'Linienstraße 94, 10115 Berlin', demo: demo, event_type: event_type5, user: user)
+Event.create!(description: 'Four police cars have blocked passage', latitude: 52.5158768, longitude: 13.3886042, location:'Friedrichstraße 158, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
+Event.create!(description: 'Organizers speak', location:'Unter den Linden 74, 10117 Berlin', latitude: 52.5168416, longitude: 13.3816742, demo: demo, event_type: event_type2, user: user)
 
 
 
@@ -120,13 +120,13 @@ demo = Demo.create!(description:'Join XR Kreuzberg on our monthly go-slow ride. 
   user: user, start_time: (Date.today + 12), start_location:"Skalitzer Straße 137, Berlin, 10999",
     start_time: Time.new(date.year,date.month,date.day,'12'), end_location: "Hermannplatz, Berlin, 10967", end_time: Time.new(date.year,date.month,date.day,'23'), route: "52.49966,13.418248;52.49343190085773,13.402997036894163;52.498028112227985,13.389072644057165;52.51875616080102,13.428497129799325;52.509363379591605,13.37212850337616;52.49424904021416,13.361056094614383;52.48495318401959,13.385885132444429;52.486561,13.424468")
 
-event2 = Event.create!(description: "Speech from Lana", location:'Berlin, Hallesches Tor', demo: demo, event_type: event_type2, user: user)
-event1 = Event.create!(description: "Remember to cork!!", location:'Berlin Kino International', demo: demo, event_type: event_type6, user: user)
+event2 = Event.create!(description: "Speech from Lana", latitude: 52.4977596, longitude: 13.3906496, location:'Berlin, Hallesches Tor', demo: demo, event_type: event_type2, user: user)
+event1 = Event.create!(description: "Remember to cork!!", latitude: 52.52064425, longitude: 13.4230157005467, location:'Berlin Kino International', demo: demo, event_type: event_type6, user: user)
 # Event.create!(description: '3 cars from the police, can not pass', location:'Unter den Linden 1, 10117 Berlin', demo: demo, event_type: event_type4, user: user)
 # Event.create!(description: 'The Activists are playing live', location:'Unter den Linden 4, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
 # Event.create!(description: 'Come see the dancing squirrels', location:'Unter den Linden 17, 10117 Berlin', demo: demo, event_type: event_type3, user: user)
-Event.create!(description: '3 doctors in medics tent ', location: "Berlin Potsdamer Platz", demo: demo, event_type: event_type5, user: user)
-Event.create!(description: '2 medics', location: "Platz der Luftbrücke, Berlin", demo: demo, event_type: event_type5, user: user)
+Event.create!(description: '3 doctors in medics tent ', latitude: 52.5092044, longitude: 13.3759366, location: "Berlin Potsdamer Platz", demo: demo, event_type: event_type5, user: user)
+Event.create!(description: '2 medics', latitude: 52.48409945, longitude: 13.3869655409355, location: "Platz der Luftbrücke, Berlin", demo: demo, event_type: event_type5, user: user)
 
 c1 = Comment.create!(user: user, content: 'Environment is so important! I invited all my friends.', commentable: demo)
 c2 = Comment.create!(user: user, content: "Great demonstration! I'm so happy we are so many and really make an impact!", commentable: demo)
