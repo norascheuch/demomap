@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @demo = Demo.find(params[:demo_id])
-    @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).includes([:event_type, :comments]).geocoded)
+    @events = policy_scope(Event.where('demo_id = ?', params[:demo_id]).includes([:event_type, :comments]))
     @mappoints = @demo.route
     if @events == []
         @markers =[
