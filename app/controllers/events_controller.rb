@@ -24,9 +24,9 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new(demo_id: params[:demo_id])
-    authorize @event
     @demo = Demo.find(params[:demo_id])
+    @event = Event.new(demo: @demo)
+    authorize @event
     @collection = EventType.where("id > 2")
   end
 
@@ -35,13 +35,13 @@ class EventsController < ApplicationController
     @event.user = current_user
     @event.demo_id = params[:demo_id]
     authorize @event
-    @event.event_type = EventType.find(params[:event][:event_type])
+    @event.event_type = EventType.find(params[:event][:event_type]) if params[:event][:event_type] != ''
     if @event.save
-      redirect_to demo_events_path(params[:demo_id])
+      redirect_to demo_events_path(params[:demo_id]), notice: 'Event created successfully'
     else
       @demo = Demo.find(params[:demo_id])
-      @event = Event.new(demo_id: params[:demo_id])
-      flash.alert = 'Something went wrong, please try again'
+      @collection = EventType.where("id > 2")
+      flash.alert = 'Something went wrong, please try again. You need to select a description, an event type and a location.'
       render :new
     end
   end

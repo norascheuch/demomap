@@ -8,5 +8,5 @@ class Event < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
 
   # geocoded_by :location
-  validates :description, :location, :latitude, :longitude, presence: true
+  validates :description, :location, :latitude, :longitude, :event_type, presence: true
 end
