@@ -12,9 +12,11 @@ import { leafletMainMap } from '../plugins/leaflet_main_map';
 import { leafletNewDemo } from '../plugins/leaflet_new_demo';
 import { leafletNewEvent } from '../plugins/leaflet_new_event';
 import { sideNav } from '../plugins/side_nav';
+import { twitterFeed } from '../plugins/twitter';
 
 
 sideNav();
+twitterFeed();
 
 // initMapbox();
 hiddenHeader();
