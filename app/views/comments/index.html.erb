@@ -40,13 +40,13 @@
             <p>Feed for #<%= @demo.d_hashtag %></p>
         </div>
 
-        <% TwitterApi.demo_hashtag.each do |tweet| %>
+        <% TwitterApi.demo_hashtag(@demo.d_hashtag).each do |tweet| %>
         <div class="card-comment">
           <div class="card-comment-header">
             <div class="card-comment-header-description">
                <%= image_tag "#{tweet.user.profile_image_url_https}" %>
                   <p><%= tweet.user.name %></p>
-                  <p>@<%= tweet.user.screen_name %></p>
+                  <p><%= tweet.user.screen_name %></p>
                   <p>
                   RT: <strong><%= tweet.retweet_count %></strong>
                   </p>
