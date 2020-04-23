@@ -91,15 +91,13 @@
     font-size: 21px}
 }
 .new-comment-submit {
-font-size: 14px !important;
-line-height: 25px !important;
-text-align: center !important;
-// margin: 0 33% !important;
-background: $base-color !important;
-font-weight: 700;
-color: white;
-// border: 1px solid red;
-width: 100% !important;
+  font-size: 14px !important;
+  line-height: 25px !important;
+  text-align: center !important;
+  background: $base-color !important;
+  font-weight: 700;
+  color: white;
+  width: 100% !important;
 }
 
 abbr[title] {
@@ -170,4 +168,14 @@ abbr[title] {
     height: 40px !important;
     width: 40px !important;
   }
+}
+
+.login-submit {
+  font-size: 14px !important;
+  line-height: 25px !important;
+  text-align: center !important;
+  background: $base-color !important;
+  font-weight: 700;
+  color: white;
+  width: 100% !important;
 }
