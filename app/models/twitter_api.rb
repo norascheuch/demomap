@@ -16,12 +16,12 @@ class TwitterApi
 ### End of comment ###
 
 ### Show Tweet for a specific hashtag ###
-  def self.demo_hashtag
+  def self.demo_hashtag(hashtag)
     tweets = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['YOUR_CONSUMER_KEY']
       config.consumer_secret     = ENV['YOUR_CONSUMER_SECRET']
     end
-    @tweets = tweets.search('#FridaysForFuture Berlin -rt')
+    @tweets = tweets.search("##{hashtag} -rt")
   end
 
 ### End of comment ###
