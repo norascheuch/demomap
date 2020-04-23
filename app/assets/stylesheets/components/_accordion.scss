@@ -1,12 +1,75 @@
 .accordion-shape{
   border-radius: 7px !important;
+  align-items: center;
+  margin-top: 1em;
 }
 
 .text-dark{
   color: black !important;
 }
 
+.card-pages-banner {
+  height: 145px;
+  top: 0px;
+  background-size: cover;
+  padding-top: 15px;
+  position: sticky;
+  z-index: 7;
+}
+
+.card-pages-title {
+  position: absolute;
+  background: white;
+  margin: 0 15px;
+  height: 87px;
+  left: 20px;
+  top: 81px;
+  border-radius: 24px 24px 0 0;
+  background-size: 100%;
+  position: sticky;
+  z-index: 7;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-pages-title-content {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  width: 70%;
+  line-height: 1.2em;
+  left: 18px;
+  top: 20px;
+  padding-top: 13px;
+}
+
+
+.card-pages-accordion {
+  display: flex;
+  list-style-type: none;
+  padding-right: 20px;
+  float: left;
+  justify-content: space-around;
+}
+
 .btn-link{
   font-weight: bold;
   font-size: 20px;
+  display: block;
+}
+
+.arrow-back-more {
+    align-self: flex-start;
+    height: 20px;
+    width: 20px;
+    transform: rotate(-90deg);
+    background: image_url("arrow-back.svg");
+    background-repeat: no-repeat;
+    margin-left: 0px;
+    margin-top: 18px;
+    display: block;
+    z-index: 12;
+}
+
+#accordion {
+  margin: 1em 0;
 }
