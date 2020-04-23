@@ -40,34 +40,34 @@
             <p>Feed for #<%= @demo.d_hashtag %></p>
         </div>
 
-        <%# TwitterApi.demo_hashtag(@demo.d_hashtag).each do |tweet| %>
- <!--        <div class="card-comment">
+        <% TwitterApi.demo_hashtag(@demo.d_hashtag).each do |tweet| %>
+        <div class="card-comment">
           <div class="card-comment-header">
             <div class="card-comment-header-description">
-               <%#= image_tag "#{tweet.user.profile_image_url_https}" %>
-                  <p><%#= tweet.user.name %></p>
-                  <p>@<#%= tweet.user.screen_name %></p>
+               <%= image_tag "#{tweet.user.profile_image_url_https}" %>
+                  <p><%= tweet.user.name %></p>
+                  <p><%= tweet.user.screen_name %></p>
                   <p>
-                  RT: <strong><%#= tweet.retweet_count %></strong>
+                  RT: <strong><%= tweet.retweet_count %></strong>
                   </p>
             </div>
             <div class="card-comment-header-time">
-              <p>posted <%#= time_ago_in_words(tweet.created_at) %> ago</p>
+              <p>posted <%= time_ago_in_words(tweet.created_at) %> ago</p>
             </div>
           </div>
 
           <div class="card-comment-infos">
             <div class="card-comment-infos-content">
               <div class="card-comment-infos-content-description">
-                 <%#= tweet.text %>
+                 <%= tweet.text %>
               </div>
               <div class="card-comment-infos-content-footer">
               </div>
             </div>
           </div>
         </div>
-        <#% end %>
-      </div> -->
+        <% end %>
+      </div>
 
 <!-- Button Add a comment -->
 
