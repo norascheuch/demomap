@@ -1,0 +1,44 @@
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .sidenav {
+      width: 160px !important;
+  }
+}
+
+
+.sidenav a {
+  padding: 8px 8px 8px 20px;
+  text-decoration: none;
+  display: block;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+.sidenav a:hover {
+    opacity: 0.7;
+}
+
+.btn-nav {
+  border: none;
+  background-color: white;
+  font-size: 22px;
+}
+
+.btn-nav:focus {
+  outline:none;
+}

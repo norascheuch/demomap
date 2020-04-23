@@ -1,73 +1,20 @@
-.navbar {
-  bottom: 0px;
-  left: 0px;
-  width: 180px;
-  position: fixed;
-  border-radius: 3px !important;
-}
-
-// .footer-symbols-map {
+// .navbar {
 //   bottom: 0px;
-//   left: 50%;
+//   left: 0px;
+//   width: 180px;
 //   position: fixed;
-//   display: block;
-//   text-align: center;
-//   line-height: 52px;
-//   border-radius: 50%;
-//   width: 55px;
-//   height: 55px;
-//   background: #B3B3B3;
-//   color: white;
-//   margin-right: 20px;
-
+//   border-radius: 3px !important;
 // }
-
-
-.navbar-lewagon {
-  justify-content: space-around;
-  background: white;
-}
-
-.navbar-expand-sm{
-    border-top-left-radius: 25px;
-    border-top-right-radius:25px;
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.navbar-light .navbar-nav .nav-link{
-  color: black;
-}
-
-// .navbar-light .navbar-toggler .fa-align-justify {
-//   position: fixed;
-//   bottom: 15px;
-//   left: 16px;
-// }
-
-.navbar-toggler-icon {
-  color: red !important;
-}
-
-.button-trans {
-  border-color: transparent !important;
-}
 
 .footer{
   position: sticky;
   left: 0 ; right: 0; bottom: 0;
   height:[footer-height];
   margin-top: 50px;
+  z-index: 9;
 }
 
-.toggler_box {
+.toggler-box {
   background-color: white;
   width: 100%;
   position: fixed;
@@ -84,22 +31,6 @@
   transition: 2s;
 }
 
-
-.shadow-off {
-  box-shadow: none;
-}
-
 .nav-link {
   color: black;
-}
-
-.html { height: 100%; }
-.body {
-    min-height:100%;
-    position:relative;
-    padding-bottom:[footer-height]
-}
-
-#button-toggler:focus{
-  outline: 0
 }

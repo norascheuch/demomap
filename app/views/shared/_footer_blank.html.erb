@@ -1,8 +1,43 @@
+<div id="mySidenav" class="sidenav" style="width: 0px;">
+  <ul class="navbar-list">
+    <li>
+      <%= link_to "Calender", demos_path, class: "nav-link" %>
+    </li>
+    <li>
+      <%= link_to "Tips & Tricks", tips_path, class: "nav-link" %>
+    </li>
+    <li>
+      <%= link_to "Organizers", organizers_path, class: "nav-link" %>
+    </li>
+    <!-- <li> -->
+      <%#= link_to "Contact", contact_path, class: "nav-link" %>
+    <!-- </li> -->
+    <li>&nbsp;</li>
+    <li>
+      <% if current_user %>
+        <%= link_to "Logout",  destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+
 <div class="footer">
-  <div class="navbar navbar-light navbar-lewagon">
-    <div id="toggler-box-strip" class="toggler_box">
-    </button>
+  <div class="navbar navbar-light">
+    <div class="toggler-box">
+      <div>
+        <button id="openNav" class="btn-nav">
+          <i class="fas fa-align-justify text-body"></i>
+        </button>
+      </div>
+      <div style='visibility: hidden;'>
+          <%= image_tag "world-navbar.svg", alt: "Demonstration" %>
+      </div>
+      <div style='visibility: hidden;'>
+          <%= image_tag "chat-navbar.svg", alt: "Demonstration" %>
+      </div>
     </div>
   </div>
 </div>
-
