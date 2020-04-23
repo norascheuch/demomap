@@ -4,10 +4,11 @@
   z-index: 8;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #fffffffa;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  box-shadow: 4px 0px 20px 0px #8888885c;
   ul {
     list-style: none;
     padding: 0;
@@ -41,4 +42,14 @@
 
 .btn-nav:focus {
   outline:none;
+}
+
+.nav-link {
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(22, 127, 251, 0.25);
+  border-right: solid;
+  border-right-color: rgba(22, 127, 251, 0.25);
+  border-right-width: medium;
+  font-weight: 300;
 }
