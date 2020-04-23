@@ -46,6 +46,7 @@
 .btn-plus {
   position: fixed;
   opacity: 0.8;
+  z-index: 9;
   text-align: center;
   line-height: 52px;
   border-radius: 50%;
@@ -59,6 +60,7 @@
 }
 
 .btn-admin {
+  z-index: 9;
   position: fixed;
   opacity: 0.8;
   text-align: center;
