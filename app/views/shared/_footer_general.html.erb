@@ -4,7 +4,9 @@
       <%= link_to "Calender", demos_path, class: "nav-link" %>
     </li>
     <li>
-      <%= link_to "Tips & Tricks", tips_path, class: "nav-link" %>
+      <%= link_to tips_path, class: "nav-link" do %>
+      Tips&nbsp;&&nbsp;Tricks
+      <% end %>
     </li>
     <li>
       <%= link_to "Organizers", organizers_path, class: "nav-link" %>
