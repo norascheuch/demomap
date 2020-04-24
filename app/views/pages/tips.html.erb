@@ -1,14 +1,16 @@
-<%= render 'shared/banner', header: 'Tips & Tricks' %>
+<%= render 'shared/header', header: 'Tips & Tricks' %>
 <div class="container justify-content-center">
   <div class="row text-align">
     <div class="col-12">
       <div id="accordion">
-        <div class="card mb-2 shadow bg-white accordion-shape">
-          <div class="card-header bg-white accordion-shape" id="headingOne">
+        <div class="card-tips mb-2 shadow bg-white accordion-shape">
+          <div class="card-header bg-white" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link text-dark p-3 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                What to bring
-              </button>
+              <div class="card-pages-accordion">
+                <button class="btn btn-link text-dark p-3 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">What to bring
+                </button>
+                <div class="arrow-back-more"></div>
+              </div>
             </h5>
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
@@ -27,12 +29,15 @@
             </div>
           </div>
         </div>
-        <div class="card mb-2 shadow bg-white accordion-shape">
+        <div class="card-tips mb-2 shadow bg-white accordion-shape">
           <div class="card-header bg-white accordion-shape" id="headingTwo">
             <h5 class="mb-0">
-              <button class="btn btn-link text-dark p-3 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                What to do
-              </button>
+              <div class="card-pages-accordion">
+                <button class="btn btn-link text-dark p-3 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  What to do
+                </button>
+                <div class="arrow-back-more"></div>
+              </div>
             </h5>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -60,12 +65,15 @@
             </div>
           </div>
         </div>
- -->        <div class="card mb-2 shadow bg-white accordion-shape">
-          <div class="card-header bg-white accordion-shape" id="headingFour">
+ -->        <div class="card-tips mb-2 shadow bg-white accordion-shape">
+          <div class="card-header bg-white" id="headingFour">
             <h5 class="mb-0">
-              <button class="btn btn-link text-dark p-3 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Dealing with Teargas
-              </button>
+              <div class="card-pages-accordion">
+                <button class="btn btn-link text-dark p-3 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Dealing with Teargas
+                </button>
+                <div class="arrow-back-more"></div>
+              </div>
             </h5>
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -82,7 +90,7 @@
             </div>
           </div>
         </div>
-             <p>From: <strong>SAFETY DURING PROTEST</strong> - Amnesty International</p>
+             <p>Sources: <strong>SAFETY DURING PROTEST</strong> - Amnesty International</p>
                    </div>
     </div>
   </div>
