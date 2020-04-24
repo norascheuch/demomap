@@ -1,6 +1,6 @@
 .accordion-shape{
   border-radius: 7px !important;
-  align-items: center;
+  // align-items: center;
   margin-top: 1em;
 }
 
@@ -46,9 +46,7 @@
 .card-pages-accordion {
   display: flex;
   list-style-type: none;
-  padding-right: 20px;
-  float: left;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .btn-link{
