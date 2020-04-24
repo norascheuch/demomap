@@ -24,13 +24,13 @@
 
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-newest" role="tabpanel" aria-labelledby="pills-newest-tab">
-          <%= render partial:'comments_tab', locals: {comments: @comments}%>
+          <%= render partial:'shared/comments_tab', locals: {comments: @comments}%>
         </div>
 
 <!-- 2nd Tab -->
 
       <div class="tab-pane fade" id="pills-loudest" role="tabpanel" aria-labelledby="pills-loudest-tab">
-        <%= render partial:'comments_tab', locals: {comments: @votes_comments}%>
+        <%= render partial:'shared/comments_tab', locals: {comments: @votes_comments}%>
       </div>
 
 
