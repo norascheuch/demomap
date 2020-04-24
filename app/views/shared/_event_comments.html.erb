@@ -1,0 +1,45 @@
+
+<% comments.each do |c|%>
+  <div class="card-comment">
+    <div class="card-comment-header">
+      <div class="card-comment-header-description">
+        <p> <%= image_tag "#{event.event_type.icon}", alt: "Demonstration" %>
+          <strong><%= event.description.first(20) + "..." %></strong>
+        </p>
+      </div>
+      <div class="card-comment-header-time">
+        <p>posted <%= time_ago_in_words(c.created_at) %> ago </p>
+      </div>
+    </div>
+
+    <div class="card-comment-infos">
+      <div class="card-comment-infos-content">
+
+        <div class="card-comment-infos-content-description">
+          <%= c.content %>
+        </div>
+        <div class="card-comment-infos-content-footer">
+
+          <p><i class="fas fa-map-marker-alt"></i>
+            <%= event.location.gsub(/,.*/,'') %>
+          </p>
+        </div>
+      </div>
+      <div class="card-comment-info-votes">
+        <%= simple_form_for([@demo, c], remote: true) do |form| %>
+          <%= form.button :button, class: 'btn-votes' do %>
+            <%= image_tag "arrow_up.svg", alt: "Upvote" %>
+          <% end %>
+          <%= form.input :vote, :as => :hidden, :input_html => { :value => 'up' } %>
+        <% end %>
+        <p class="weighted-score" data-id="<%= c.id %>"><%= c.weighted_score %></p>
+        <%= simple_form_for([@demo, c], remote: true) do |form| %>
+          <%= form.input :vote, :as => :hidden, :input_html => { :value => 'down' } %>
+          <%= form.button :button, class: 'btn-votes' do %>
+            <%= image_tag "arrow_down.svg", alt: "Downvote" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
