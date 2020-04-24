@@ -1,6 +1,7 @@
 <%= link_to demo_event_path(demo, event) do %>
     <div class="card-popup-header">
        <%= image_tag event.event_type.icon%>
+       <p><%= event.start_time.strftime("%l:%M %p") unless event.start_time.nil? %> &nbsp;</p>
        <p><%= event.event_type.name%></p>
     </div>
     <div class="card-popup-content">
@@ -15,5 +16,3 @@
       </div>
     </div>
 <% end %>
-
-

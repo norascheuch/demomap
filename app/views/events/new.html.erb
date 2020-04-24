@@ -5,6 +5,8 @@
       <%= simple_form_for [@demo, @event] do |f| %>
         <%= f.input :description %>
         <%= f.input :event_type, collection: @collection %>
+        <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_time, as: :string, required: false,  input_html: {class: "datepicker"} %>
         <%= f.input :location, as: :hidden %>
         <%= f.input :latitude, as: :hidden %>
         <%= f.input :longitude, as: :hidden %>
