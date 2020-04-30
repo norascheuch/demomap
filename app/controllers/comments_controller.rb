@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     end
     @comments = @comments.sort_by(&:created_at).reverse!
     @votes_comments = @comments.sort_by{|a| a.weighted_score}.reverse
+    # @twitter = TwitterApi.demo_hashtag(@demo.d_hashtag)
   end
 
 
