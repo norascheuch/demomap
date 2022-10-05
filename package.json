@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@mapbox/mapbox-gl-directions": "^4.0.3",
-    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
+    "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
     "dotenv": "^8.2.0",
