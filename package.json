@@ -2,7 +2,7 @@
   "name": "demomap",
   "private": true,
   "dependencies": {
-    "@mapbox/mapbox-gl-directions": "^4.0.3",
+    "@mapbox/mapbox-gl-directions": "^4.1.1",
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^4.4.1",
