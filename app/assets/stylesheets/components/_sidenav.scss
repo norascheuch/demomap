@@ -1,13 +1,16 @@
 .sidenav {
-  height: 100%;
+  height: 90%;
   position: fixed;
   z-index: 8;
-  top: 0;
+  // top: 0;
   left: 0;
-  background-color: #fff;
+  bottom: 0;
+  background-color: #fffffffa;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  box-shadow: 4px 0px 20px 0px #8888885c;
+  border-radius: 0 25px 0 0;
   ul {
     list-style: none;
     padding: 0;
@@ -41,4 +44,14 @@
 
 .btn-nav:focus {
   outline:none;
+}
+
+.nav-link {
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #f8f9fa;
+  border-right: solid;
+  border-right-color: rgba(22, 127, 251, 0.42);
+  border-right-width: medium;
+  font-weight: 300;
 }
